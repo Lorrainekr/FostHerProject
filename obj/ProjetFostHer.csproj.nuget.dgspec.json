@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "G:\\.shortcut-targets-by-id\\11nCsrFKDiUfLuNgr06wYbhUfkOT1MKkQ\\Projet 2 - ISIKA\\MVC\\ProjetFostHer\\ProjetFostHer.csproj": {}
+    "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\ProjetFostHer.csproj": {}
   },
   "projects": {
-    "G:\\.shortcut-targets-by-id\\11nCsrFKDiUfLuNgr06wYbhUfkOT1MKkQ\\Projet 2 - ISIKA\\MVC\\ProjetFostHer\\ProjetFostHer.csproj": {
+    "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\ProjetFostHer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "G:\\.shortcut-targets-by-id\\11nCsrFKDiUfLuNgr06wYbhUfkOT1MKkQ\\Projet 2 - ISIKA\\MVC\\ProjetFostHer\\ProjetFostHer.csproj",
+        "projectUniqueName": "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\ProjetFostHer.csproj",
         "projectName": "ProjetFostHer",
-        "projectPath": "G:\\.shortcut-targets-by-id\\11nCsrFKDiUfLuNgr06wYbhUfkOT1MKkQ\\Projet 2 - ISIKA\\MVC\\ProjetFostHer\\ProjetFostHer.csproj",
+        "projectPath": "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\ProjetFostHer.csproj",
         "packagesPath": "C:\\Users\\leann\\.nuget\\packages\\",
-        "outputPath": "G:\\.shortcut-targets-by-id\\11nCsrFKDiUfLuNgr06wYbhUfkOT1MKkQ\\Projet 2 - ISIKA\\MVC\\ProjetFostHer\\obj\\",
+        "outputPath": "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\leann\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,23 +40,9 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.14, )"
-            },
-            "Microsoft.EntityFrameworkCore.Tools": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[3.1.14, )"
-            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.5, )"
-            },
-            "Pomelo.EntityFrameworkCore.MySql": {
-              "target": "Package",
-              "version": "[3.2.5, )"
             }
           },
           "imports": [
