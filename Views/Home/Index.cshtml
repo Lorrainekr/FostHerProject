@@ -1,7 +1,24 @@
-﻿
+﻿@model ProjetFostHer.ViewModels.HomeViewModel
 @{
-    ViewData["Title"] = "Index";
+    Layout = null;
 }
 
-<h1>Bienvenue sur FostHer !</h1>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>Picasso</h1>
+    <ul>
+        <li>@Model.Message</li>
+        <li>@Model.Date.ToString("dd/MM/yyyy")</li>
+
+        <li>@Model.Associations.RNA</li>
+        <li>@Model.Associations.Tel</li>
+    </ul>
+</body>
+</html>
 
