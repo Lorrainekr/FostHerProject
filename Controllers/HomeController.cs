@@ -27,7 +27,7 @@ namespace ProjetFostHer.Controllers
                 Associations = associationPicasso
             };
 
-            return View(associationPicasso);
+            return View(homeviewmodel);
         }
     }
 }
