@@ -30,6 +30,11 @@ namespace ProjetFostHer.DAL
             return _bddContext.Artists.ToList();
         }
 
+        public List<Association> ListAllAssociations()
+        {
+            return _bddContext.Associations.ToList();
+        }
+
         public void Dispose()
         {
             _bddContext.Dispose();
@@ -47,6 +52,15 @@ namespace ProjetFostHer.DAL
             Artist newArtist = new Artist() { Email = email, Password = password, Address = address, FirstName = firstname, LastName = lastname, StageName = stagename, Domain = domain, Siret = siret };
 
             _bddContext.Artists.Add(newArtist);
+            _bddContext.SaveChanges();
+        }
+
+        public void CreateAssociation(string email, string password, string assoname, string address, string tel, string rna, string siren)
+        {
+
+            Association newAssociation = new Association() { Email = email, Password = password, AssoName = assoname, Address = address, Tel = tel, RNA = rna, Siren = siren };
+
+            _bddContext.Associations.Add(newAssociation);
             _bddContext.SaveChanges();
         }
 
@@ -69,8 +83,21 @@ namespace ProjetFostHer.DAL
             }
         }
 
+        public void EditAssociation(int id, string email, string password, string assoname, string address, string tel, string rna, string siren)
+        {
+            Association asso = _bddContext.Associations.Find(id);
 
-
+            if (asso != null)
+            {
+                asso.Email = email;
+                asso.Password = password;
+                asso.AssoName = assoname;
+                asso.Address = address;
+                asso.Tel = tel;
+                asso.RNA = rna;
+                asso.Siren = siren;
+            }
+        }
 
         public void DeleteArtist(int id)
         {
@@ -83,6 +110,14 @@ namespace ProjetFostHer.DAL
 
         }
 
+        public void DeleteAssociation(int id)
+        {
+            Association asso = _bddContext.Associations.Find(id);
+
+            _bddContext.Associations.Remove(asso);
+
+            _bddContext.SaveChanges();
+        }
 
     }
 }
