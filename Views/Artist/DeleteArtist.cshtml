@@ -1,0 +1,58 @@
+﻿@model ProjetFostHer.Models.Artist
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SupprimerLesDonnéesArtiste</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Supprimer les données d'une artiste' : </legend>
+            @Html.LabelFor(m => Model.Email)
+            @Html.TextBoxFor(m => Model.Email, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.Email)
+            <br />
+            @Html.LabelFor(m => Model.Password,new { @readonly = true })
+            @Html.TextBoxFor(m => Model.Password)
+            @Html.ValidationMessageFor(m => Model.Password)
+
+            @Html.LabelFor(m => Model.Address)
+            @Html.TextBoxFor(m => Model.Address, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.Address)
+
+            @Html.LabelFor(m => Model.FirstName, new { @readonly = true })
+            @Html.TextBoxFor(m => Model.FirstName)
+            @Html.ValidationMessageFor(m => Model.FirstName)
+
+            @Html.LabelFor(m => Model.LastName, new { @readonly = true })
+            @Html.TextBoxFor(m => Model.LastName)
+            @Html.ValidationMessageFor(m => Model.LastName)
+
+            @Html.LabelFor(m => Model.StageName, new { @readonly = true })
+            @Html.TextBoxFor(m => Model.StageName)
+            @Html.ValidationMessageFor(m => Model.StageName)
+
+            @Html.LabelFor(m => Model.Domain, new { @readonly = true })
+            @Html.TextBoxFor(m => Model.Domain)
+            @Html.ValidationMessageFor(m => Model.Domain)
+
+            @Html.LabelFor(m => Model.Siret, new { @readonly = true })
+            @Html.TextBoxFor(m => Model.Siret)
+            @Html.ValidationMessageFor(m => Model.Siret)
+
+            <br />
+            <input type="submit" value="Supprimer" />
+        </fieldset>
+    }
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
