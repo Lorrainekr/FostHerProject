@@ -37,7 +37,7 @@ namespace ProjetFostHer.DAL
 
         public List<Crowdfunding> ListAllCrowdfundings()
         {
-            return _bddContext.Crowdfundings.Tolist();
+            return _bddContext.Crowdfundings.ToList();
         }
 
         public void Dispose()
@@ -46,7 +46,13 @@ namespace ProjetFostHer.DAL
         }
         public void CreateUser(int id, string email, string password)
         {
-            User newUser = new User() { Id = id, Email = email, Password = password };
+            User newUser = new User() 
+            { 
+                Id = id, 
+                Email = email, 
+                Password = password 
+            };
+
             _bddContext.Users.Add(newUser);
             _bddContext.SaveChanges();
         }
@@ -54,7 +60,16 @@ namespace ProjetFostHer.DAL
         public void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, string domain, string siret)
         {
 
-            Artist newArtist = new Artist() { Email = email, Password = password, Address = address, FirstName = firstname, LastName = lastname, StageName = stagename, Domain = domain, Siret = siret };
+            Artist newArtist = new Artist() 
+            { 
+                Email = email, 
+                Password = password, 
+                Address = address, 
+                FirstName = firstname, 
+                LastName = lastname, 
+                StageName = stagename, 
+                Domain = domain, 
+                Siret = siret };
 
             _bddContext.Artists.Add(newArtist);
             _bddContext.SaveChanges();
@@ -63,12 +78,37 @@ namespace ProjetFostHer.DAL
         public void CreateAssociation(string email, string password, string assoname, string address, string tel, string rna, string siren)
         {
 
-            Association newAssociation = new Association() { Email = email, Password = password, AssoName = assoname, Address = address, Tel = tel, RNA = rna, Siren = siren };
+            Association newAssociation = new Association() 
+            { 
+                Email = email, 
+                Password = password, 
+                AssoName = assoname, 
+                Address = address, 
+                Tel = tel, 
+                RNA = rna, 
+                Siren = siren 
+            };
 
             _bddContext.Associations.Add(newAssociation);
             _bddContext.SaveChanges();
         }
 
+        public void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation)
+        {
+            Crowdfunding newCrowdfunding = new Crowdfunding()
+            {
+                NameCrowdfunding = namecrowdfunding,
+                StartDate = startdate,
+                EndDate = enddate,
+                AssociationCrowdfunding = associationcrowdfunding,
+                AmountMax = amountmax,
+                MinDonation = mindonation,
+                MaxDonation = maxdonation
+            };
+
+            _bddContext.Crowdfundings.Add(newCrowdfunding);
+            _bddContext.SaveChanges();
+        }
 
         public void EditArtist(int id, string email, string password, string address, string firstname, string lastname, string stagename, string domain, string siret)
         {
@@ -104,6 +144,22 @@ namespace ProjetFostHer.DAL
             }
         }
 
+        public void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation)
+        {
+            Crowdfunding crowd = _bddContext.Crowdfundings.Find(id);
+
+            if (crowd != null)
+            {
+                crowd.NameCrowdfunding = namecrowdfunding;
+                crowd.StartDate = startdate;
+                crowd.EndDate = enddate;
+                crowd.AssociationCrowdfunding = associationcrowdfunding;
+                crowd.AmountMax = amountmax;
+                crowd.MinDonation = mindonation;
+                crowd.MaxDonation = maxdonation;
+            }
+        }
+
         public void DeleteArtist(int id)
         {
             Artist art = _bddContext.Artists.Find(id);
@@ -123,6 +179,16 @@ namespace ProjetFostHer.DAL
 
             _bddContext.SaveChanges();
         }
+
+        public void DeleteCrowdfunding(int id)
+        {
+            Crowdfunding crowd = _bddContext.Crowdfundings.Find(id);
+
+            _bddContext.Crowdfundings.Remove(crowd);
+
+            _bddContext.SaveChanges();
+        }
+
 
     }
 }

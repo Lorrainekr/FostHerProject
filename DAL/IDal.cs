@@ -20,5 +20,9 @@ namespace ProjetFostHer.DAL
         void CreateAssociation(string email, string password, string assoname, string address, string tel, string rna, string siren);
         void EditAssociation(int id, string email, string password, string assoname, string address, string tel, string rna, string siren);
         void DeleteAssociation(int id);
+
+        void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation);
+        void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation);
+        void DeleteCrowdfunding(int id);
     }
 }
