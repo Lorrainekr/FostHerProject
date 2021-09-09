@@ -35,6 +35,11 @@ namespace ProjetFostHer.DAL
             return _bddContext.Associations.ToList();
         }
 
+        public List<Crowdfunding> ListAllCrowdfundings()
+        {
+            return _bddContext.Crowdfundings.Tolist();
+        }
+
         public void Dispose()
         {
             _bddContext.Dispose();

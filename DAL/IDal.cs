@@ -12,6 +12,7 @@ namespace ProjetFostHer.DAL
         List<User> ListAllUsers();
         List<Artist> ListAllArtists();
         List<Association> ListAllAssociations();
+        List<Crowdfunding> ListAllCrowdfundings();
         void CreateUser(int id, string email, string password);
         void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, string domain, string siret);
         void EditArtist(int id, string email, string password, string address, string firstname, string lastname, string stagename, string domain, string siret);
