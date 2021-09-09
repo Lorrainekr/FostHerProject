@@ -27,7 +27,7 @@ namespace ProjetFostHer.Models
                 {
                     
                     Email="aymen17@hotmail.fr",
-                    Password="12345",
+                    Password="Pn12345!",
                     Address="8 rue",
                     FirstName="Juan",
                     LastName="Mata",
@@ -40,7 +40,7 @@ namespace ProjetFostHer.Models
                 {
                   
                     Email = "Mymen.jelassi2014@gmail.com",
-                    Password = "12345",
+                    Password = "Mn12345$",
                     Address = "9 rue",
                     FirstName = "George",
                     LastName = "Michael",
@@ -48,10 +48,31 @@ namespace ProjetFostHer.Models
                     Domain = "Musique",
                     Siret = "00551555"
                 }
-           
-           
+            );
+            this.Associations.AddRange(
+               new Association
+               {
 
-                 );
+                   Email = "lokr@gmail.com",
+                   Password = "Br12345,",
+                   AssoName = "Lokri",
+                   Address = "210 boulevard Pompidou 75011 Paris",
+                   Tel = "0652314598",
+                   RNA = "W456987123",
+                   Siren = "789456123"
+               },
+               new Association
+               {
+
+                   Email = "lakr@gmail.com",
+                   Password = "Br12346:",
+                   AssoName = "Lowky",
+                   Address = "22 rue Poupoupidou 75010 Somewhere",
+                   Tel = "0652314556",
+                   RNA = "W456987852",
+                   Siren = "789456258"
+               }
+            );
 
             this.SaveChanges();
         }
