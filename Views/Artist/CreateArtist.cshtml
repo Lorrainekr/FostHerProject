@@ -1,0 +1,58 @@
+﻿@model ProjetFostHer.Models.Artist
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ajouter une artiste</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Ajouter une artiste : </legend>
+            @Html.LabelFor(m => Model.Email)
+            @Html.TextBoxFor(m => Model.Email)
+            @Html.ValidationMessageFor(m => Model.Email)
+            <br />
+            @Html.LabelFor(m => Model.Password)
+            @Html.TextBoxFor(m => Model.Password)
+            @Html.ValidationMessageFor(m => Model.Password)
+
+            @Html.LabelFor(m => Model.Address)
+            @Html.TextBoxFor(m => Model.Address)
+            @Html.ValidationMessageFor(m => Model.Address)
+
+            @Html.LabelFor(m => Model.FirstName)
+            @Html.TextBoxFor(m => Model.FirstName)
+            @Html.ValidationMessageFor(m => Model.FirstName)
+
+            @Html.LabelFor(m => Model.LastName)
+            @Html.TextBoxFor(m => Model.LastName)
+            @Html.ValidationMessageFor(m => Model.LastName)
+
+            @Html.LabelFor(m => Model.StageName)
+            @Html.TextBoxFor(m => Model.StageName)
+            @Html.ValidationMessageFor(m => Model.StageName)
+
+            @Html.LabelFor(m => Model.Domain)
+            @Html.TextBoxFor(m => Model.Domain)
+            @Html.ValidationMessageFor(m => Model.Domain)
+
+            @Html.LabelFor(m => Model.Siret)
+            @Html.TextBoxFor(m => Model.Siret)
+            @Html.ValidationMessageFor(m => Model.Siret)
+
+            <br />
+            <input type="submit" value="Ajouter" />
+        </fieldset>
+    }
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

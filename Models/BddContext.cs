@@ -18,5 +18,42 @@ namespace ProjetFostHer.Models
         {
             optionsBuilder.UseMySql("server=localhost;user id=root;password=rrrrr;database=FostHerUserList");
         }
+        public void InitializeDb()
+        {
+            this.Database.EnsureDeleted();
+            this.Database.EnsureCreated();
+            this.Artists.AddRange(
+                new Artist
+                {
+                    
+                    Email="aymen17@hotmail.fr",
+                    Password="12345",
+                    Address="8 rue",
+                    FirstName="Juan",
+                    LastName="Mata",
+                    StageName="JM",
+                    Domain="Peinture",
+                    Siret="00551515"
+                   
+                },
+                new Artist
+                {
+                  
+                    Email = "Mymen.jelassi2014@gmail.com",
+                    Password = "12345",
+                    Address = "9 rue",
+                    FirstName = "George",
+                    LastName = "Michael",
+                    StageName = "GM",
+                    Domain = "Musique",
+                    Siret = "00551555"
+                }
+           
+           
+
+                 );
+
+            this.SaveChanges();
+        }
     }
 }
