@@ -13,6 +13,7 @@ namespace ProjetFostHer.Models
         public DbSet<Association> Associations { get; set; }
         public DbSet<AdvancedUser> AdvancedUsers { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<Crowdfunding> Crowdfundings { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -22,6 +23,10 @@ namespace ProjetFostHer.Models
         {
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
+
+            Association asso1 = new Association();
+            Association asso2 = new Association();
+
             this.Artists.AddRange(
                 new Artist
                 {
@@ -71,6 +76,30 @@ namespace ProjetFostHer.Models
                    Tel = "0652314556",
                    RNA = "W456987852",
                    Siren = "789456258"
+               }
+            );
+
+            this.Crowdfundings.AddRange(
+               new Crowdfunding
+               {
+                   NameCrowdfunding = "Soutiens des artistes du 20eme",
+                   StartDate = DateTime.Now,
+                   EndDate = DateTime.Today,
+                   AssociationCrowdfunding = asso1,
+                   AmountMax = 30000,
+                   MinDonation = 5,
+                   MaxDonation = 1000
+               },
+
+               new Crowdfunding
+               {
+                   NameCrowdfunding = "Soutiens des artistes du 10eme",
+                   StartDate = DateTime.Now,
+                   EndDate = DateTime.Today,
+                   AssociationCrowdfunding = asso2,
+                   AmountMax = 30000,
+                   MinDonation = 5,
+                   MaxDonation = 1000
                }
             );
 
