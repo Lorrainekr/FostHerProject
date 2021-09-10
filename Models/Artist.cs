@@ -8,6 +8,8 @@ namespace ProjetFostHer.Models
 {
     public class Artist
     {
+        
+
         public int Id { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Veuillez saisir une adresse mail valide")]
@@ -28,9 +30,25 @@ namespace ProjetFostHer.Models
         public string LastName { get; set; }
         public string StageName { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
-        public string Domain { get; set; }
+        public Category Category { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         [StringLength(14, ErrorMessage = "Votre numéro de SIRET est composé de 14 chiffres")]
         public string Siret { get; set; }
+
+        public Artist(string email, string password, string address, string firstName, string lastName, string stageName, Category category, string siret)
+        {
+            Email = email;
+            Password = password;
+            Address = address;
+            FirstName = firstName;
+            LastName = lastName;
+            StageName = stageName;
+            Category = category;
+            Siret = siret;
+        }
+
+        public Artist()
+        {
+        }
     }
 }

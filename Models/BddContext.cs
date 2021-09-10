@@ -14,6 +14,8 @@ namespace ProjetFostHer.Models
         public DbSet<AdvancedUser> AdvancedUsers { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Crowdfunding> Crowdfundings { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Event> Events { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -26,6 +28,13 @@ namespace ProjetFostHer.Models
 
             Association asso1 = new Association();
             Association asso2 = new Association();
+            Category cat1 = new Category();
+            cat1.CategoryName = "Peinture";
+            Category cat2 = new Category();
+            cat1.CategoryName = "Cinema";
+            Category cat3 = new Category();
+            cat1.CategoryName = "Sculpture";
+
 
             this.Artists.AddRange(
                 new Artist
@@ -37,7 +46,7 @@ namespace ProjetFostHer.Models
                     FirstName="Juan",
                     LastName="Mata",
                     StageName="JM",
-                    Domain="Peinture",
+                    Category= cat1,
                     Siret="00551515"
                    
                 },
@@ -50,7 +59,7 @@ namespace ProjetFostHer.Models
                     FirstName = "George",
                     LastName = "Michael",
                     StageName = "GM",
-                    Domain = "Musique",
+                    Category = cat2,
                     Siret = "00551555"
                 }
             );
@@ -83,8 +92,8 @@ namespace ProjetFostHer.Models
                new Crowdfunding
                {
                    NameCrowdfunding = "Soutiens des artistes du 20eme",
-                   StartDate = DateTime.Now,
-                   EndDate = DateTime.Today,
+                   StartDate = new DateTime(2021,09,10),
+                   EndDate = new DateTime(2021,11,10),
                    AssociationCrowdfunding = asso1,
                    AmountMax = 30000,
                    MinDonation = 5,
@@ -94,12 +103,56 @@ namespace ProjetFostHer.Models
                new Crowdfunding
                {
                    NameCrowdfunding = "Soutiens des artistes du 10eme",
-                   StartDate = DateTime.Now,
-                   EndDate = DateTime.Today,
+                   StartDate = new DateTime(2021,09,10),
+                   EndDate = new DateTime(2021, 11, 10),
                    AssociationCrowdfunding = asso2,
                    AmountMax = 30000,
                    MinDonation = 5,
                    MaxDonation = 1000
+               }
+            );
+
+            this.Events.AddRange(
+               new Event
+               {
+                   Designation = "Soutiens des artistes du 20eme",
+                   Type = "Conférence",
+                   StartDate = new DateTime(2021, 09, 10),
+                   EndDate = new DateTime(2021, 11, 10),
+                   Stock = 500,
+                   Price = 0.0,
+                   Category = cat1,
+                   ArtistEvent = new Artist(
+                        "Mymen.jelassi2014@gmail.com",
+                        "Mn12345$",
+                        "9 rue",
+                        "George",
+                        "Michael",
+                        "GM",
+                        cat2,
+                        "00551555"
+                        )
+               },
+
+               new Event
+               {
+                   Designation = "Soutiens des artistes du 10eme",
+                   Type = "Conférence",
+                   StartDate = new DateTime(2021, 09, 10),
+                   EndDate = new DateTime(2021, 11, 10),
+                   Stock = 500,
+                   Price = 0.0,
+                   Category = cat1,
+                   ArtistEvent = new Artist(
+                        "Mymen.jelassi2014@gmail.com",
+                        "Mn12345$",
+                        "9 rue",
+                        "George",
+                        "Michael",
+                        "GM",
+                        cat3,
+                        "00551555"
+                        )
                }
             );
 

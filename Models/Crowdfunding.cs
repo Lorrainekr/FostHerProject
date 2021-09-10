@@ -20,6 +20,7 @@ namespace ProjetFostHer.Models
         public Association AssociationCrowdfunding { get; set; }
         [Required(ErrorMessage = "Indiquez le montant que vous souhaitez obtenir")]
         public int AmountMax { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public int MinDonation { get; set; }
         public int MaxDonation { get; set; }
 

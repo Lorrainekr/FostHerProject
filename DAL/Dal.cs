@@ -37,7 +37,15 @@ namespace ProjetFostHer.DAL
 
         public List<Crowdfunding> ListAllCrowdfundings()
         {
-            return _bddContext.Crowdfundings.Tolist();
+            return _bddContext.Crowdfundings.ToList();
+        }
+        public List<Category> ListAllCategory()
+        {
+            return _bddContext.Categories.ToList();
+        }
+        public List<Event> ListAllEvents()
+        {
+            return _bddContext.Events.ToList();
         }
 
         public void Dispose()
@@ -46,15 +54,30 @@ namespace ProjetFostHer.DAL
         }
         public void CreateUser(int id, string email, string password)
         {
-            User newUser = new User() { Id = id, Email = email, Password = password };
+            User newUser = new User() 
+            { 
+                Id = id, 
+                Email = email, 
+                Password = password 
+            };
+
             _bddContext.Users.Add(newUser);
             _bddContext.SaveChanges();
         }
 
-        public void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, string domain, string siret)
+        public void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, Category category, string siret)
         {
 
-            Artist newArtist = new Artist() { Email = email, Password = password, Address = address, FirstName = firstname, LastName = lastname, StageName = stagename, Domain = domain, Siret = siret };
+            Artist newArtist = new Artist() 
+            { 
+                Email = email, 
+                Password = password, 
+                Address = address, 
+                FirstName = firstname, 
+                LastName = lastname, 
+                StageName = stagename, 
+                Category = category, 
+                Siret = siret };
 
             _bddContext.Artists.Add(newArtist);
             _bddContext.SaveChanges();
@@ -63,14 +86,55 @@ namespace ProjetFostHer.DAL
         public void CreateAssociation(string email, string password, string assoname, string address, string tel, string rna, string siren)
         {
 
-            Association newAssociation = new Association() { Email = email, Password = password, AssoName = assoname, Address = address, Tel = tel, RNA = rna, Siren = siren };
+            Association newAssociation = new Association() 
+            { 
+                Email = email, 
+                Password = password, 
+                AssoName = assoname, 
+                Address = address, 
+                Tel = tel, 
+                RNA = rna, 
+                Siren = siren 
+            };
 
             _bddContext.Associations.Add(newAssociation);
             _bddContext.SaveChanges();
         }
 
+        public void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation)
+        {
+            Crowdfunding newCrowdfunding = new Crowdfunding()
+            {
+                NameCrowdfunding = namecrowdfunding,
+                StartDate = startdate,
+                EndDate = enddate,
+                AssociationCrowdfunding = associationcrowdfunding,
+                AmountMax = amountmax,
+                MinDonation = mindonation,
+                MaxDonation = maxdonation
+            };
 
-        public void EditArtist(int id, string email, string password, string address, string firstname, string lastname, string stagename, string domain, string siret)
+            _bddContext.Crowdfundings.Add(newCrowdfunding);
+            _bddContext.SaveChanges();
+        }
+        public void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, int stock, double price, Category category, Artist artistevent)
+        {
+            Event newEvent = new Event()
+            {
+                Designation = designation,
+                Type = type,
+                StartDate = startdate,
+                EndDate = enddate,
+                Stock = stock,
+                Price = price,
+                Category = category,
+                ArtistEvent = artistevent
+            };
+
+            _bddContext.Events.Add(newEvent);
+            _bddContext.SaveChanges();
+        }
+        public void EditArtist(int id, string email, string password, string address, string firstname, string lastname, string stagename, Category category, string siret)
         {
             Artist art = _bddContext.Artists.Find(id);
 
@@ -82,7 +146,7 @@ namespace ProjetFostHer.DAL
                 art.FirstName = firstname;
                 art.LastName = lastname;
                 art.StageName = stagename;
-                art.Domain = domain;
+                art.Category = category;
                 art.Siret = siret;
                 _bddContext.SaveChanges();
             }
@@ -104,6 +168,38 @@ namespace ProjetFostHer.DAL
             }
         }
 
+        public void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation)
+        {
+            Crowdfunding crowd = _bddContext.Crowdfundings.Find(id);
+
+            if (crowd != null)
+            {
+                crowd.NameCrowdfunding = namecrowdfunding;
+                crowd.StartDate = startdate;
+                crowd.EndDate = enddate;
+                crowd.AssociationCrowdfunding = associationcrowdfunding;
+                crowd.AmountMax = amountmax;
+                crowd.MinDonation = mindonation;
+                crowd.MaxDonation = maxdonation;
+            }
+        }
+        public void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price, Category category, Artist artistevent)
+        {
+            Event eve = _bddContext.Events.Find(id);
+
+            if (eve != null)
+            {
+                eve.Designation = designation;
+                eve.Type = type;
+                eve.StartDate = startdate;
+                eve.EndDate = enddate;
+                eve.Stock = stock;
+                eve.Price = price;
+                eve.Category = category;
+                eve.ArtistEvent = artistevent;
+            }
+        }
+
         public void DeleteArtist(int id)
         {
             Artist art = _bddContext.Artists.Find(id);
@@ -120,6 +216,23 @@ namespace ProjetFostHer.DAL
             Association asso = _bddContext.Associations.Find(id);
 
             _bddContext.Associations.Remove(asso);
+
+            _bddContext.SaveChanges();
+        }
+
+        public void DeleteCrowdfunding(int id)
+        {
+            Crowdfunding crowd = _bddContext.Crowdfundings.Find(id);
+
+            _bddContext.Crowdfundings.Remove(crowd);
+
+            _bddContext.SaveChanges();
+        }
+        public void DeleteEvent(int id)
+        {
+            Event eve = _bddContext.Events.Find(id);
+
+            _bddContext.Events.Remove(eve);
 
             _bddContext.SaveChanges();
         }
