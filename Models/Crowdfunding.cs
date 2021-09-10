@@ -10,7 +10,7 @@ namespace ProjetFostHer.Models
     {
         public int Id { get; set; }
         [Required(ErrorMessage = "Veuillez renseigner un titre pour votre campagne")]
-        [MaxLength(20, ErrorMessage = "Le titre est trop long !")]
+        [MaxLength(50, ErrorMessage = "Le titre est trop long !")]
         public string NameCrowdfunding { get; set; }
         [Required(ErrorMessage = "Veuillez indiquez quand débute votre campagne")]
         public DateTime StartDate { get; set; }

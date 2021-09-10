@@ -8,6 +8,22 @@ namespace ProjetFostHer.Models
 {
     public class Association
     {
+        public Association()
+        {
+        }
+
+        public Association(string email, string password, string assoName, string address, string tel, string rNA, string siren)
+        {
+            Email = email;
+            Password = password;
+            AssoName = assoName;
+            Address = address;
+            Tel = tel;
+            RNA = rNA;
+            Siren = siren;
+        }
+
+
         public int Id { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Veuillez saisir une adresse mail valide")]

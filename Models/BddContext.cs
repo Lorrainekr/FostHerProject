@@ -26,8 +26,8 @@ namespace ProjetFostHer.Models
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
 
-            Association asso1 = new Association();
-            Association asso2 = new Association();
+            Association asso1 = new Association("lokr@gmail.com", "Br12345,", "Lokri", "210 boulevard Pompidou 75011 Paris", "0652314598", "W456987123", "789456123");
+            Association asso2 = new Association("lakr@gmail.com", "Br12346:", "Lowky", "22 rue Poupoupidou 75010 Somewhere", "0652314556", "W456987852", "789456258");
             Category cat1 = new Category();
             cat1.CategoryName = "Peinture";
             Category cat2 = new Category();
@@ -63,33 +63,33 @@ namespace ProjetFostHer.Models
                     Siret = "00551555"
                 }
             );
-            this.Associations.AddRange(
-               new Association
-               {
+            //this.Associations.AddRange(
+            //   new Association
+            //   {
 
-                   Email = "lokr@gmail.com",
-                   Password = "Br12345,",
-                   AssoName = "Lokri",
-                   Address = "210 boulevard Pompidou 75011 Paris",
-                   Tel = "0652314598",
-                   RNA = "W456987123",
-                   Siren = "789456123"
-               },
-               new Association
-               {
+            //       Email = "lokr@gmail.com",
+            //       Password = "Br12345,",
+            //       AssoName = "Lokri",
+            //       Address = "210 boulevard Pompidou 75011 Paris",
+            //       Tel = "0652314598",
+            //       RNA = "W456987123",
+            //       Siren = "789456123"
+            //   },
+            //   new Association
+            //   {
 
-                   Email = "lakr@gmail.com",
-                   Password = "Br12346:",
-                   AssoName = "Lowky",
-                   Address = "22 rue Poupoupidou 75010 Somewhere",
-                   Tel = "0652314556",
-                   RNA = "W456987852",
-                   Siren = "789456258"
-               }
-            );
+            //       Email = "lakr@gmail.com",
+            //       Password = "Br12346:",
+            //       AssoName = "Lowky",
+            //       Address = "22 rue Poupoupidou 75010 Somewhere",
+            //       Tel = "0652314556",
+            //       RNA = "W456987852",
+            //       Siren = "789456258"
+            //   }
+            //);
 
             this.Crowdfundings.AddRange(
-               new Crowdfunding
+               new Crowdfunding 
                {
                    NameCrowdfunding = "Soutiens des artistes du 20eme",
                    StartDate = new DateTime(2021,09,10),
