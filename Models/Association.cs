@@ -23,6 +23,7 @@ namespace ProjetFostHer.Models
         public string Password { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         public string AssoName { get; set; }
+        [Required(ErrorMessage = "Champ obligatoire")]
         public string Address { get; set; }
         public string Tel { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]

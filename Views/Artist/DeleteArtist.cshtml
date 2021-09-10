@@ -39,9 +39,9 @@
             @Html.TextBoxFor(m => Model.StageName)
             @Html.ValidationMessageFor(m => Model.StageName)
 
-            @Html.LabelFor(m => Model.Domain, new { @readonly = true })
-            @Html.TextBoxFor(m => Model.Domain)
-            @Html.ValidationMessageFor(m => Model.Domain)
+            @Html.LabelFor(m => Model.Category.CategoryName, new { @readonly = true })
+            @Html.TextBoxFor(m => Model.Category.CategoryName)
+            @Html.ValidationMessageFor(m => Model.Category.CategoryName)
 
             @Html.LabelFor(m => Model.Siret, new { @readonly = true })
             @Html.TextBoxFor(m => Model.Siret)

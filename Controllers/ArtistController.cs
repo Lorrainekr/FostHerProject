@@ -37,7 +37,7 @@ namespace ProjetFostHer.Controllers
             {
                 using (Dal ctx = new Dal())
                 {
-                    ctx.EditArtist(art.Id, art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Domain, art.Siret);
+                    ctx.EditArtist(art.Id, art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Category, art.Siret);
                     
                     return RedirectToAction("Modifications");
                 }
@@ -55,7 +55,7 @@ namespace ProjetFostHer.Controllers
                 return View(art);
             using (Dal ctx = new Dal())
                 { 
-                ctx.CreateArtist(art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Domain, art.Siret);
+                ctx.CreateArtist(art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Category, art.Siret);
 
                 return View("Modifications");
             }
