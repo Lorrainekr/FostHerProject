@@ -37,7 +37,17 @@ namespace ProjetFostHer.Controllers
             {
                 using (Dal ctx = new Dal())
                 {
-                    ctx.EditAssociation(asso.Id, asso.Email, asso.Password, asso.AssoName, asso.Address, asso.Tel, asso.RNA, asso.Siren);
+                    ctx.EditAssociation
+                        (
+                        asso.Id, 
+                        asso.Email, 
+                        asso.Password, 
+                        asso.AssoName, 
+                        asso.Address, 
+                        asso.Tel, 
+                        asso.RNA, 
+                        asso.Siren
+                        );
 
                     return RedirectToAction("Modification");
                 }
@@ -55,7 +65,16 @@ namespace ProjetFostHer.Controllers
                 return View(asso);
             using (Dal ctx = new Dal())
             {
-                ctx.CreateAssociation(asso.Email, asso.Password, asso.AssoName, asso.Address, asso.Tel, asso.RNA, asso.Siren);
+                ctx.CreateAssociation
+                    (
+                    asso.Email, 
+                    asso.Password, 
+                    asso.AssoName, 
+                    asso.Address, 
+                    asso.Tel, 
+                    asso.RNA, 
+                    asso.Siren
+                    );
 
                 return View("Modifications");
             }
@@ -80,7 +99,7 @@ namespace ProjetFostHer.Controllers
         }
 
         [HttpPost]
-        public IActionResult DeleteArtist(Association asso)
+        public IActionResult DeleteAssociation(Association asso)
         {
             if (!ModelState.IsValid)
                 return View(asso);
@@ -89,7 +108,7 @@ namespace ProjetFostHer.Controllers
             {
                 using (Dal ctx = new Dal())
                 {
-                    ctx.DeleteArtist(asso.Id);
+                    ctx.DeleteAssociation(asso.Id);
 
                     return View("Modifications");
                 }
