@@ -10,6 +10,10 @@ namespace ProjetFostHer.Controllers
 {
     public class ArtistController : Controller
     {
+        public IActionResult IndexArtist()
+        {
+            return View();
+        }
         public IActionResult EditArtist(int id)
         {
             if (id != 0)
