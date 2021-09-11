@@ -1,38 +1,7 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
 
-.footer_container {
-    background-image: url('~/img/background_footer.svg');
-    padding: 20px;
-    position: relative;
-    width: initial;
-    height: 600px;
-    border-radius: 10px;
+body {
+    background-color: burlywood;
 }
 
-img {
-    width: 25%;
-    position: absolute;
-    top: 40%;
-    left: 11%;
-}
-
-.footer-list {
-    color: #F3EFF4;
-    font-size: 18pt;
-    font-family: pacifico regular;
-    list-style-type: none;
-    text-align: center;
-    line-height: 38pt;
-    position: absolute;
-    bottom: 8%;
-    right: 42%;
-}
-
-.footer-social {
-    font-size: 60px;
-    color: #F3EFF4;
-    position: absolute;
-    top: 56%;
-    right: 17%;
-}
