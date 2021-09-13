@@ -10,7 +10,7 @@ namespace ProjetFostHer.DAL
     {
         // log utilisateur :
         int AddUser(string name, string email, string password);
-        User Authentification(string name, string email, string password);
+        User Authentification(string email, string password);
         User GetUser(int id);
         User GetUser(string idStr);
         void DeleteCreateDatabase();
