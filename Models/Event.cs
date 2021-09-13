@@ -8,6 +8,8 @@ namespace ProjetFostHer.Models
 {
     public class Event
     {
+  
+        [Key]
         public int Id { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         public string Designation { get; set; }
@@ -19,9 +21,11 @@ namespace ProjetFostHer.Models
         public DateTime EndDate { get; set; }
         public int Stock { get; set; }
         public double Price { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         public Category Category { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         public Artist ArtistEvent { get; set; }
+
+
     }
 }

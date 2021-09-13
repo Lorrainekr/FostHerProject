@@ -16,6 +16,7 @@ namespace ProjetFostHer.Models
         public DbSet<Crowdfunding> Crowdfundings { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -120,7 +121,7 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021, 09, 10),
                    EndDate = new DateTime(2021, 11, 10),
                    Stock = 500,
-                   Price = 0.0,
+                   Price = 30,
                    Category = cat1,
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
@@ -141,7 +142,7 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021, 09, 10),
                    EndDate = new DateTime(2021, 11, 10),
                    Stock = 500,
-                   Price = 0.0,
+                   Price = 40,
                    Category = cat1,
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
@@ -156,7 +157,9 @@ namespace ProjetFostHer.Models
                }
             );
 
-            this.SaveChanges();
+          
+
+      this.SaveChanges();
         }
     }
 }

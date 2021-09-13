@@ -16,6 +16,8 @@ namespace ProjetFostHer.DAL
         List<Crowdfunding> ListAllCrowdfundings();
         List<Category> ListAllCategory();
         List<Event> ListAllEvents();
+        List<Cart> ListAllCarts();
+        void AddToCart(Event eve);
         // Méthode pour les users
         void CreateUser(int id, string email, string password);
         // Méthode pour les artistes
@@ -32,7 +34,7 @@ namespace ProjetFostHer.DAL
         void DeleteCrowdfunding(int id);
         // Méthode pour les évènements
         void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, int stock, double price, Category category, Artist artistevent);
-        void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price, Category category, Artist artistevent);
+        void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price);
         void DeleteEvent(int id);
 
     }

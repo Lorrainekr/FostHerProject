@@ -2,6 +2,7 @@
 @{
     Layout = null;
 }
+@using ProjetFostHer.Models
 
 <!DOCTYPE html>
 
@@ -11,5 +12,30 @@
     <title>IndexEvent</title>
 </head>
 <body>
-</body>
+    <table cellpadding="2" cellspacing="2" border="1">
+
+        <tr>
+
+            <th> Id </th>
+            <th> Name </th>
+            <th> Price </th>
+            <th> Acheter </th>
+
+        </tr>>
+        
+        
+        @foreach (Event e in ViewBag.listEvents)
+        {
+            <tr>
+                <td>@e.Id </td>
+                <td>@e.Designation </td>
+                <td>@e.Price </td>
+                <td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id } )</td>
+
+            </tr>
+        }
+        </table>
+    
+
+    </body>
 </html>
