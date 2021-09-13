@@ -22,7 +22,9 @@ namespace ProjetFostHer.DAL
         List<Category> ListAllCategory();
         List<Event> ListAllEvents();
         List<Cart> ListAllCarts();
-        void AddToCart(Event eve);
+        void AddToCart(Event eve,int quantity);
+        void EditCart(Event eve,int q);
+        bool Verif(Event eve);
         // Méthode pour les users
         void CreateUser(int id, string name, string email, string password);
         // Méthode pour les artistes

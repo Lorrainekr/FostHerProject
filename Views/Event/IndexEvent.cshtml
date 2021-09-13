@@ -26,13 +26,14 @@
         
         @foreach (Event e in ViewBag.listEvents)
         {
-            <tr>
-                <td>@e.Id </td>
-                <td>@e.Designation </td>
-                <td>@e.Price </td>
-                <td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id } )</td>
+    <tr>
+        <td>@e.Id </td>
+        <td>@e.Designation </td>
+        <td>@e.Price </td>
+        
+        <td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id })</td>
 
-            </tr>
+    </tr>
         }
         </table>
     

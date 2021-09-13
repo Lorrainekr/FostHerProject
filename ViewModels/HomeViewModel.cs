@@ -13,5 +13,6 @@ namespace ProjetFostHer.ViewModels
         public Association Associations { get; set; }
         public Artist Artists { get; set; }
         public Event Events { get; set; }
+        public Cart Carts { get; set; }
     }
 }

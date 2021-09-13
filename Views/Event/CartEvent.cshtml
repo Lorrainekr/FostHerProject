@@ -1,5 +1,6 @@
-﻿@model ProjetFostHer.Models.Event
-@using ProjetFostHer.Controllers
+﻿
+@model ProjetFostHer.Models.Event
+
 @{
     Layout = null;
 }
@@ -14,35 +15,43 @@
 <body>
     @using (Html.BeginForm())
     {
-        <fieldset>
-            <legend>Modifier un Utilisateur : </legend>
-            <br />
-            @Html.LabelFor(m => Model.Designation)
-            @Html.TextBoxFor(m => Model.Designation)
-            @Html.ValidationMessageFor(m => Model.Designation)
-            <br />
+    <fieldset>
+        <legend>Modifier un Utilisateur : </legend>
+        <br />
+        @Html.LabelFor(m => Model.Designation)
+        @Html.TextBoxFor(m => Model.Designation)
+        @Html.ValidationMessageFor(m => Model.Designation)
+        <br />
 
-            @Html.LabelFor(m => Model.Type)
-            @Html.TextBoxFor(m => Model.Type)
-            @Html.ValidationMessageFor(m => Model.Type)
-            <br />
-            @Html.LabelFor(m => Model.StartDate)
-            @Html.TextBoxFor(m => Model.StartDate)
-            @Html.ValidationMessageFor(m => Model.StartDate)
-            <br />
-            @Html.LabelFor(m => Model.EndDate)
-            @Html.TextBoxFor(m => Model.EndDate)
-            @Html.ValidationMessageFor(m => Model.EndDate)
-            <br />
-            @Html.LabelFor(m => Model.Price)
-            @Html.TextBoxFor(m => Model.Price)
-            @Html.ValidationMessageFor(m => Model.Price)
-       
-            <br />
+        @Html.LabelFor(m => Model.Type)
+        @Html.TextBoxFor(m => Model.Type)
+        @Html.ValidationMessageFor(m => Model.Type)
+        <br />
+        @Html.LabelFor(m => Model.StartDate)
+        @Html.TextBoxFor(m => Model.StartDate)
+        @Html.ValidationMessageFor(m => Model.StartDate)
+        <br />
+        @Html.LabelFor(m => Model.EndDate)
+        @Html.TextBoxFor(m => Model.EndDate)
+        @Html.ValidationMessageFor(m => Model.EndDate)
+        <br />
+        @Html.LabelFor(m => Model.Price)
+        @Html.TextBoxFor(m => Model.Price)
+        @Html.ValidationMessageFor(m => Model.Price)
 
-            <br />
-            <input type="submit" value="Modifier" />
-        </fieldset>
+        <br />
+        @Html.LabelFor(m => Model.Quantity)
+        @Html.EditorFor(m => Model.Quantity, new {  @Value = 5 , htmlAttributes = new { min = 1, max = 20 }})
+        @Html.ValidationMessageFor(m => Model.Quantity)
+
+        
+
+
+        <br />
+
+        <br />
+        <input type="submit" value="Modifier" />
+    </fieldset>
     }
 
 </body>

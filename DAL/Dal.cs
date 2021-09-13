@@ -52,10 +52,8 @@ namespace ProjetFostHer.DAL
         }
 
         public List<Cart> ListAllCarts()
-
-        { 
-            return _bddContext.Carts.Include(c=>c.Event).ToList();
-        }
+        
+        return _bddContext.Carts.Include(c=>c.Event).ToList();
 
         public void Dispose()
         {
@@ -68,7 +66,7 @@ namespace ProjetFostHer.DAL
                 Id = id,
                 Name = name,
                 Email = email, 
-                Password = password 
+                Password = password
             };
 
             _bddContext.Users.Add(newUser);
@@ -78,16 +76,17 @@ namespace ProjetFostHer.DAL
         public void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, Category category, string siret)
         {
 
-            Artist newArtist = new Artist() 
-            { 
-                Email = email, 
-                Password = password, 
-                Address = address, 
-                FirstName = firstname, 
-                LastName = lastname, 
-                StageName = stagename, 
-                Category = category, 
-                Siret = siret };
+            Artist newArtist = new Artist()
+            {
+                Email = email,
+                Password = password,
+                Address = address,
+                FirstName = firstname,
+                LastName = lastname,
+                StageName = stagename,
+                Category = category,
+                Siret = siret
+            };
 
             _bddContext.Artists.Add(newArtist);
             _bddContext.SaveChanges();
@@ -96,15 +95,15 @@ namespace ProjetFostHer.DAL
         public void CreateAssociation(string email, string password, string assoname, string address, string tel, string rna, string siren)
         {
 
-            Association newAssociation = new Association() 
-            { 
-                Email = email, 
-                Password = password, 
-                AssoName = assoname, 
-                Address = address, 
-                Tel = tel, 
-                RNA = rna, 
-                Siren = siren 
+            Association newAssociation = new Association()
+            {
+                Email = email,
+                Password = password,
+                AssoName = assoname,
+                Address = address,
+                Tel = tel,
+                RNA = rna,
+                Siren = siren
             };
 
             _bddContext.Associations.Add(newAssociation);
@@ -207,7 +206,7 @@ namespace ProjetFostHer.DAL
                 eve.EndDate = enddate;
                 eve.Stock = stock;
                 eve.Price = price;
-             
+
                 _bddContext.SaveChanges();
             }
         }
@@ -249,9 +248,10 @@ namespace ProjetFostHer.DAL
             _bddContext.SaveChanges();
         }
 
-        public void AddToCart(Event eve)
+        public void AddToCart(Event eve, int q)
         {
-            Cart newCart = new Cart(eve, 1);
+            Cart newCart = new Cart(eve);
+            newCart.Event.Quantity = q;
             
             _bddContext.Carts.Update(newCart);
             _bddContext.SaveChanges();
@@ -294,6 +294,37 @@ namespace ProjetFostHer.DAL
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         }
 
+
+        public void EditCart(Event eve,int q)
+        {
+            Cart cart = _bddContext.Carts.Find(eve.Id);
+            cart.Event.Quantity+=q;
+
+            _bddContext.Carts.Update(cart);
+
+
+               
+                _bddContext.SaveChanges();
+            
+        }
+
+
+        public bool Verif(Event eve)
+
+        {
+
+            List<Cart> Li = _bddContext.Carts.Include(c => c.Event).ToList();
+            foreach (Cart e in Li)
+            {
+                if (e.Event.Designation == eve.Designation)
+                {
+                    return true;
+                };
+            }
+            return false;
+
+
+        }
     }
 }
 

@@ -11,16 +11,17 @@ namespace ProjetFostHer.Models
         {
         }
 
-        public Cart(Event @event, int quantity)
+        public Cart(Event @event)
         {
             this.Event = @event;
-            this.Quantity = quantity;
+            
         }
 
         public int Id { get; set; }
         
         public  Event Event { get; set; }
-        public int Quantity { get; set; }
+   
+       
    
 
       
