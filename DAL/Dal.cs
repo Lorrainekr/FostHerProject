@@ -1,4 +1,5 @@
-﻿using ProjetFostHer.Models;
+﻿using Microsoft.EntityFrameworkCore;
+using ProjetFostHer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,6 +48,14 @@ namespace ProjetFostHer.DAL
         {
             return _bddContext.Events.ToList();
         }
+
+        public List<Cart> ListAllCarts()
+
+        {
+            
+            return _bddContext.Carts.Include(c=>c.Event).ToList();
+        }
+
 
         public void Dispose()
         {
@@ -165,6 +174,7 @@ namespace ProjetFostHer.DAL
                 asso.Tel = tel;
                 asso.RNA = rna;
                 asso.Siren = siren;
+                _bddContext.SaveChanges();
             }
         }
 
@@ -181,9 +191,10 @@ namespace ProjetFostHer.DAL
                 crowd.AmountMax = amountmax;
                 crowd.MinDonation = mindonation;
                 crowd.MaxDonation = maxdonation;
+                _bddContext.SaveChanges();
             }
         }
-        public void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price, Category category, Artist artistevent)
+        public void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price)
         {
             Event eve = _bddContext.Events.Find(id);
 
@@ -195,8 +206,8 @@ namespace ProjetFostHer.DAL
                 eve.EndDate = enddate;
                 eve.Stock = stock;
                 eve.Price = price;
-                eve.Category = category;
-                eve.ArtistEvent = artistevent;
+             
+                _bddContext.SaveChanges();
             }
         }
 
@@ -234,6 +245,17 @@ namespace ProjetFostHer.DAL
 
             _bddContext.Events.Remove(eve);
 
+            _bddContext.SaveChanges();
+        }
+
+        public void AddToCart(Event eve)
+        {
+            Cart newCart = new Cart(eve, 1);
+            
+
+          
+            
+            _bddContext.Carts.Update(newCart);
             _bddContext.SaveChanges();
         }
 

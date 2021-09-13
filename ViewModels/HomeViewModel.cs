@@ -12,5 +12,6 @@ namespace ProjetFostHer.ViewModels
         public DateTime Date { get; set; }
         public Association Associations { get; set; }
         public Artist Artists { get; set; }
+        public Event Events { get; set; }
     }
 }

@@ -1,0 +1,46 @@
+﻿
+
+@{
+    Layout = null;
+}
+@using ProjetFostHer.Models
+@using ProjetFostHer.Controllers
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexEvent</title>
+</head>
+<body>
+    <table cellpadding="2" cellspacing="2" border="1">
+
+        <tr>
+
+            <th> Id </th>
+            <th> Name </th>
+            <th> Price </th>
+            <th> Quantity </th>
+            <th> Sub Total</th>
+
+        </tr>>
+        @foreach (Cart item in ViewBag.listcarts)
+        {
+            <tr>
+                <td>@item.Event.Id </td>
+                <td>@item.Event.Designation </td>
+                <td>@item.Event.Price </td>
+                <td>@item.Quantity </td>
+                <td>@(item.Quantity * item.Event.Price) </td>
+
+                
+                <td align="center">Order Now </td>
+
+            </tr>
+        }
+    </table>
+
+
+</body>
+</html>
