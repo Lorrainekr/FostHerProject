@@ -3,6 +3,8 @@ using ProjetFostHer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjetFostHer.DAL
@@ -50,23 +52,20 @@ namespace ProjetFostHer.DAL
         }
 
         public List<Cart> ListAllCarts()
-
-        {
-
-            return _bddContext.Carts.Include(c => c.Event).ToList();
-        }
-
+        
+        return _bddContext.Carts.Include(c=>c.Event).ToList();
 
         public void Dispose()
         {
             _bddContext.Dispose();
         }
-        public void CreateUser(int id, string email, string password)
+        public void CreateUser(int id, string name, string email, string password)
         {
-            User newUser = new User()
-            {
+            User newUser = new User() 
+            { 
                 Id = id,
-                Email = email,
+                Name = name,
+                Email = email, 
                 Password = password
             };
 
@@ -253,11 +252,46 @@ namespace ProjetFostHer.DAL
         {
             Cart newCart = new Cart(eve);
             newCart.Event.Quantity = q;
-
-
-
+            
             _bddContext.Carts.Update(newCart);
             _bddContext.SaveChanges();
+        }
+        // Méthode login :
+        public int AddUser(string name, string email, string password)
+        {
+            string motDePasse = EncodeMD5(password);
+            User user = new User() { Name = name, Email = email, Password = motDePasse };
+            _bddContext.Users.Add(user);
+            _bddContext.SaveChanges();
+
+            return user.Id;
+        }
+
+        public User Authentification(string name, string email, string password)
+        {
+            string motDePasse = EncodeMD5(password);
+            User user = _bddContext.Users.FirstOrDefault(u => u.Email == email && u.Password == motDePasse);
+            return user;
+        }
+
+        public User GetUser(int id)
+        {
+            return _bddContext.Users.Find(id);
+        }
+
+        public User GetUser(string idStr)
+        {
+            int id;
+            if (int.TryParse(idStr, out id))
+            {
+                return this.GetUser(id);
+            }
+            return null;
+        }
+        private string EncodeMD5(string motDePasse)
+        {
+            string motDePasseSel = "ChoixResto" + motDePasse + "ASP.NET MVC";
+            return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));
         }
 
 

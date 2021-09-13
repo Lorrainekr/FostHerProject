@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,12 @@ namespace ProjetFostHer
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddRazorPages();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+            options.LoginPath = "/Login/Index";
+
+            });
             services.AddControllersWithViews();
             services.AddMvc();
         }
@@ -62,5 +69,6 @@ namespace ProjetFostHer
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
     }
 }

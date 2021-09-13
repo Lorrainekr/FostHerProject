@@ -1,11 +1,122 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 
 body {
-    background-color: burlywood;
-    margin: 0;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #333333;
     padding: 0;
+    background-color: #ffffff;
 }
+
+/* 2. Typography Styles
+======================================== */
+
+a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: #F3EFF4;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    margin: 15px;
+}
+
+/* Site Navigation */
+
+.logo_header {
+    position: absolute;
+    margin: 15px;
+}
+
+.site_header {
+    background-color: #E94E1B;
+    background-image: url("images/background_accueil.svg");
+    padding: 15px 15px;
+    position: sticky;
+}
+
+.site-navigation {
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.site_header_left {
+    display: inline-block;
+    margin-left: 130px;
+}
+
+.site_header_left li, .site_header_right li {
+    line-height: 0;
+    display: inline-block;
+}
+
+.site_header_right {
+    display: inline-block;
+    position: relative;
+    left: 350px;
+}
+
+.site_header_right li a {
+    text-decoration: none;
+    margin-left: 20px;
+}
+/* 5. Component Styles
+======================================== */
+button {
+    border: none;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.button {
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px black;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.5s ease;
+}
+
+.button:hover {
+    opacity: 0.75;
+}
+
+.button-primary {
+    background-color: #F3EFF4;
+    color: #E94E1B;
+}
+/*Css footer*/
 .footer_container {
     background-image: url('../img/background_footer.svg');
     position: relative;

@@ -1,0 +1,28 @@
+﻿@model ProjetFostHer.ViewModels.UserViewModel
+@{
+    Layout = "_Layout";
+}
+
+@{
+    <p>Veuillez remplir ce formulaire pour créer votre compte :</p>
+    using (Html.BeginForm())
+    {
+        <div>
+            @Html.LabelFor(m => m.User.Name)
+            @Html.TextBoxFor(m => m.User.Name)
+            @Html.ValidationMessageFor(m => m.User.Name)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.User.Email)
+            @Html.TextBoxFor(m => m.User.Email)
+            @Html.ValidationMessageFor(m => m.User.Email)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.User.Password)
+            @Html.PasswordFor(m => m.User.Password)
+            @Html.ValidationMessageFor(m => m.User.Password)
+        </div>
+        <input type="submit" value="Créer mon compte" />
+    }
+}
+
