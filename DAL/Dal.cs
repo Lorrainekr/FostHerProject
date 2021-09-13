@@ -52,8 +52,9 @@ namespace ProjetFostHer.DAL
         }
 
         public List<Cart> ListAllCarts()
-        
-        return _bddContext.Carts.Include(c=>c.Event).ToList();
+        {
+            return _bddContext.Carts.Include(c => c.Event).ToList();
+        }
 
         public void Dispose()
         {
@@ -267,7 +268,7 @@ namespace ProjetFostHer.DAL
             return user.Id;
         }
 
-        public User Authentification(string name, string email, string password)
+        public User Authentification(string email, string password)
         {
             string motDePasse = EncodeMD5(password);
             User user = _bddContext.Users.FirstOrDefault(u => u.Email == email && u.Password == motDePasse);

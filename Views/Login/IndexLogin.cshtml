@@ -1,4 +1,4 @@
-﻿@model ProjetFostHer.ViewModels.UserViewModel
+﻿@model ProjetFostHer.ViewModels.HomeViewModel
 @{
     Layout = "_Layout";
 }
@@ -20,7 +20,7 @@ else
         </div>
         <div>
             @Html.LabelFor(m => m.User.Password)
-            @Html.TextBoxFor(m => m.User.Password)
+            @Html.PasswordFor(m => m.User.Password)
             @Html.ValidationMessageFor(m => m.User.Password)
         </div>
         <input type="submit" value="Se connecter"/>
