@@ -8,6 +8,11 @@ namespace ProjetFostHer.DAL
 {
     public interface IDal : IDisposable
     {
+        // log utilisateur :
+        int AddUser(string name, string email, string password);
+        User Authentification(string name, string email, string password);
+        User GetUser(int id);
+        User GetUser(string idStr);
         void DeleteCreateDatabase();
         // Liste des classes
         List<User> ListAllUsers();
@@ -19,7 +24,7 @@ namespace ProjetFostHer.DAL
         List<Cart> ListAllCarts();
         void AddToCart(Event eve);
         // Méthode pour les users
-        void CreateUser(int id, string email, string password);
+        void CreateUser(int id, string name, string email, string password);
         // Méthode pour les artistes
         void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, Category category, string siret);
         void EditArtist(int id, string email, string password, string address, string firstname, string lastname, string stagename, Category category, string siret);
