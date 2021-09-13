@@ -1,6 +1,6 @@
 ﻿@model ProjetFostHer.ViewModels.HomeViewModel
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -11,14 +11,7 @@
     <title>Index</title>
 </head>
 <body>
-    <h1>Picasso</h1>
-    <ul>
-        <li>@Model.Message</li>
-        <li>@Model.Date.ToString("dd/MM/yyyy")</li>
-
-        <li>@Model.Associations.RNA</li>
-        <li>@Model.Associations.Tel</li>
-    </ul>
+    <h1>Bienvenue sur la plateforme FostHer !</h1>
     <ul>
         <li>@Html.ActionLink("Créer une artiste", "CreateArtist", "Artist")</li>
         <li>@Html.ActionLink("Supprimer une artiste", "DeleteArtist", "Artist")</li>
