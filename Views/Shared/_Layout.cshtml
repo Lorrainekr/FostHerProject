@@ -19,7 +19,7 @@
     <div class="nav_container">
         <!-- Site Header -->
         <header role="banner" aria-label="site navigation" class="site_header">
-           <!-- Site Navigation -->
+            <!-- Site Navigation -->
             <nav role="navigation" class="site-navigation">
                 <img class="logo_header" src="~/img/logo_site_blanc.svg" alt="logo" />
                 <ul class="site_header_left">
@@ -33,6 +33,7 @@
                     <li><a href="#" class="button button-primary">@Html.ActionLink("Connexion", "IndexLogin", "Login")</a></li>
                 </ul>
             </nav>
+        </header>
     </div>
     <div class="view_container">
         @RenderBody()
@@ -60,6 +61,8 @@
             </div>
         </div>
     </footer>
-    @RenderSection("ScriptJS", required:false)
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

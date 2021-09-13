@@ -42,8 +42,15 @@ namespace ProjetFostHer.Models
                         Name = "Low",
                         Email = "lock@gmail.com",
                         Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
+                    },
+
+                new User
+                    {
+                        Name = "Tom",
+                        Email = "tom@gmail.com",
+                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
                     }
-                );
+                    );
 
 
             this.Artists.AddRange(

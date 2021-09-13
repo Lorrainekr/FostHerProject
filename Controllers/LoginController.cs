@@ -48,11 +48,11 @@ namespace ProjetFostHer.Controllers
 
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
-                    return Redirect("Home/Index");
+                    return Redirect("/");
                 }
                 ModelState.AddModelError("User.Name", "Mail et/ou mot de passe incorrect(s)");
             }
-            return View(viewModel);
+            return View("ConfirmCreateAccount");
         }
 
         public IActionResult CreerCompte()
@@ -80,7 +80,7 @@ namespace ProjetFostHer.Controllers
 
                 return Redirect("/");
             }
-            return View("ConfirmCreateAccount");
+            return View(user);
         }
 
         public ActionResult Deconnexion()
