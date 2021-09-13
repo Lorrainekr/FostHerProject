@@ -10,6 +10,7 @@ namespace ProjetFostHer.Controllers
 {
     public class EventController : Controller
     {
+       
         public IActionResult IndexEvent()
         {
             using (IDal dal = new Dal())
@@ -27,6 +28,7 @@ namespace ProjetFostHer.Controllers
                 using (IDal dal = new Dal())
                 {
                     Event eve = dal.ListAllEvents().Where(r => r.Id == id).FirstOrDefault();
+                    
                     if (eve == null)
                     {
                         return View("Error");
@@ -40,6 +42,7 @@ namespace ProjetFostHer.Controllers
         [HttpPost]
         public IActionResult CartEvent(Event eve)
         {
+            
             if (!ModelState.IsValid)
                 return View(eve);
 
@@ -47,8 +50,14 @@ namespace ProjetFostHer.Controllers
             {
                 using (Dal ctx = new Dal())
                 {
-                  
-                    ctx.AddToCart(eve);
+                    if (ctx.Verif(eve))
+                    {
+                        Cart cart = ctx.ListAllCarts().Where(r => r.Event.Id == eve.Id).FirstOrDefault();
+                        ctx.EditCart(eve,eve.Quantity);
+                    }
+                    
+                    else { ctx.AddToCart(eve,eve.Quantity); }
+                    
 
                     return RedirectToAction("IndexEvent");
                 }
