@@ -252,11 +252,12 @@ namespace ProjetFostHer.DAL
             _bddContext.SaveChanges();
         }
 
-        public void AddToCart(Event eve, int q)
+        public void AddToCart(Event eve, int q,User a)
         {
             Cart newCart = new Cart(eve);
             newCart.Event.Quantity = q;
-            
+            newCart.user = a;
+
 
             _bddContext.Carts.Update(newCart);
             _bddContext.SaveChanges();
@@ -311,10 +312,11 @@ namespace ProjetFostHer.DAL
         }
 
 
-        public void EditCart(Event eve,int q)
+        public void EditCart(Event eve,int q,User u)
         {
             Cart cart = _bddContext.Carts.Find(eve.Id);
             cart.Event.Quantity+=q;
+            cart.user = u;
 
             _bddContext.Carts.Update(cart);
 

@@ -28,6 +28,7 @@ namespace ProjetFostHer.Models
 
         public Crowdfunding crowdfunding { get; set; }
 
+        public User user { get; set; }
 
 
 

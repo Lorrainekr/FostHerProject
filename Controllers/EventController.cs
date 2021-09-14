@@ -50,16 +50,32 @@ namespace ProjetFostHer.Controllers
             {
                 using (Dal ctx = new Dal())
                 {
-                    if (ctx.Verif(eve))
+                  
+                    
+                    if (HttpContext.User.Identity.IsAuthenticated)
+                        
                     {
-                        Cart cart = ctx.ListAllCarts().Where(r => r.Event.Id == eve.Id).FirstOrDefault();
-                        ctx.EditCart(eve,eve.Quantity);
-                    }
-                    
-                    else { ctx.AddToCart(eve,eve.Quantity); }
-                    
+                        int a = Int32.Parse(HttpContext.User.Identity.Name) ;
+                        User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
 
-                    return RedirectToAction("IndexEvent");
+                        if (ctx.Verif(eve))
+                        {
+                            
+                            Cart cart = ctx.ListAllCarts().Where(r => r.Event.Id == eve.Id).FirstOrDefault();
+                            
+                            
+                            ctx.EditCart(eve, eve.Quantity,user);
+                        }
+
+                        else { ctx.AddToCart(eve, eve.Quantity,user); }
+
+
+                        return RedirectToAction("IndexEvent");
+                    }
+                    else
+                    {
+                        return View("Error");
+                    }
                 }
             }
             else

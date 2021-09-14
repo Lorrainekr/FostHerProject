@@ -39,9 +39,17 @@
                         <input type="search" id="site-search" name="q"
                                aria-label="Rechercher un artiste, une association, un évènement">
                     </div>
+<<<<<<< HEAD
                     @{ 
 
                          @if(!User.Identity.IsAuthenticated)
+=======
+                   
+
+            </nav>
+
+                        @if (!User.Identity.IsAuthenticated)
+>>>>>>> 599c4e52c2a7be70a3fdc1f0c6df4cf74b630fb6
                         {
                             <div class="block_button">
                                 <p class="button_white">@Html.ActionLink("Connexion", "IndexLogin", "Login")</p>
@@ -50,7 +58,11 @@
                         else
                         {
                             <div>
+<<<<<<< HEAD
                                 <p>@Model.User.Name</p>
+=======
+                              <p> Bienvenue  @ViewData["Message"] </p>
+>>>>>>> 599c4e52c2a7be70a3fdc1f0c6df4cf74b630fb6
                                 <a href="#">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</a>
                             </div>
                         }
@@ -58,6 +70,7 @@
                 </div>
             </div>
             
+
         </header>
     </div>
     <div class="view_container">
