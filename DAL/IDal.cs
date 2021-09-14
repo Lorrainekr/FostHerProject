@@ -27,9 +27,9 @@ namespace ProjetFostHer.DAL
         void DeleteCreateDatabase();
         
         // Méthode pour le panier
-        void AddToCart(Event eve,int quantity);
+        void AddToCart(Event eve,int quantity,User user);
         void AddToCart(Crowdfunding cr, double d);
-        void EditCart(Event eve,int q);
+        void EditCart(Event eve,int q,User user);
         void EditCart(Crowdfunding cr, double d);
         bool Verif(Event eve);
 

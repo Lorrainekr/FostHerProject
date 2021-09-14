@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjetFostHer.DAL;
 using ProjetFostHer.Models;
 using ProjetFostHer.ViewModels;
 using System;
@@ -12,6 +13,22 @@ namespace ProjetFostHer.Controllers
     {
         public IActionResult Index()
         {
+            
+                using (Dal ctx = new Dal())
+                {
+                
+                if (!(HttpContext.User.Identity.Name == null))
+                {
+                 int  a = Int32.Parse(HttpContext.User.Identity.Name);
+ 
+                    User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+              
+                ViewData["Message"] = user.Name.ToString();
+                }
+
+            }
+
+            
             return View();
         }
     }
