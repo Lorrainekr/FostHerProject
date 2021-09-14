@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+
 using ProjetFostHer.DAL;
 using ProjetFostHer.Models;
 using System;
@@ -16,13 +17,9 @@ namespace ProjetFostHer.ViewModels
         public Artist Artists { get; set; }
         public Event Events { get; set; }
         public Cart Carts { get; set; }
-
         public Crowdfunding Crowdfundings { get; set; }
-
         public User User { get; set; }
         public bool Authentification { get; set; }
-
-        
 
     }
 }
