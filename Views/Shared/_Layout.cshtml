@@ -39,7 +39,10 @@
                         <input type="search" id="site-search" name="q"
                                aria-label="Rechercher un artiste, une association, un évènement">
                     </div>
-                    @{
+                   
+
+            </nav>
+
                         @if (!User.Identity.IsAuthenticated)
                         {
                             <div class="block_button">
@@ -49,6 +52,7 @@
                         else
                         {
                             <div>
+                              <p> Bienvenue  @ViewData["Message"] </p>
                                 <a href="#">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</a>
                             </div>
                         }
@@ -56,6 +60,7 @@
                 </div>
             </div>
             
+
         </header>
     </div>
     <div class="view_container">

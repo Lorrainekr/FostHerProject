@@ -26,6 +26,7 @@ namespace ProjetFostHer.Models
         //[Required(ErrorMessage = "Champ obligatoire")]
         public Artist ArtistEvent { get; set; }
         public int Quantity { get; set; }
+        public User user { get; set; }
 
 
     }

@@ -1,4 +1,6 @@
-﻿using ProjetFostHer.Models;
+﻿using Microsoft.AspNetCore.Http;
+using ProjetFostHer.DAL;
+using ProjetFostHer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +21,8 @@ namespace ProjetFostHer.ViewModels
 
         public User User { get; set; }
         public bool Authentification { get; set; }
+
+        
 
     }
 }
