@@ -28,8 +28,12 @@ namespace ProjetFostHer.DAL
         
         // Méthode pour le panier
         void AddToCart(Event eve,int quantity);
+        void AddToCart(Crowdfunding cr, double d);
         void EditCart(Event eve,int q);
+        void EditCart(Crowdfunding cr, double d);
         bool Verif(Event eve);
+
+        bool Verif(Crowdfunding cr);
 
         // Méthode pour les artistes
         void CreateArtist(string email, string password, string address, string firstname, string lastname, string stagename, Category category, string siret);
@@ -42,8 +46,8 @@ namespace ProjetFostHer.DAL
         void DeleteAssociation(int id);
 
         // Méthode pour les crowdfundings
-        void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation);
-        void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation);
+        void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation);
+        void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation);
         void DeleteCrowdfunding(int id);
 
         // Méthode pour les évènements

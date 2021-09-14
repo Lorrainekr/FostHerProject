@@ -18,21 +18,26 @@
 
             <th> Id </th>
             <th> Name </th>
-            <th> Price </th>
-            <th> Acheter </th>
+            <th> Min Donation </th>
+            <th> Max Donation </th>
+            <th> Amount max </th>
 
         </tr>>
 
 
-        @foreach (Event e in ViewBag.listEvents)
+        @foreach (Crowdfunding c in ViewBag.listcrowdfundings)
         {
             <tr>
-                <td>@e.Id </td>
-                <td>@e.Designation </td>
-                <td>@e.Price </td>
+                <td>@c.Id </td>
+                <td>@c.NameCrowdfunding </td>
+                <td>@c.MinDonation </td>
+                <td>@c.MaxDonation </td>
+                <td>@c.AmountMax </td>
 
-                <td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id })</td>
 
+
+
+                <td align="center">@Html.ActionLink("Voir le crowdfunding", "CartCrowdfunding", "Crowdfunding", new { id = c.Id })</td>
 
             </tr>
         }
