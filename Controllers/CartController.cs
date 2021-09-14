@@ -14,14 +14,24 @@ namespace ProjetFostHer.Controllers
         {
             using (IDal dal = new Dal())
             {
-               
-                List <Cart> cart = dal.ListAllCarts(); 
-                ViewBag.listcarts = cart;
-            
-            
-            
+
+                List<Cart> cart = dal.ListAllCarts();
+                if (!cart.Any())
+                {
+                    return View("Panier Vide");
+                }
+                else
+                {
+                    ViewBag.listcarts = cart;
+
+
+                    return View();
+
+
+                }
+
             }
-            return View();
         }
     }
 }
+

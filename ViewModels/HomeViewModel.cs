@@ -14,5 +14,6 @@ namespace ProjetFostHer.ViewModels
         public Artist Artists { get; set; }
         public Event Events { get; set; }
         public Cart Carts { get; set; }
+        public Crowdfunding Crowdfundings { get; set; }
     }
 }

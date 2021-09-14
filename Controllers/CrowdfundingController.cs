@@ -118,6 +118,67 @@ namespace ProjetFostHer.Controllers
                 return View("Error");
             }
         }
+
+        public IActionResult IndexCrowdfunding()
+        {
+            using (IDal dal = new Dal())
+            {
+                List<Crowdfunding> cr = dal.ListAllCrowdfundings();
+                ViewBag.listcrowdfundings = cr;
+            }
+            return View();
+        }
+
+
+        public IActionResult CartCrowdfunding(int id)
+        {
+            if (id != 0)
+            {
+                using (IDal dal = new Dal())
+                {
+                    Crowdfunding cr = dal.ListAllCrowdfundings().Where(r => r.Id == id).FirstOrDefault();
+
+                    if (cr == null)
+                    {
+                        return View("Error");
+                    }
+                    return View(cr);
+                }
+            }
+            return View("Error");
+        }
+
+        [HttpPost]
+        public IActionResult CartCrowdfunding(Crowdfunding cr)
+        {
+
+            if (!ModelState.IsValid)
+                return View(cr);
+
+            if (cr.Id != 0)
+            {
+                using (Dal ctx = new Dal())
+                {
+                    if (ctx.Verif(cr))
+                    {
+                        Cart cart = ctx.ListAllCarts().Where(r => r.crowdfunding.Id == cr.Id).FirstOrDefault();
+                        ctx.EditCart(cr, cr.Donation);
+                    }
+
+                    else { ctx.AddToCart(cr, cr.Donation); }
+
+
+                    return RedirectToAction("IndexCrowdfunding");
+                }
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+
+
     }
 
 }

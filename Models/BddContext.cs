@@ -98,7 +98,18 @@ namespace ProjetFostHer.Models
                    AssociationCrowdfunding = asso1,
                    AmountMax = 30000,
                    MinDonation = 5,
-                   MaxDonation = 1000
+                   MaxDonation = 1000,
+                   Artist = new Artist(
+                        "hdjbnd@gmail.com",
+                        "Mn1d45$",
+                        "80 rue",
+                        "Jean",
+                        "Dujardin",
+                        "Jpm",
+                        cat1,
+                        "00551555"
+                        )
+
                },
 
                new Crowdfunding
@@ -109,7 +120,17 @@ namespace ProjetFostHer.Models
                    AssociationCrowdfunding = asso2,
                    AmountMax = 30000,
                    MinDonation = 5,
-                   MaxDonation = 1000
+                   MaxDonation = 1000,
+                   Artist = new Artist(
+                        "hdjbnd@gmail.com",
+                        "Mn12345$",
+                        "9 rue",
+                        "Jean",
+                        "Michael",
+                        "JVG",
+                        cat2,
+                        "00551555"
+                        )
                }
             );
 

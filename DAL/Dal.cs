@@ -30,7 +30,7 @@ namespace ProjetFostHer.DAL
 
         public List<Artist> ListAllArtists()
         {
-            return _bddContext.Artists.ToList();
+            return _bddContext.Artists.Include(c => c.Category).ToList();
         }
 
         public List<Association> ListAllAssociations()
@@ -40,7 +40,7 @@ namespace ProjetFostHer.DAL
 
         public List<Crowdfunding> ListAllCrowdfundings()
         {
-            return _bddContext.Crowdfundings.ToList();
+            return _bddContext.Crowdfundings.Include(c => c.AssociationCrowdfunding).Include(c => c.Artist).ToList();
         }
         public List<Category> ListAllCategory()
         {
@@ -48,12 +48,17 @@ namespace ProjetFostHer.DAL
         }
         public List<Event> ListAllEvents()
         {
-            return _bddContext.Events.ToList();
+           return _bddContext.Events.Include(c => c.ArtistEvent).Include(c => c.Category).ToList();
+          
         }
 
         public List<Cart> ListAllCarts()
+        {
+            return _bddContext.Carts.Include(c => c.Event).Include(c => c.crowdfunding).ToList();       
+           
+        }
         
-        return _bddContext.Carts.Include(c=>c.Event).ToList();
+        
 
         public void Dispose()
         {
@@ -110,7 +115,7 @@ namespace ProjetFostHer.DAL
             _bddContext.SaveChanges();
         }
 
-        public void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation)
+        public void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation)
         {
             Crowdfunding newCrowdfunding = new Crowdfunding()
             {
@@ -178,7 +183,7 @@ namespace ProjetFostHer.DAL
             }
         }
 
-        public void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, int amountmax, int mindonation, int maxdonation)
+        public void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation)
         {
             Crowdfunding crowd = _bddContext.Crowdfundings.Find(id);
 
@@ -253,9 +258,21 @@ namespace ProjetFostHer.DAL
             Cart newCart = new Cart(eve);
             newCart.Event.Quantity = q;
             
+
             _bddContext.Carts.Update(newCart);
             _bddContext.SaveChanges();
         }
+
+        public void AddToCart(Crowdfunding cr, double d)
+        {
+            Cart newCart = new Cart(cr);
+            newCart.crowdfunding.Donation = d;
+            
+
+            _bddContext.Carts.Update(newCart);
+            _bddContext.SaveChanges();
+        }
+
         // Méthode login :
         public int AddUser(string name, string email, string password)
         {
@@ -308,23 +325,77 @@ namespace ProjetFostHer.DAL
             
         }
 
+        public void EditCart(Crowdfunding cr, double d)
+        {
+            Cart cart = _bddContext.Carts.Find(cr.Id);
+            cart.crowdfunding.Donation += d;
+
+            _bddContext.Carts.Update(cart);
+
+
+
+            _bddContext.SaveChanges();
+
+        }
+
 
         public bool Verif(Event eve)
 
         {
-
+            
             List<Cart> Li = _bddContext.Carts.Include(c => c.Event).ToList();
+            bool a = false;
             foreach (Cart e in Li)
             {
-                if (e.Event.Designation == eve.Designation)
+                if (e.Event == null)
                 {
-                    return true;
-                };
+                    a = false;
+                }
+                else if (e.Event.Designation.ToString().Equals(eve.Designation.ToString()) && !(string.IsNullOrEmpty(eve.Designation.ToString())))
+                {
+                    a = true;
+                    break;
+                }
+                else
+                {
+                    a = false;
+                }
             }
-            return false;
+            return a;
 
 
         }
+
+        public bool Verif(Crowdfunding cr)
+
+        {
+            bool a = false;
+            List<Cart> Li = _bddContext.Carts.Include(c => c.crowdfunding).Include(c => c.Event).ToList();
+            
+            foreach (Cart e in Li)
+            {
+                if (e.crowdfunding == null)
+                {
+                    a=false;
+                }
+                else if (e.crowdfunding.NameCrowdfunding.ToString().Equals(cr.NameCrowdfunding.ToString()))
+                {
+                    a = true;
+                    break;
+                }
+                else
+                {
+                     a=false;
+                }
+
+                   
+            }
+            return a;
+            
+
+
+        }
+
     }
 }
 

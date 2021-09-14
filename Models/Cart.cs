@@ -17,15 +17,22 @@ namespace ProjetFostHer.Models
             
         }
 
+        public Cart(Crowdfunding crowdfunding)
+        {
+            this.crowdfunding = crowdfunding;
+        }
+
         public int Id { get; set; }
         
         public  Event Event { get; set; }
-   
-       
-   
 
-      
-      
+        public Crowdfunding crowdfunding { get; set; }
+
+
+
+
+
+
 
 
 

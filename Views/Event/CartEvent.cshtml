@@ -2,7 +2,7 @@
 @model ProjetFostHer.Models.Event
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -10,49 +10,54 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>ModifierUtilisateur</title>
+    <title>Ajouter au panier</title>
 </head>
 <body>
     @using (Html.BeginForm())
     {
     <fieldset>
-        <legend>Modifier un Utilisateur : </legend>
+        <legend>Ajouter au panier : </legend>
         <br />
         @Html.LabelFor(m => Model.Designation)
-        @Html.TextBoxFor(m => Model.Designation)
+        @Html.TextBoxFor(m => Model.Designation, new { @readonly = true })
         @Html.ValidationMessageFor(m => Model.Designation)
         <br />
 
         @Html.LabelFor(m => Model.Type)
-        @Html.TextBoxFor(m => Model.Type)
+        @Html.TextBoxFor(m => Model.Type, new { @readonly = true })
         @Html.ValidationMessageFor(m => Model.Type)
         <br />
         @Html.LabelFor(m => Model.StartDate)
-        @Html.TextBoxFor(m => Model.StartDate)
+        @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
         @Html.ValidationMessageFor(m => Model.StartDate)
         <br />
         @Html.LabelFor(m => Model.EndDate)
-        @Html.TextBoxFor(m => Model.EndDate)
+        @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
         @Html.ValidationMessageFor(m => Model.EndDate)
         <br />
         @Html.LabelFor(m => Model.Price)
-        @Html.TextBoxFor(m => Model.Price)
+        @Html.TextBoxFor(m => Model.Price, new { @readonly = true })
         @Html.ValidationMessageFor(m => Model.Price)
 
         <br />
         @Html.LabelFor(m => Model.Quantity)
-        @Html.EditorFor(m => Model.Quantity, new {  @Value = 5 , htmlAttributes = new { min = 1, max = 20 }})
+        @Html.EditorFor(m => Model.Quantity, new { htmlAttributes = new { min = 1, max = 20 } })
         @Html.ValidationMessageFor(m => Model.Quantity)
 
-        
+      
+
 
 
         <br />
 
         <br />
-        <input type="submit" value="Modifier" />
+        <input type="submit" value="Confirmer" />
+
+
     </fieldset>
+
     }
+    <h1 align="center">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</h1>
 
 </body>
 </html>
