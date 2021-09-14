@@ -47,7 +47,10 @@ namespace ProjetFostHer.Controllers
                     HttpContext.SignInAsync(userPrincipal);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 14debd7522bb5ade0cb6e7b0ddb6619ab864906e
                       
 
 >>>>>>> d0a448978322cfebf975fff52ee5b6445dfda8f6
