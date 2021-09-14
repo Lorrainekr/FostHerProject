@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
-<<<<<<< HEAD
-=======
+
 using ProjetFostHer.DAL;
->>>>>>> 599c4e52c2a7be70a3fdc1f0c6df4cf74b630fb6
 using ProjetFostHer.Models;
 using System;
 using System.Collections.Generic;
@@ -22,18 +20,6 @@ namespace ProjetFostHer.ViewModels
         public Crowdfunding Crowdfundings { get; set; }
         public User User { get; set; }
         public bool Authentification { get; set; }
-
-<<<<<<< HEAD
-        public string ConfirmLoginName()
-        {
-            int a = Int32.Parse(HttpContext.User.Identity.Name);
-           
-            User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
-
-        }
-=======
-        
->>>>>>> 599c4e52c2a7be70a3fdc1f0c6df4cf74b630fb6
 
     }
 }
