@@ -25,7 +25,7 @@ namespace ProjetFostHer.Controllers
             if (HttpContext.User.Identity.IsAuthenticated)
             {
                 viewModel.User = dal.GetUser(HttpContext.User.Identity.Name);
-                return View(viewModel);
+                return Redirect("/Home/Index");
             }
             return View(viewModel); 
         }
@@ -33,7 +33,7 @@ namespace ProjetFostHer.Controllers
         [HttpPost]
         public ActionResult IndexLogin(HomeViewModel viewModel, string returnUrl)
         {
-            if (ModelState.IsValid)
+            if (viewModel.User.Email != null && viewModel.User.Password != null)
             {
                 User user = dal.Authentification(viewModel.User.Email, viewModel.User.Password);
                 if (user != null)
@@ -48,11 +48,16 @@ namespace ProjetFostHer.Controllers
 
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
-                    return Redirect("/");
+                    return Redirect("IndexLogin" );
                 }
-                ModelState.AddModelError("User.Name", "Mail et/ou mot de passe incorrect(s)");
+                ModelState.AddModelError("User.Email", "Mail et/ou mot de passe incorrect(s)");
             }
-            return View("ConfirmCreateAccount");
+            return View("User.Email", "Mail et/ou mot de passe incorrect(s)");
+        }
+
+        public IActionResult ConfirmCreateAccount(HomeViewModel hvm)
+        {
+            return View(hvm);
         }
 
         public IActionResult CreerCompte()

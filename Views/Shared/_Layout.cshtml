@@ -30,7 +30,13 @@
                 </ul>
                 <ul class="site_header_right">
                     <li><a href="#">A propos</a></li>
-                    <li><a href="#" class="button button-primary">@Html.ActionLink("Connexion", "IndexLogin", "Login")</a></li>
+                    @{
+            if (!User.Identity.IsAuthenticated)
+            {
+               <li><a href="#" class="button button-primary">@Html.ActionLink("Connexion", "IndexLogin", "Login")</a></li>
+            }
+                    }
+                    
                 </ul>
             </nav>
         </header>
