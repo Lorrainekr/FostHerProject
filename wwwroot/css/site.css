@@ -1,11 +1,110 @@
 ﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
 for details on configuring this project to bundle and minify static web assets. */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
 
 body {
-    background-color: burlywood;
+    margin: 0 auto;
+    overflow-x: hidden;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    color: #333333;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
     margin: 0;
+}
+
+li {
+    list-style: none;
+    margin: 15px;
+}
+
+/* CSS header */
+.header_block {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    display: inline-flex;
+}
+
+.right_item {
+    display: flex;
+    align-items: center;
+}
+
+.logo_block {
+    margin-left: 15px;
+}
+
+.site_header {
+    background-color: #E35931;
     padding: 0;
 }
+
+.site-navigation {
+    padding-left: 20px;
+}
+
+.header_list li {
+    display: inline-block;
+}
+
+.block_button {
+    display:flex;
+    justify-content: end;
+}
+button_white {
+    border: none;
+}
+
+button_white:hover {
+    cursor: pointer;
+}
+
+.button_white {
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px black;
+    display: inline-block;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.5s ease;
+}
+
+.button_white:hover {
+    opacity: 0.75;
+}
+
+.button_white {
+    background-color: #F3EFF4;
+}
+/*Css footer*/
 .footer_container {
     background-image: url('../img/background_footer.svg');
     position: relative;

@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-
+@model ProjetFostHer.ViewModels.HomeViewModel
 <!DOCTYPE html>
 
 <html>
@@ -17,7 +17,48 @@
 <body>
     <!-- Header du site -->
     <div class="nav_container">
-        <h1>Insérez le menu ici</h1>
+        <!-- Site Header -->
+        <header role="banner" aria-label="site navigation" class="site_header">
+            <div class="header_block">
+                <!-- Site Navigation -->
+                
+                <nav role="navigation" class="site-navigation">
+                    <div class="logo_block">
+                        <img class="logo_header" src="~/img/logo_site_blanc.svg" alt="logo" />
+                    </div>
+                    <ul class="header_list">
+                        <li class="header_item"><a href="">Associations</a>  </li>
+                        <li class="header_item"><a href="">Artistes</a>  </li>
+                        <li class="header_item"> <a href="">Evénements</a></li>
+                        <li class="header_item"><a href="">Crowdfundings</a></li>
+                    </ul>
+                </nav>
+                <div class="right_item">
+                    <div class="search_block">
+                        <label for="site-search">Rechercher un artiste, une association, un évènement</label>
+                        <input type="search" id="site-search" name="q"
+                               aria-label="Rechercher un artiste, une association, un évènement">
+                    </div>
+
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <div class="block_button">
+                                <p class="button_white">@Html.ActionLink("Connexion", "IndexLogin", "Login")</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                              <p> Bienvenue  @ViewData["Message"] </p>
+                                <a href="#">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+            
+
+        </header>
     </div>
     <div class="view_container">
         @RenderBody()
@@ -45,6 +86,8 @@
             </div>
         </div>
     </footer>
-    @RenderSection("ScriptJS", required:false)
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

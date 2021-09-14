@@ -16,6 +16,7 @@ namespace ProjetFostHer.Models
         public DbSet<Crowdfunding> Crowdfundings { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,6 +35,22 @@ namespace ProjetFostHer.Models
             cat1.CategoryName = "Cinema";
             Category cat3 = new Category();
             cat1.CategoryName = "Sculpture";
+
+            this.Users.AddRange(
+                new User
+                    {
+                        Name = "Low",
+                        Email = "lock@gmail.com",
+                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
+                    },
+
+                new User
+                    {
+                        Name = "Tom",
+                        Email = "tom@gmail.com",
+                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
+                    }
+                    );
 
 
             this.Artists.AddRange(
@@ -97,7 +114,18 @@ namespace ProjetFostHer.Models
                    AssociationCrowdfunding = asso1,
                    AmountMax = 30000,
                    MinDonation = 5,
-                   MaxDonation = 1000
+                   MaxDonation = 1000,
+                   Artist = new Artist(
+                        "hdjbnd@gmail.com",
+                        "Mn1d45$",
+                        "80 rue",
+                        "Jean",
+                        "Dujardin",
+                        "Jpm",
+                        cat1,
+                        "00551555"
+                        )
+
                },
 
                new Crowdfunding
@@ -108,7 +136,17 @@ namespace ProjetFostHer.Models
                    AssociationCrowdfunding = asso2,
                    AmountMax = 30000,
                    MinDonation = 5,
-                   MaxDonation = 1000
+                   MaxDonation = 1000,
+                   Artist = new Artist(
+                        "hdjbnd@gmail.com",
+                        "Mn12345$",
+                        "9 rue",
+                        "Jean",
+                        "Michael",
+                        "JVG",
+                        cat2,
+                        "00551555"
+                        )
                }
             );
 
@@ -120,7 +158,7 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021, 09, 10),
                    EndDate = new DateTime(2021, 11, 10),
                    Stock = 500,
-                   Price = 0.0,
+                   Price = 30,
                    Category = cat1,
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
@@ -141,7 +179,7 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021, 09, 10),
                    EndDate = new DateTime(2021, 11, 10),
                    Stock = 500,
-                   Price = 0.0,
+                   Price = 40,
                    Category = cat1,
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
@@ -156,7 +194,9 @@ namespace ProjetFostHer.Models
                }
             );
 
-            this.SaveChanges();
+          
+
+      this.SaveChanges();
         }
     }
 }
