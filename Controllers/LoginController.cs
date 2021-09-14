@@ -48,7 +48,7 @@ namespace ProjetFostHer.Controllers
 
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
-                    return Redirect("IndexLogin" );
+                    return Redirect("IndexLogin");
                 }
                 ModelState.AddModelError("User.Email", "Mail et/ou mot de passe incorrect(s)");
             }
@@ -91,7 +91,7 @@ namespace ProjetFostHer.Controllers
         public ActionResult Deconnexion()
         {
             HttpContext.SignOutAsync();
-            return Redirect("/");
+            return Redirect("/Home/Index");
         }
     }
 }

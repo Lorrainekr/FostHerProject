@@ -26,13 +26,9 @@ body {
     background-color: #ffffff;
 }
 
-/* 2. Typography Styles
-======================================== */
-
 a {
     font-family: 'Oswald', sans-serif;
     font-size: 20px;
-    color: #F3EFF4;
     text-decoration: none;
 }
 
@@ -46,56 +42,49 @@ li {
     margin: 15px;
 }
 
-/* Site Navigation */
+/* CSS header */
+.header_block {
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    display: inline-flex;
+}
 
-.logo_header {
-    position: absolute;
-    margin: 15px;
+.right_item {
+    display: flex;
+    align-items: center;
+}
+
+.logo_block {
+    margin-left: 15px;
 }
 
 .site_header {
-    background-color: #E94E1B;
-    background-image: url("images/background_accueil.svg");
-    padding: 15px 15px;
-    position: sticky;
+    background-color: #E35931;
+    padding: 0;
 }
 
 .site-navigation {
-    margin: 0 auto;
-    max-width: 1280px;
+    padding-left: 20px;
 }
 
-.site_header_left {
-    display: inline-block;
-    margin-left: 130px;
-}
-
-.site_header_left li, .site_header_right li {
-    line-height: 0;
+.header_list li {
     display: inline-block;
 }
 
-.site_header_right {
-    display: inline-block;
-    position: relative;
-    left: 350px;
+.block_button {
+    display:flex;
+    justify-content: end;
 }
-
-.site_header_right li a {
-    text-decoration: none;
-    margin-left: 20px;
-}
-/* 5. Component Styles
-======================================== */
-button {
+button_white {
     border: none;
 }
 
-button:hover {
+button_white:hover {
     cursor: pointer;
 }
 
-.button {
+.button_white {
     border-radius: 100px;
     box-shadow: 3px 3px 3px black;
     display: inline-block;
@@ -108,13 +97,12 @@ button:hover {
     transition: opacity 0.5s ease;
 }
 
-.button:hover {
+.button_white:hover {
     opacity: 0.75;
 }
 
-.button-primary {
+.button_white {
     background-color: #F3EFF4;
-    color: #E94E1B;
 }
 /*Css footer*/
 .footer_container {

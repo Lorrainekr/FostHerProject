@@ -1,7 +1,7 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
-
+@model ProjetFostHer.ViewModels.HomeViewModel
 <!DOCTYPE html>
 
 <html>
@@ -19,26 +19,43 @@
     <div class="nav_container">
         <!-- Site Header -->
         <header role="banner" aria-label="site navigation" class="site_header">
-            <!-- Site Navigation -->
-            <nav role="navigation" class="site-navigation">
-                <img class="logo_header" src="~/img/logo_site_blanc.svg" alt="logo" />
-                <ul class="site_header_left">
-                    <li><a href="">Associations</a>  </li>
-                    <li><a href="">Artistes</a>  </li>
-                    <li> <a href="">Evénements</a></li>
-                    <li><a href="">Crowdfundings</a></li>
-                </ul>
-                <ul class="site_header_right">
-                    <li><a href="#">A propos</a></li>
+            <div class="header_block">
+                <!-- Site Navigation -->
+                
+                <nav role="navigation" class="site-navigation">
+                    <div class="logo_block">
+                        <img class="logo_header" src="~/img/logo_site_blanc.svg" alt="logo" />
+                    </div>
+                    <ul class="header_list">
+                        <li class="header_item"><a href="">Associations</a>  </li>
+                        <li class="header_item"><a href="">Artistes</a>  </li>
+                        <li class="header_item"> <a href="">Evénements</a></li>
+                        <li class="header_item"><a href="">Crowdfundings</a></li>
+                    </ul>
+                </nav>
+                <div class="right_item">
+                    <div class="search_block">
+                        <label for="site-search">Rechercher un artiste, une association, un évènement</label>
+                        <input type="search" id="site-search" name="q"
+                               aria-label="Rechercher un artiste, une association, un évènement">
+                    </div>
                     @{
-            if (!User.Identity.IsAuthenticated)
-            {
-               <li><a href="#" class="button button-primary">@Html.ActionLink("Connexion", "IndexLogin", "Login")</a></li>
-            }
+                        @if (!User.Identity.IsAuthenticated)
+                        {
+                            <div class="block_button">
+                                <p class="button_white">@Html.ActionLink("Connexion", "IndexLogin", "Login")</p>
+                            </div>
+                        }
+                        else
+                        {
+                            <div>
+                                <a href="#">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</a>
+                            </div>
+                        }
                     }
-                    
-                </ul>
-            </nav>
+                </div>
+            </div>
+            
         </header>
     </div>
     <div class="view_container">
