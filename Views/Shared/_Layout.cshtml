@@ -39,8 +39,9 @@
                         <input type="search" id="site-search" name="q"
                                aria-label="Rechercher un artiste, une association, un évènement">
                     </div>
-                    @{
-                        @if (!User.Identity.IsAuthenticated)
+                    @{ 
+
+                         @if(!User.Identity.IsAuthenticated)
                         {
                             <div class="block_button">
                                 <p class="button_white">@Html.ActionLink("Connexion", "IndexLogin", "Login")</p>
@@ -49,6 +50,7 @@
                         else
                         {
                             <div>
+                                <p>@Model.User.Name</p>
                                 <a href="#">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</a>
                             </div>
                         }
