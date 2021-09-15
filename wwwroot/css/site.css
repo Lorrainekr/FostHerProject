@@ -27,8 +27,6 @@ body {
 }
 
 a {
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
     text-decoration: none;
 }
 
@@ -43,11 +41,17 @@ li {
 }
 
 /* CSS header */
+.nav_container {
+    z-index: 10;
+    position: absolute;
+    width: inherit;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
 .header_block {
     display:flex;
     align-items:center;
     justify-content: space-between;
-    display: inline-flex;
 }
 
 .right_item {
@@ -59,6 +63,11 @@ li {
     margin-left: 15px;
 }
 
+.logo_header {
+    height:50px;
+    margin: 7px;
+}
+
 .site_header {
     background-color: #E35931;
     padding: 0;
@@ -66,16 +75,62 @@ li {
 
 .site-navigation {
     padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header_list{
+    margin-left: 10px;
 }
 
 .header_list li {
     display: inline-block;
 }
 
+.header_list li a {
+    color: #ffffff;
+    font-family: Oswald;
+    font-size: 22px;
+}
+
+.search_bar {
+    padding: 13.5px 30px;
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    text-align: left;
+    font-size: 15px;
+    border: 2px solid #ffffff;
+    margin-right: 20px;
+    font-size: 14px;
+    width: 460px;
+}
+
+.icon_search{
+    position: relative;
+    left: -12%;
+    color: #E35931;
+}
+
+input.search_bar:focus-visible {
+    outline-color: rgb(0 0 0 / 0%);
+    outline-style: none;
+}
+
 .block_button {
     display:flex;
     justify-content: end;
+    margin-right: 35px;
+    align-items: center;
 }
+
+.user_button{
+    font-family: Oswald semibold;
+    font-size: 22px;
+    color:#ffffff;
+    text-align:center;
+    margin: 0 25px 0 0;
+}
+
 button_white {
     border: none;
 }
@@ -84,33 +139,87 @@ button_white:hover {
     cursor: pointer;
 }
 
-.button_white {
+.button_white a {
+    border: 2px solid #ffffff;
     border-radius: 100px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
     display: inline-block;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
     line-height: normal;
-    padding: 15px 30px;
+    padding: 13.5px 30px;
     text-align: center;
     text-decoration: none;
-    transition: opacity 0.5s ease;
+    margin-left: 10px;
+    color: #E35931;
+    background-color: #ffffff;
 }
 
-.button_white:hover {
-    opacity: 0.75;
+    .button_white a:hover {
+        background-color: #E35931;
+        color: #ffffff;
+        transition-duration: 1s;
+    }
+
+/*Css page accueil*/
+.bienvenue {
+    z-index: 1;
+    margin-top: -82px;
 }
 
-.button_white {
-    background-color: #F3EFF4;
+.bienvenue-container {
+    background-image: url('../img/background_accueil.svg');
+    padding: 20px;
+    position: relative;
+    height: 1266px;
 }
+
+.bienvenue {
+    font-family: 'Oswald', sans-serif;
+    color: white;
+}
+
+.bienvenue-title {
+    margin-top: 5cm;
+    margin-left: 4cm;
+    font-size: 30pt;
+}
+
+.line-break {
+    margin-left: 4cm;
+    height: 6px;
+    width: 6cm;
+    background: white;
+}
+
+.bienvenue-text {
+    margin-top: 2cm;
+    margin-left: 4cm;
+    text-align: left;
+    font-size: 18pt;
+    position: absolue;
+    top: 10%;
+    left: 5%;
+}
+
+.bienvenue-image {
+    display: grid;
+    position: absolute;
+    top: 17%;
+    right: 18%;
+}
+
 /*Css footer*/
 .footer_container {
     background-image: url('../img/background_footer.svg');
     position: relative;
-    width: initial;
     height: 621px;
     width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 50px;
 }
 .logo_footer_block:hover {
     color: #E5D8EB;
@@ -118,23 +227,17 @@ button_white:hover {
 
 .logo_footer {
     height: 315px;
-    position: absolute;
-    top: 40%;
-    left: 11%;
 }
 
 .footer-list {
+    text-align: center;
+}
+
+.footer-list li{
     color: #ffffff;
     font-size: 25px;
     font-family: oswald regular;
     list-style-type: none;
-    text-align: center;
-    line-height: 38pt;
-    position: absolute;
-    bottom: 8%;
-    right: 47%;
-    padding: 0;
-    top: 60%;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.50);
 }
 .footer-list a {
@@ -145,23 +248,24 @@ button_white:hover {
         color: #E5D8EB;
 }
 
+.social_footer_block {
+    margin-bottom: 12px;
+}
+
 .footer-social {
     font-size: 60px;
     color: #ffffff;
-    position: absolute;
-    top: 65%;
-    right: 17%;
     display: inline-flex;
-    flex-direction: row;
     list-style-type: none;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.50);
 }
 .footer-social a i {
     padding:15px;
     color: #ffffff;
+    font-size: 60px;
 }
 
-    .footer-social a i:hover {
-        color: #E5D8EB;
-    }
+.footer-social a i:hover {
+    color: #E5D8EB;
+}
 
