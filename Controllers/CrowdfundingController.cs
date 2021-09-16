@@ -10,6 +10,10 @@ namespace ProjetFostHer.Controllers
 {
     public class CrowdfundingController : Controller
     {
+        public IActionResult CrowdfundingIndex()
+        {
+            return View();
+        }
         public IActionResult EditCrowdfunding(int id)
         {
             if (id != 0)

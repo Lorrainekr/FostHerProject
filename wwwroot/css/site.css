@@ -26,13 +26,18 @@ body {
     background-color: #ffffff;
 }
 
+h1, h2 {
+    font-family: 'Oswald', sans-serif;
+}
+
 a {
     text-decoration: none;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
 }
 
 li {
@@ -40,12 +45,34 @@ li {
     margin: 15px;
 }
 
+h2 {
+    color: #7E4393;
+    font-size: 55px;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
 /* CSS header */
+.site_header {
+    position: fixed;
+    width: inherit;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    background-color: #E35931;
+    padding: 0;
+}
+
 .nav_container {
     z-index: 10;
     position: absolute;
     width: inherit;
-    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
 }
 
 .header_block {
@@ -68,10 +95,7 @@ li {
     margin: 7px;
 }
 
-.site_header {
-    background-color: #E35931;
-    padding: 0;
-}
+
 
 .site-navigation {
     padding-left: 20px;
@@ -94,7 +118,7 @@ li {
 }
 
 .search_bar {
-    padding: 13.5px 30px;
+    padding: 15px 30px;
     border-radius: 100px;
     box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
     text-align: left;
@@ -155,60 +179,199 @@ button_white:hover {
     background-color: #ffffff;
 }
 
-    .button_white a:hover {
-        background-color: #E35931;
-        color: #ffffff;
-        transition-duration: 1s;
-    }
+.button_white a:hover {
+    background-color: #E35931;
+    color: #ffffff;
+    transition-duration: 1s;
+}
 
 /*Css page accueil*/
 .bienvenue {
     z-index: 1;
     margin-top: -82px;
-}
-
-.bienvenue-container {
     background-image: url('../img/background_accueil.svg');
-    padding: 20px;
-    position: relative;
+    font-family: 'Oswald', sans-serif;
+    color: white;
     height: 1266px;
 }
 
-.bienvenue {
-    font-family: 'Oswald', sans-serif;
-    color: white;
+.container {
+    padding: 0 250px 0 250px;
 }
 
-.bienvenue-title {
-    margin-top: 5cm;
-    margin-left: 4cm;
-    font-size: 30pt;
+.bienvenue-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 220px;
+}
+
+.bienvenue_block_text {
+    margin-right: 120px;
+    text-align: left;
+}
+
+.bienvenue-title h1 {
+    font-size: 60px;
+    margin: 0;
 }
 
 .line-break {
-    margin-left: 4cm;
-    height: 6px;
-    width: 6cm;
     background: white;
+    height: 6px;
+    width: 220px;
+    border-radius: 4px;
+    margin: 40px 0 40px 0;
 }
 
 .bienvenue-text {
-    margin-top: 2cm;
-    margin-left: 4cm;
+    font-family: 'Open Sans light';
     text-align: left;
-    font-size: 18pt;
-    position: absolue;
-    top: 10%;
-    left: 5%;
+    font-size: 18px;
 }
 
-.bienvenue-image {
-    display: grid;
-    position: absolute;
-    top: 17%;
-    right: 18%;
+.bienvenue-title .sub_title {
+    font-size: 20px;
 }
 
+.bienvenue-text .bold_text{
+    font-family: Open sans semibold;
+}
+
+.ancre_down {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin-top: 250px;
+}
+
+.ancre_down i {
+    font-size: 60px;
+}
+
+/*Css accueil crowdfunding*/
+.crowdfunding_accueil_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.crowdfunding_accueil_title {
+    font-family: 'Oswald', sans-serif;
+    color: #7E4393;
+    font-size: 30px
+}
+
+.crowdfunding_accueil_title h2{
+    margin-top: 0;
+}
+
+.crowdfunding_title_theme {
+    font-family: 'Oswald light', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.crowdfunding_accueil_img {
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.crowdfunding_accueil_gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img_theme {
+    border-radius: 10px;
+}
+
+/*Css accueil block artiste*/
+
+.artist_accueil_container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.artiste_gallery_accueil {
+    font-family: 'Oswald', sans-serif;
+    color: #7E4393;
+    font-size: 30px;
+}
+
+.artist_accueil_title h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #E94E1B;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+    text-align: center;
+    position: relative;
+    padding: 15px 10px;
+    margin: 0 50px 0 50px;
+    top: -46px;
+}
+}
+
+.image-artistes-home {
+    display: inline-block;
+}
+
+.gallery-artistes-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.artist_link_page {
+    font-family: 'Oswald semibold', sans-serif;
+    font-size: 16px;
+    color: #484848;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.link_button{
+    margin-right: 10px;
+}
+
+.icon_artist_link {
+    font-size: 30px;
+    color: #484848;
+} 
+
+/*Css à propos accueil*/
+
+.about_accueil_container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.about_accueil_title {
+    font-family: 'Oswald', sans-serif;
+    color: #7E4393;
+    font-size: 30pt;
+}
+
+.about_accueil_block {
+    text-align: left;
+    font-family: 'Open sans', sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about_accueil_text {
+    margin-right: 70px;
+}
 /*Css footer*/
 .footer_container {
     background-image: url('../img/background_footer.svg');
@@ -268,4 +431,324 @@ button_white:hover {
 .footer-social a i:hover {
     color: #E5D8EB;
 }
+
+/*PAGE CROWDFUNDING*/
+
+.crowdfunding_container {
+    padding-top: 320px;
+}
+
+
+.nom, .montant {
+    font-family: 'Oswald', sans-serif;
+}
+
+.nom {
+    color: #E94E1B;
+}
+
+/* Site Navigation */
+
+/*ECRAN PRINCIPAL Page CROWDFUNDING */
+
+.intro p, .intro h2 {
+    text-align: center;
+    margin: 35px auto;
+    max-width: 65%;
+}
+
+.key-info {
+    display: flex;
+    gap: 10px;
+    padding: 30px 30px;
+    max-width: 90%;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.info li {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+.titre-asso {
+    margin-left: 0px 50px;
+    line-height: 0;
+}
+
+#amount {
+    margin-right: 0px;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    font-family: 'Oswald', sans-serif;
+}
+
+/* SOUS-MENUS*/
+/*nav*/
+
+.sousmenu {
+    background-color: #cccccc;
+    height: 60px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 15px auto;
+}
+
+.sousmenu {
+    display: flex;
+    flex-direction: row;
+}
+
+/* SOUS PAGE 1 - Projet (CONTAINER) */
+
+.SSP1 {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* BLOC FIXE = contreparties (à droite) */
+
+.contrepartie {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 80px;
+    width: 300px;
+    gap: 20px;
+}
+
+.contrepartie h3 {
+    color: #7E4393;
+    font-size: 25px;
+}
+
+.contrepartie div {
+    box-shadow: 6px 3px 3px #F3EFF4;
+    transition: opacity 0.5s ease;
+}
+
+.contrepartie img, .contrepartie p {
+    width: 300px;
+}
+
+.contrepartie p, .contrepartie h4 {
+    height: auto;
+    padding: auto 20px;
+}
+
+/* CONTENU DES SOUS PAGES = PROJET / OBJECTIFS */
+
+.projet, .objectifs, .contributeurs {
+    width: 65%;
+    align-items: left;
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+    .projet h2, .objectifs h2, .contributeurs h2 {
+        color: dimgrey;
+        font-size: 42px;
+    }
+
+/* CONTENU SOUS-PAGE CONTRIBUTEURS */
+
+.list-contrib {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 95%;
+}
+
+.contrib {
+    box-shadow: 6px 6px 6px #F3EFF4;
+    transition: opacity 0.5s ease;
+    width: 190px;
+}
+
+.contrib p {
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Component Styles
+======================================== */
+
+/* BOUTONS */
+
+button {
+    border: none;
+}
+
+    button:hover {
+        cursor: pointer;
+        opacity: 0.75;
+    }
+
+.button {
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px #a85236;
+    font-family: sans-serif;
+    border: none;
+    font-size: 15px;
+    line-height: normal;
+    padding: 10px 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: opacity 0.5s ease;
+}
+
+.button-primary {
+    background-color: #F3EFF4;
+    color: #E94E1B;
+}
+
+.button-secondary {
+    background-color: #E94E1B;
+    color: #F3EFF4;
+    padding: 15px 80px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* LIGNES DIV */
+
+.line-break-black {
+    margin: 1cm auto;
+    height: 6px;
+    width: 90px;
+    background: black;
+}
+
+.line-break-ssmenu {
+    height: 6px;
+    width: 90px;
+    background: dimgrey;
+    margin-bottom: 30px;
+}
+
+.line-break-contrib {
+    margin: auto auto;
+    height: 2px;
+    width: 35px;
+    background: #7E4393;
+}
+
+/* BARRE DE PROGRESSION DU CROWDFUNDING */
+
+progress {
+    border-radius: 7px;
+    width: auto;
+    height: 7px;
+    margin: 10px 0 0 0;
+}
+
+    progress::-webkit-progress-bar {
+        background-color: #ebb2a0;
+    }
+
+    progress::-webkit-progress-value {
+        background-color: #E94E1B;
+        box-shadow: 1px 1px 5px 3px #b3b3b3;
+    }
+
+/* IMAGES */
+
+.cover-image {
+    object-fit: cover;
+    width: 65%;
+    margin-right: 30px;
+    height: 400px;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: 35px;
+}
+
+/* SOCIAL MEDIA */
+
+.social {
+    margin-top: 25px;
+    margin-left: 10px;
+    height: 55px;
+    width: 55px;
+    border-radius: 10px;
+    box-shadow: 6px 3px 3px #F3EFF4;
+    font-size: 20px;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    color: grey;
+}
+
+    .social:hover {
+        cursor: pointer;
+        opacity: 0.75;
+    }
+
+#fb {
+    background-color: #3b5998;
+    color: white;
+}
+
+#ig {
+    color: white;
+    background-color: #517fa4;
+}
+
+#tw {
+    color: white;
+    background-color: #00aced;
+}
+
+
+/* Collapsible */
+.collapsible {
+    background-color: white;
+    box-shadow: 3px 3px 3px #F4A68D;
+    font-family: sans-serif;
+    font-weight: 200;
+    color: dimgray;
+    font-size: 15px;
+    line-height: normal;
+    text-decoration: none;
+    text-align: left;
+    border: 2px solid #E94E1B;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 18px;
+    width: 90%;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+    .active, .collapsible:hover {
+        font-weight: 400;
+        background-color: white;
+        width: 90%;
+    }
+
+.content, content li {
+    padding: 0 18px;
+    width: 90%;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    display: none;
+    overflow: hidden;
+    background-color: #FDF4F1;
+}
+
 

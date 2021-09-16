@@ -1,0 +1,68 @@
+﻿
+@model ProjetFostHer.ViewModels.HomeViewModel
+@{
+    Layout = "_Layout";
+}
+<div class="container crowdfunding_container">
+    <div class="intro">
+        <h2>J'ai 3 Amours: Piano, Contrebasse, Claquettes !</h2>
+        <p>
+            Un spectacle musical avec claquettes qui revisite
+            le répertoire jazz en y ajoutant quelques épices essentielles
+            à un Objet Very Non Identifiable.
+        </p>
+        <div class="line-break-black">
+        </div>
+
+        <div class="key-info">
+            <!--Image à gauche de l'écran-->
+            <img 
+                 src="~/img/visuel_crowdfunding.png" 
+                 class="cover-image" 
+                 alt="photo accueil crowdfunding">
+            <!--avatar au centre-->
+            <div class"avatar_block">
+                <img src="#" alt="allez vers l'association" />
+            </div>
+            <!--Infos clés-->
+            <section class="info">
+                <h3>Roxane Butterfly</h3>
+                <h4 class="titre-asso">La Fabrique de la Danse</h4>
+                <ul>
+                    <li><strong>%</strong><br> Contributeurs</li>
+                    <li><strong>% jours</strong><br> Restants</li>
+                    <li><strong>% euros</strong><br> Récoltés sur %</li>
+                </ul>
+                <progress class="progress-amount" max="100" value="70"> 70% </progress>
+                <div class="progress-amount"></div>
+                <p id="amount">XX%</p>
+                <a href="#" class="button button-secondary">Contribuer</a>
+                <!-- Boutons social media-->
+                <div class="share">
+                    <ul>
+                        <li><i class="social fas fa-heart"></i></li>
+                        <li><i class="social fas fa-share-alt"></i></li>
+                        <li><i class="social fab fa-facebook-f" id="fb"></i></li>
+                        <li><i class="social fab fa-instagram" id="ig"></i></li>
+                        <li><i class="social fab fa-twitter" id="tw"></i></li>
+                    
+                    </ul>
+                    <br>
+                    <br>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="souspages">
+        <nav class="sousmenu">
+            <ul>
+                <li><a href="#">Le projet</a></li>
+                <li><a href="#">Objectifs</a></li>
+                <li> <a href="#">Commentaires</a></li> <!--TBD intégration ou non-->
+                <li><a href="#">Contributions</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
