@@ -1,0 +1,99 @@
+﻿
+@model ProjetFostHer.ViewModels.HomeViewModel
+@{
+    Layout = "_Layout";
+}
+<div class="container crowdfunding_container">
+    <div class="crowdfunding_block">
+        <div class="crowdfunding_title_block">
+            <h2>J'ai 3 Amours: Piano, Contrebasse, Claquettes !</h2>
+            <p>
+                Un spectacle musical avec claquettes qui revisite
+                le répertoire jazz en y ajoutant quelques épices essentielles
+                à un Objet Very Non Identifiable.
+            </p>
+            <div class="line-break-black">
+            </div>
+        </div>
+        <div class="crowdfunding_info_block">
+            <!--Image à gauche de l'écran-->
+            <div class="crowdfunding_info_visual">
+                <img src="~/img/visuel_crowdfunding.png"
+                     class="cover-image"
+                     alt="photo accueil crowdfunding">
+            </div>
+            <!--Infos clés-->
+            <section class="crowdfunding_info_content">
+                <div class="crowdfunding_info_title">
+                    <div class="avatar_block">
+                        <a class="avatar_link" alt="allez vers l'association" href='@Url.Action("Index", "Home")'>
+                            <div class="avatar"></div>
+                        </a>
+                    </div>
+                    <div class="sub-title-asso">
+                        <h3>Roxane Butterfly</h3>
+                        <h5>La Fabrique de la Danse</h5>
+                    </div>
+                </div>
+                <div class="crowdfunding_progressbar">
+                    <div class="crowdfunding_progressbar_content">
+                        <p><strong>70</strong><br> Contributeurs</p>
+                        <p><strong>3 jours</strong><br> Restants</p>
+                        <p><strong>1500 euros</strong><br> Récoltés sur 1800</p>
+                    </div>
+                    <div class="crowdfunding_progressbar_bar">
+                        <progress class="progress-amount" max="100" value="70"> 70% </progress>
+                        <p id="amount">70 %</p>
+                    </div>
+                    <div class="block_button_crowdfunding">
+                        <p class="button_orange">@Html.ActionLink("Contribuer", "CrowdfundingIndex", "Crowdfunding")</p>
+                    </div>
+                </div>
+                
+                <!-- Boutons social media-->
+                <div class="crowdfunding_share">
+                    <ul class="crowdfunding_share_list">
+                        <li><i class="social fas fa-heart"></i></li>
+                        <li><i class="social fas fa-share-alt"></i></li>
+                        <li><i class="social fab fa-facebook-f" id="fb"></i></li>
+                        <li><i class="social fab fa-instagram" id="ig"></i></li>
+                        <li><i class="social fab fa-twitter" id="tw"></i></li>
+
+                    </ul>
+                    <br>
+                    <br>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="souspages">
+    <nav id="subnav" class="sousmenu">
+        <ul>
+            <li>
+                <a id="project">Projets</a>
+            </li>
+            <li>
+                <a  id="objectif">Objectifs</a>
+            </li>
+            <li> <a id="comment">Commentaires</a></li> <!--TBD intégration ou non-->
+            <li>
+                <a  id="contributions">Contributions</a>
+            </li>
+        </ul>
+    </nav>
+    <div id="partial_project">
+        @Html.Partial("CrowdfundingSubpageProject")
+    </div>
+    <div id="partial_objectif" style="display:none;">
+        @Html.Partial("CrowdfundingSubpageObjectif")
+    </div>
+    <div id="partial_contributor" style="display:none;">
+        @Html.Partial("CrowdfundingSubpageContributor")
+    </div>
+</div>
+
+
+
+
+

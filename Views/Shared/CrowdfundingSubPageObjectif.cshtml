@@ -1,0 +1,48 @@
+﻿
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+<section class="objectifs">
+    <h2>Les objectifs du crowdfunding</h2>
+    <div class="line-break-ssmenu"></div></br>
+    <p>Blablablablabla blabla blablabla bla bla </p></br>
+    <button type="button" class="collapsible">Notre objectif : 4500 euros pour monter de toutes pièces une représentation professionnelle</button>
+    <div class="content">
+        <p>
+            Lancer dans la création lumière des 3 amours </br>
+            Faire un teaser pour diffuser nos 3 Amours. </br>
+            Travailler 2 jours en studio d'enregistrement. </br>
+            Nous produire dans un théâtre, et diffuser notre spectacle, avec la création de costumes et une résidence de 4 jours de travail avec un metteur en scène. </br>
+        </p>
+    </div>
+    <button type="button" class="collapsible"> Si l'objectif est dépassé de 1000 euros !</button>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button type="button" class="collapsible">Si votre générosité nous fait dépasser l'objectif de 2000 euros !</button>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <button type="button" class="collapsible">Et après ?</button>
+    <div class="content">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+            }
+            });
+        }
+    </script>
+</section>

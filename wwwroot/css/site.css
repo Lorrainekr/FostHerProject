@@ -26,15 +26,18 @@ body {
     background-color: #ffffff;
 }
 
-a {
+h1, h2 {
     font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+}
+
+a {
     text-decoration: none;
 }
 
-ul {
-    padding: 0;
-    margin: 0;
+p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: lighter;
+    font-size: 14px;
 }
 
 li {
@@ -42,12 +45,45 @@ li {
     margin: 15px;
 }
 
+h2 {
+    color: #7E4393;
+    font-size: 55px;
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+}
+
+h4 {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+}
+
+h5 {
+    font-family: 'Open Sans regular', sans-serif;
+    font-size: 15px;
+}
+
 /* CSS header */
+.site_header {
+    position: fixed;
+    width: inherit;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    background-color: #E35931;
+    padding: 0;
+}
+
+.nav_container {
+    z-index: 10;
+    position: absolute;
+    width: inherit;
+}
+
 .header_block {
     display:flex;
     align-items:center;
     justify-content: space-between;
-    display: inline-flex;
 }
 
 .right_item {
@@ -59,23 +95,71 @@ li {
     margin-left: 15px;
 }
 
-.site_header {
-    background-color: #E35931;
-    padding: 0;
+.logo_header {
+    height:50px;
+    margin: 7px;
 }
+
+
 
 .site-navigation {
     padding-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header_list{
+    margin-left: 10px;
 }
 
 .header_list li {
     display: inline-block;
 }
 
+.header_list li a {
+    color: #ffffff;
+    font-family: Oswald;
+    font-size: 22px;
+}
+
+.search_bar {
+    padding: 15px 30px;
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    text-align: left;
+    font-size: 15px;
+    border: 2px solid #ffffff;
+    margin-right: 20px;
+    font-size: 14px;
+    width: 460px;
+}
+
+.icon_search{
+    position: relative;
+    left: -12%;
+    color: #E35931;
+}
+
+input.search_bar:focus-visible {
+    outline-color: rgb(0 0 0 / 0%);
+    outline-style: none;
+}
+
 .block_button {
     display:flex;
     justify-content: end;
+    margin-right: 35px;
+    align-items: center;
 }
+
+.user_button{
+    font-family: Oswald semibold;
+    font-size: 22px;
+    color:#ffffff;
+    text-align:center;
+    margin: 0 25px 0 0;
+}
+
 button_white {
     border: none;
 }
@@ -84,33 +168,226 @@ button_white:hover {
     cursor: pointer;
 }
 
-.button_white {
+.button_white a {
+    border: 2px solid #ffffff;
     border-radius: 100px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
     display: inline-block;
-    font-family: 'Oswald', sans-serif;
-    font-size: 20px;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
     line-height: normal;
-    padding: 15px 30px;
+    padding: 13.5px 30px;
     text-align: center;
     text-decoration: none;
-    transition: opacity 0.5s ease;
+    margin-left: 10px;
+    color: #E35931;
+    background-color: #ffffff;
 }
 
-.button_white:hover {
-    opacity: 0.75;
+.button_white a:hover {
+    background-color: #E35931;
+    color: #ffffff;
+    transition-duration: 0.5s;
 }
 
-.button_white {
-    background-color: #F3EFF4;
+/*Css page accueil*/
+.bienvenue {
+    z-index: 1;
+    margin-top: -82px;
+    background-image: url('../img/background_accueil.svg');
+    font-family: 'Oswald', sans-serif;
+    color: white;
+    height: 1266px;
+}
+
+.container {
+    padding: 0 250px 0 250px;
+}
+
+.bienvenue-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 220px;
+}
+
+.bienvenue_block_text {
+    margin-right: 120px;
+    text-align: left;
+}
+
+.bienvenue-title h1 {
+    font-size: 60px;
+    margin: 0;
+}
+
+.line-break {
+    background: white;
+    height: 6px;
+    width: 220px;
+    border-radius: 4px;
+    margin: 40px 0 40px 0;
+}
+
+.bienvenue-text {
+    font-family: 'Open Sans light';
+    text-align: left;
+    font-size: 18px;
+}
+
+.bienvenue-title .sub_title {
+    font-size: 20px;
+}
+
+.bienvenue-text .bold_text{
+    font-family: Open sans semibold;
+}
+
+.ancre_down {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-evenly;
+    margin-top: 250px;
+}
+
+.ancre_down i {
+    font-size: 60px;
+}
+
+/*Css accueil crowdfunding*/
+.crowdfunding_accueil_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.crowdfunding_accueil_title {
+    font-family: 'Oswald', sans-serif;
+    color: #7E4393;
+    font-size: 30px
+}
+
+.crowdfunding_accueil_title h2{
+    margin-top: 0;
+}
+
+.crowdfunding_title_theme {
+    font-family: 'Oswald light', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.crowdfunding_accueil_img {
+    border-radius: 50px;
+    display: inline-block;
+}
+
+.crowdfunding_accueil_gallery {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.img_theme {
+    border-radius: 10px;
+}
+
+/*Css accueil block artiste*/
+
+.artist_accueil_container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.artiste_gallery_accueil {
+    font-family: 'Oswald', sans-serif;
+    color: #7E4393;
+    font-size: 30px;
+}
+
+.artist_accueil_title h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    color: #E94E1B;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+    text-align: center;
+    position: relative;
+    padding: 15px 10px;
+    margin: 0 50px 0 50px;
+    top: -46px;
+}
+}
+
+.image-artistes-home {
+    display: inline-block;
+}
+
+.gallery-artistes-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.artist_link_page {
+    font-family: 'Oswald semibold', sans-serif;
+    font-size: 16px;
+    color: #484848;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.link_button{
+    margin-right: 10px;
+}
+
+.icon_artist_link {
+    font-size: 30px;
+    color: #484848;
+} 
+
+/*Css à propos accueil*/
+
+.about_accueil_container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+}
+
+.about_accueil_title {
+    font-family: 'Oswald', sans-serif;
+    color: #7E4393;
+    font-size: 30pt;
+}
+
+.about_accueil_block {
+    text-align: left;
+    font-family: 'Open sans', sans-serif;
+    font-size: 14px;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+}
+
+.about_accueil_text {
+    margin-right: 70px;
 }
 /*Css footer*/
 .footer_container {
     background-image: url('../img/background_footer.svg');
     position: relative;
-    width: initial;
     height: 621px;
     width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding-bottom: 50px;
 }
 .logo_footer_block:hover {
     color: #E5D8EB;
@@ -118,23 +395,17 @@ button_white:hover {
 
 .logo_footer {
     height: 315px;
-    position: absolute;
-    top: 40%;
-    left: 11%;
 }
 
 .footer-list {
+    text-align: center;
+}
+
+.footer-list li{
     color: #ffffff;
     font-size: 25px;
     font-family: oswald regular;
     list-style-type: none;
-    text-align: center;
-    line-height: 38pt;
-    position: absolute;
-    bottom: 8%;
-    right: 47%;
-    padding: 0;
-    top: 60%;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.50);
 }
 .footer-list a {
@@ -145,23 +416,449 @@ button_white:hover {
         color: #E5D8EB;
 }
 
+.social_footer_block {
+    margin-bottom: 12px;
+}
+
 .footer-social {
     font-size: 60px;
     color: #ffffff;
-    position: absolute;
-    top: 65%;
-    right: 17%;
     display: inline-flex;
-    flex-direction: row;
     list-style-type: none;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.50);
 }
 .footer-social a i {
     padding:15px;
     color: #ffffff;
+    font-size: 60px;
 }
 
-    .footer-social a i:hover {
-        color: #E5D8EB;
+.footer-social a i:hover {
+    color: #E5D8EB;
+}
+
+/*PAGE CROWDFUNDING*/
+
+.crowdfunding_container {
+    padding-top: 140px;
+}
+
+.crowdfunding_title_block {
+    display: flex;
+    padding: 30px 0;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.crowdfunding_title_block h2 {
+    margin-bottom: 10px;
+}
+
+.line-break-black {
+    height: 6px;
+    width: 90px;
+    border-radius: 4px;
+    margin: 20px 0 20px 0;
+    background: #3E3E3E;
+    text-align: center;
+}
+
+.crowdfunding_info_block {
+    display: flex;
+    padding: 30px 0;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 100px;
+}
+
+.crowdfunding_info_content {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.cover-image {
+    margin-right: 30px;
+}
+
+.avatar {
+    
+    background-image: url(../img/artiste_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-size: 120%;
+}
+
+.avatar_link {
+    width: 70px;
+    height: 70px;
+    text-shadow: 1px 1px 2px rgb(255 255 255 / 50%);
+}
+
+.crowdfunding_info_title {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.crowdfunding_info_content li {
+    display: inline-block;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+}
+
+.sub-title-asso {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.sub-title-asso h3, .sub-title-asso h5 {
+    margin: 0;
+    padding: 5px 30px;
+}
+
+.crowdfunding_progressbar_content {
+
+}
+
+.crowdfunding_progressbar_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.crowdfunding_progressbar_content p{
+    padding: 10px 20px;
+}
+
+.crowdfunding_progressbar_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.progress-amount {
+    border-radius: 7px;
+    width: 70%;
+    height: 7px;
+    margin: 10px 20px 10px 20px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #ebb2a0;
+    border-radius: 100px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #E94E1B;
+    border-radius: 100px;
+}
+
+#amount {
+    margin-top: 2px;
+    margin-bottom: 15px;
+    font-family: 'open sans semibold', sans-serif;
+    font-size: 20px;
+}
+
+.block_button_crowdfunding {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+}
+
+button_orange {
+    border: none;
+}
+
+button_orange:hover {
+    cursor: pointer;
+}
+
+.button_orange a {
+    border: 2px solid #E35931;
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    padding: 13.5px 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+    color:  #ffffff;
+    background-color: #E35931;
+}
+
+.button_orange a:hover {
+    background-color: #ffffff;
+    color: #E35931;
+    transition-duration: 0.5s;
+}
+
+
+.titre-asso {
+    margin-left: 0px 50px;
+    line-height: 0;
+}
+
+.crowdfundign_share {
+    display: flex;
+    flex-direction: column;
+}
+
+.crowdfunding_share_list {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.crowdfunding_share_list li{
+    margin: 0;
+}
+
+.social {
+    margin-top: 25px;
+    margin-left: 10px;
+    height: 55px;
+    width: 55px;
+    border-radius: 10px;
+    box-shadow: 6px 3px 3px #F3EFF4;
+    font-size: 20px;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    color: grey;
+}
+
+.social:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+#fb {
+    background-color: #3b5998;
+    color: white;
+}
+
+#ig {
+    color: white;
+    background-color: #517fa4;
+}
+
+#tw {
+    color: white;
+    background-color: #00aced;
+}
+
+#subnav {
+    background-color: #E5E5E5;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 94px;
+    z-index: 20;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: smoothScroll 0.5s forwards;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateY(-40px);
     }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.sousmenu ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.sousmenu ul li a {
+    color: #828282;
+    font-family: Oswald;
+    font-size: 22px;
+}
+
+.sousmenu ul li a:hover {
+    cursor: pointer;
+    color: #3E3E3E;
+}
+
+/* SOUS PAGE 1 - Projet (CONTAINER) */
+
+.SSP1 {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+/* BLOC FIXE = contreparties (à droite) */
+
+.contrepartie {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 80px;
+    width: 300px;
+    gap: 20px;
+}
+
+.contrepartie h3 {
+    color: #7E4393;
+    font-size: 25px;
+}
+
+.contrepartie div {
+    box-shadow: 6px 3px 3px #F3EFF4;
+    transition: opacity 0.5s ease;
+}
+
+.contrepartie img, .contrepartie p {
+    width: 300px;
+}
+
+.contrepartie p, .contrepartie h4 {
+    height: auto;
+    padding: auto 20px;
+}
+
+/* CONTENU DES SOUS PAGES = PROJET / OBJECTIFS */
+
+.projet, .objectifs, .contributeurs {
+    width: 65%;
+    align-items: left;
+    margin-left: 80px;
+    margin-bottom: 50px;
+}
+
+    .projet h2, .objectifs h2, .contributeurs h2 {
+        color: dimgrey;
+        font-size: 42px;
+    }
+
+/* CONTENU SOUS-PAGE CONTRIBUTEURS */
+
+.list-contrib {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 95%;
+}
+
+.contrib {
+    box-shadow: 6px 6px 6px #F3EFF4;
+    transition: opacity 0.5s ease;
+    width: 190px;
+}
+
+.contrib p {
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* Component Styles
+======================================== */
+
+/* BOUTONS */
+
+
+
+/* LIGNES DIV */
+
+
+
+.line-break-ssmenu {
+    height: 6px;
+    width: 90px;
+    background: dimgrey;
+    margin-bottom: 30px;
+}
+
+.line-break-contrib {
+    margin: auto auto;
+    height: 2px;
+    width: 35px;
+    background: #7E4393;
+}
+
+
+
+/* IMAGES */
+
+
+
+
+
+/* SOCIAL MEDIA */
+
+
+
+
+/* Collapsible */
+.collapsible {
+    background-color: white;
+    box-shadow: 3px 3px 3px #F4A68D;
+    font-family: sans-serif;
+    font-weight: 200;
+    color: dimgray;
+    font-size: 15px;
+    line-height: normal;
+    text-decoration: none;
+    text-align: left;
+    border: 2px solid #E94E1B;
+    outline: none;
+    margin-bottom: 10px;
+    padding: 18px;
+    width: 90%;
+    transition: opacity 0.5s ease;
+    cursor: pointer;
+}
+
+    .active, .collapsible:hover {
+        font-weight: 400;
+        background-color: white;
+        width: 90%;
+    }
+
+.content, content li {
+    padding: 0 18px;
+    width: 90%;
+    margin-bottom: 20px;
+    font-family: sans-serif;
+    display: none;
+    overflow: hidden;
+    background-color: #FDF4F1;
+}
+
 
