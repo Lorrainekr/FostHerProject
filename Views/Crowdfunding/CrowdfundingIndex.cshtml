@@ -60,8 +60,6 @@
                         <li><i class="social fab fa-twitter" id="tw"></i></li>
 
                     </ul>
-                    <br>
-                    <br>
                 </div>
             </section>
         </div>
@@ -69,24 +67,26 @@
 </div>
 <div class="souspages">
     <nav id="subnav" class="sousmenu">
-        <ul>
-            <li>
-                <a id="project">Projets</a>
-            </li>
-            <li>
-                <a  id="objectif">Objectifs</a>
-            </li>
-            <li> <a id="comment">Commentaires</a></li> <!--TBD intégration ou non-->
-            <li>
-                <a  id="contributions">Contributions</a>
-            </li>
-        </ul>
+        <div>
+            <ul>
+                <li><a id="project">Projets</a></li>
+                <li><a id="objectif">Objectifs</a></li>
+                <li><a id="comment">Commentaires</a></li>
+                <li><a id="contributions">Contributions</a></li>
+            </ul>
+        </div>
+        <div class="block_button_crowdfunding">
+            <p class="button_orange">@Html.ActionLink("Contribuer", "CrowdfundingIndex", "Crowdfunding")</p>
+        </div>
     </nav>
     <div id="partial_project">
         @Html.Partial("CrowdfundingSubpageProject")
     </div>
     <div id="partial_objectif" style="display:none;">
         @Html.Partial("CrowdfundingSubpageObjectif")
+    </div>
+    <div id="partial_comment" style="display:none;">
+        @Html.Partial("CrowdfundingSubpageComment")
     </div>
     <div id="partial_contributor" style="display:none;">
         @Html.Partial("CrowdfundingSubpageContributor")
