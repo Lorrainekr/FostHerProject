@@ -60,6 +60,11 @@ h4 {
     font-size: 18px;
 }
 
+h5 {
+    font-family: 'Open Sans regular', sans-serif;
+    font-size: 15px;
+}
+
 /* CSS header */
 .site_header {
     position: fixed;
@@ -182,7 +187,7 @@ button_white:hover {
 .button_white a:hover {
     background-color: #E35931;
     color: #ffffff;
-    transition-duration: 1s;
+    transition-duration: 0.5s;
 }
 
 /*Css page accueil*/
@@ -435,75 +440,277 @@ button_white:hover {
 /*PAGE CROWDFUNDING*/
 
 .crowdfunding_container {
-    padding-top: 320px;
+    padding-top: 140px;
 }
 
-
-.nom, .montant {
-    font-family: 'Oswald', sans-serif;
-}
-
-.nom {
-    color: #E94E1B;
-}
-
-/* Site Navigation */
-
-/*ECRAN PRINCIPAL Page CROWDFUNDING */
-
-.intro p, .intro h2 {
-    text-align: center;
-    margin: 35px auto;
-    max-width: 65%;
-}
-
-.key-info {
+.crowdfunding_title_block {
     display: flex;
-    gap: 10px;
-    padding: 30px 30px;
-    max-width: 90%;
+    padding: 30px 0;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
 }
 
-.info {
+.crowdfunding_title_block h2 {
+    margin-bottom: 10px;
+}
+
+.line-break-black {
+    height: 6px;
+    width: 90px;
+    border-radius: 4px;
+    margin: 20px 0 20px 0;
+    background: #3E3E3E;
+    text-align: center;
+}
+
+.crowdfunding_info_block {
+    display: flex;
+    padding: 30px 0;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    margin-bottom: 100px;
+}
+
+.crowdfunding_info_content {
     display: flex;
     flex-direction: column;
     width: 30%;
 }
 
-.info li {
+.cover-image {
+    margin-right: 30px;
+}
+
+.avatar {
+    
+    background-image: url(../img/artiste_1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-size: 120%;
+}
+
+.avatar_link {
+    width: 70px;
+    height: 70px;
+    text-shadow: 1px 1px 2px rgb(255 255 255 / 50%);
+}
+
+.crowdfunding_info_title {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.crowdfunding_info_content li {
     display: inline-block;
     font-family: 'Open Sans', sans-serif;
     font-size: 13px;
 }
+
+.sub-title-asso {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-start;
+}
+
+.sub-title-asso h3, .sub-title-asso h5 {
+    margin: 0;
+    padding: 5px 30px;
+}
+
+.crowdfunding_progressbar_content {
+
+}
+
+.crowdfunding_progressbar_content {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.crowdfunding_progressbar_content p{
+    padding: 10px 20px;
+}
+
+.crowdfunding_progressbar_bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.progress-amount {
+    border-radius: 7px;
+    width: 70%;
+    height: 7px;
+    margin: 10px 20px 10px 20px;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #ebb2a0;
+    border-radius: 100px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #E94E1B;
+    border-radius: 100px;
+}
+
+#amount {
+    margin-top: 2px;
+    margin-bottom: 15px;
+    font-family: 'open sans semibold', sans-serif;
+    font-size: 20px;
+}
+
+.block_button_crowdfunding {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    flex-direction: column;
+}
+
+button_orange {
+    border: none;
+}
+
+button_orange:hover {
+    cursor: pointer;
+}
+
+.button_orange a {
+    border: 2px solid #E35931;
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    padding: 13.5px 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+    color:  #ffffff;
+    background-color: #E35931;
+}
+
+.button_orange a:hover {
+    background-color: #ffffff;
+    color: #E35931;
+    transition-duration: 0.5s;
+}
+
 
 .titre-asso {
     margin-left: 0px 50px;
     line-height: 0;
 }
 
-#amount {
-    margin-right: 0px;
-    margin-top: 2px;
-    margin-bottom: 15px;
-    font-family: 'Oswald', sans-serif;
+.crowdfundign_share {
+    display: flex;
+    flex-direction: column;
 }
 
-/* SOUS-MENUS*/
-/*nav*/
-
-.sousmenu {
-    background-color: #cccccc;
-    height: 60px;
-    width: 100%;
+.crowdfunding_share_list {
     display: flex;
     justify-content: center;
-    gap: 25px;
-    padding: 15px auto;
+    margin: 0;
+    padding: 0;
 }
 
-.sousmenu {
+.crowdfunding_share_list li{
+    margin: 0;
+}
+
+.social {
+    margin-top: 25px;
+    margin-left: 10px;
+    height: 55px;
+    width: 55px;
+    border-radius: 10px;
+    box-shadow: 6px 3px 3px #F3EFF4;
+    font-size: 20px;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    color: grey;
+}
+
+.social:hover {
+    cursor: pointer;
+    opacity: 0.75;
+}
+
+#fb {
+    background-color: #3b5998;
+    color: white;
+}
+
+#ig {
+    color: white;
+    background-color: #517fa4;
+}
+
+#tw {
+    color: white;
+    background-color: #00aced;
+}
+
+#subnav {
+    background-color: #E5E5E5;
+    height: 60px;
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 94px;
+    z-index: 20;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    animation: smoothScroll 0.5s forwards;
+}
+
+@keyframes smoothScroll {
+    0% {
+        transform: translateY(-40px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.sousmenu ul {
     display: flex;
     flex-direction: row;
+    padding: 0;
+}
+
+.sousmenu ul li a {
+    color: #828282;
+    font-family: Oswald;
+    font-size: 22px;
+}
+
+.sousmenu ul li a:hover {
+    cursor: pointer;
+    color: #3E3E3E;
 }
 
 /* SOUS PAGE 1 - Projet (CONTAINER) */
@@ -585,50 +792,11 @@ button_white:hover {
 
 /* BOUTONS */
 
-button {
-    border: none;
-}
 
-    button:hover {
-        cursor: pointer;
-        opacity: 0.75;
-    }
-
-.button {
-    border-radius: 100px;
-    box-shadow: 3px 3px 3px #a85236;
-    font-family: sans-serif;
-    border: none;
-    font-size: 15px;
-    line-height: normal;
-    padding: 10px 50px;
-    text-align: center;
-    text-decoration: none;
-    transition: opacity 0.5s ease;
-}
-
-.button-primary {
-    background-color: #F3EFF4;
-    color: #E94E1B;
-}
-
-.button-secondary {
-    background-color: #E94E1B;
-    color: #F3EFF4;
-    padding: 15px 80px;
-    margin: 0 auto;
-    text-align: center;
-    font-weight: bold;
-}
 
 /* LIGNES DIV */
 
-.line-break-black {
-    margin: 1cm auto;
-    height: 6px;
-    width: 90px;
-    background: black;
-}
+
 
 .line-break-ssmenu {
     height: 6px;
@@ -644,75 +812,17 @@ button {
     background: #7E4393;
 }
 
-/* BARRE DE PROGRESSION DU CROWDFUNDING */
 
-progress {
-    border-radius: 7px;
-    width: auto;
-    height: 7px;
-    margin: 10px 0 0 0;
-}
-
-    progress::-webkit-progress-bar {
-        background-color: #ebb2a0;
-    }
-
-    progress::-webkit-progress-value {
-        background-color: #E94E1B;
-        box-shadow: 1px 1px 5px 3px #b3b3b3;
-    }
 
 /* IMAGES */
 
-.cover-image {
-    object-fit: cover;
-    width: 65%;
-    margin-right: 30px;
-    height: 400px;
-}
 
-.avatar {
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-    margin-top: 35px;
-}
+
+
 
 /* SOCIAL MEDIA */
 
-.social {
-    margin-top: 25px;
-    margin-left: 10px;
-    height: 55px;
-    width: 55px;
-    border-radius: 10px;
-    box-shadow: 6px 3px 3px #F3EFF4;
-    font-size: 20px;
-    padding: 20px;
-    transition: opacity 0.5s ease;
-    color: grey;
-}
 
-    .social:hover {
-        cursor: pointer;
-        opacity: 0.75;
-    }
-
-#fb {
-    background-color: #3b5998;
-    color: white;
-}
-
-#ig {
-    color: white;
-    background-color: #517fa4;
-}
-
-#tw {
-    color: white;
-    background-color: #00aced;
-}
 
 
 /* Collapsible */

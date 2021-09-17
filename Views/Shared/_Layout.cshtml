@@ -23,7 +23,13 @@
                 <!-- Site Navigation -->
                 <nav role="navigation" class="site-navigation">
                     <div class="logo_block">
-                        <img class="logo_header" src="~/img/logo_site_blanc.svg" alt="logo"/>
+                        <a href='@Url.Action("Index", "Home")'>
+                             <img 
+                                  class="logo_header"
+                                  alt="Logo FostHer"
+                                  src='@Url.Content("~/img/logo_site_blanc.svg")'/>
+                        </a>
+
                     </div>
                     <ul class="header_list">
                         <li class="header_item"><a href="">Associations</a></li>
@@ -34,9 +40,9 @@
                 </nav>
                 <div class="right_item">
                     <div class="search_block">
-                        <input class="search_bar" 
-                               type="search" 
-                               id="site-search" 
+                        <input class="search_bar"
+                               type="search"
+                               id="site-search"
                                name="saisie"
                                placeholder="Rechercher un artiste, une association, un évènement"
                                aria-label="Rechercher un artiste, une association, un évènement">
@@ -52,8 +58,10 @@
                     else
                     {
                         <div class="block_button">
-                            <p class="user_button"> Bienvenue 
-                                        <br />Low@*@ViewData["Message"]*@ </p>
+                            <p class="user_button">
+                                Bienvenue
+                                <br />Low@*@ViewData["Message"]*@
+                            </p>
                             <p class="button_white">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</p>
                         </div>
                     }
@@ -89,8 +97,9 @@
             </div>
         </div>
     </footer>
-    <script src="~/Scripts/jquery-3.3.1.js"></script>
-    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
-    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Script/jquery-3.3.1.js"></script>
+    <script src="~/Script/jquery.validate-vsdoc.js"></script>
+    <script src="~/Script/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Script/MyScript.js"></script>
 </body>
 </html>
