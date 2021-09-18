@@ -10,6 +10,10 @@ namespace ProjetFostHer.Controllers
 {
     public class AssociationController : Controller
     {
+        public IActionResult IndexAssociation()
+        {
+            return View();
+        }
         public IActionResult EditAssociation(int id)
         {
             if (id != 0)

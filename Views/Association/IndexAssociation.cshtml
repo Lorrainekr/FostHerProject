@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewData["Title"] = "IndexAssociation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="container">
+    <h1>Associations</h1>
+    <ul>
+        <li>@Html.ActionLink("Créer une association", "CreateAssociation", "Association")</li>
+        <li>@Html.ActionLink("Supprimer une association", "DeleteAssociation", "Association")</li>
+        <li>@Html.ActionLink("Modifier une association", "EditAssociation", "Association")</li>
+    </ul>
+</section>
+
+
