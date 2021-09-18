@@ -13,43 +13,72 @@
 <body>
     @using (Html.BeginForm())
     {
-        <fieldset>
-            <legend>Supprimer les données d'une artiste' : </legend>
-            @Html.LabelFor(m => Model.Email)
-            @Html.TextBoxFor(m => Model.Email, new { @readonly = true })
-            @Html.ValidationMessageFor(m => Model.Email)
-            <br />
-            @Html.LabelFor(m => Model.Password,new { @readonly = true })
-            @Html.TextBoxFor(m => Model.Password)
-            @Html.ValidationMessageFor(m => Model.Password)
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire de suppréssion de compte artiste</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Mes coordonnées</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.LastName)
+                            @Html.LabelFor(m => Model.FirstName)
+                            @Html.LabelFor(m => Model.StageName)
+                            @Html.LabelFor(m => Model.Category.CategoryName)
+                            @Html.LabelFor(m => Model.Siret)
+                            @Html.LabelFor(m => Model.Address)
 
-            @Html.LabelFor(m => Model.Address)
-            @Html.TextBoxFor(m => Model.Address, new { @readonly = true })
-            @Html.ValidationMessageFor(m => Model.Address)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.LastName)
+                            @Html.TextBoxFor(m => Model.FirstName)
+                            @Html.TextBoxFor(m => Model.StageName)
+                            @Html.TextBoxFor(m => Model.Category.CategoryName)
+                            @Html.TextBoxFor(m => Model.Siret)
+                            @Html.TextBoxFor(m => Model.Address)
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.LastName)
+                            @Html.ValidationMessageFor(m => Model.FirstName)
+                            @Html.ValidationMessageFor(m => Model.StageName)
+                            @Html.ValidationMessageFor(m => Model.Category.CategoryName)
+                            @Html.ValidationMessageFor(m => Model.Siret)
+                            @Html.ValidationMessageFor(m => Model.Address)
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="label_content_login">
+                <h3>Mes informations de connexion</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.Email)
+                            @Html.LabelFor(m => Model.Password)
+                            @Html.LabelFor(m => Model.Password)
 
-            @Html.LabelFor(m => Model.FirstName, new { @readonly = true })
-            @Html.TextBoxFor(m => Model.FirstName)
-            @Html.ValidationMessageFor(m => Model.FirstName)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.Email)
+                            @Html.TextBoxFor(m => Model.Password)
+                            @Html.TextBoxFor(m => Model.Password)
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.Email)
+                            @Html.ValidationMessageFor(m => Model.Password)
+                            @Html.ValidationMessageFor(m => Model.Password)
+                        </div>
+                    </div>
 
-            @Html.LabelFor(m => Model.LastName, new { @readonly = true })
-            @Html.TextBoxFor(m => Model.LastName)
-            @Html.ValidationMessageFor(m => Model.LastName)
-
-            @Html.LabelFor(m => Model.StageName, new { @readonly = true })
-            @Html.TextBoxFor(m => Model.StageName)
-            @Html.ValidationMessageFor(m => Model.StageName)
-
-            @Html.LabelFor(m => Model.Category.CategoryName, new { @readonly = true })
-            @Html.TextBoxFor(m => Model.Category.CategoryName)
-            @Html.ValidationMessageFor(m => Model.Category.CategoryName)
-
-            @Html.LabelFor(m => Model.Siret, new { @readonly = true })
-            @Html.TextBoxFor(m => Model.Siret)
-            @Html.ValidationMessageFor(m => Model.Siret)
-
-            <br />
-            <input type="submit" value="Supprimer" />
-        </fieldset>
+                    <div class="button_orange">
+                        <input type="submit" value="Supprimer" />
+                    </div>
+                </fieldset>
+            </div>
+        </section>
     }
     <script src="~/Scripts/jquery-3.3.1.js"></script>
     <script src="~/Scripts/jquery.validate-vsdoc.js"></script>

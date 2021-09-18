@@ -6,14 +6,12 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>IndexArtist</title>
-</head>
 <body>
     <h1>Artistes</h1>
     <ul>
-        <li>@Html.ActionLink("CreateArtist", "CreateArtist")</li>
+        <li>@Html.ActionLink("Créer une artiste", "CreateArtist", "Artist")</li>
+        <li>@Html.ActionLink("Supprimer une artiste", "DeleteArtist", "Artist")</li>
+        <li>@Html.ActionLink("Modifier une artiste", "EditArtist", "Artist")</li>
     </ul>
 </body>
 </html>

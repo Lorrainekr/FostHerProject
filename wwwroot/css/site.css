@@ -100,8 +100,6 @@ h5 {
     margin: 7px;
 }
 
-
-
 .site-navigation {
     padding-left: 20px;
     display: flex;
@@ -718,24 +716,6 @@ button_orange:hover {
     margin-top: 0;
 }
 
-/*.stickycontrepartie {
-    position: fixed;
-    top: 180px;
-    width: 15.9%;
-    right: 250px;
-    animation: smoothScroll 0.5s forwards;
-}
-
-@keyframes smoothScroll {
-    0% {
-        transform: translateY(-40px);
-    }
-
-    100% {
-        transform: translateY(0px);
-    }
-}*/
-
 .contrepartie_block {
     display: flex;
     flex-direction: column;
@@ -865,6 +845,93 @@ margin-bottom: 100px;
         font-style: italic;
     }
 
+/*CSS FORMULAIRES*/
+
+.container_label {
+    padding-top: 20px;
+    margin-bottom: 150px;
+    background-color: #EFEBF1;
+    margin-top: 150px;
+}
+
+.label_content {
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-top: 2px solid #c3c3c3;
+    padding-top: 20px;
+}
+
+.label_block {
+    display: flex;
+    justify-content: flex-start;
+}
 
 
+.label_block_text {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    margin-right: 50px;
+}
 
+.label_block_text label {
+    margin: 5px;
+    padding: 13.5px 40px;
+    font-family: 'Open Sans regular';
+    font-size: 14px;
+}
+
+.label_block_form {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+.label_block_form input {
+    margin: 5px;
+    padding: 13.5px 40px;
+    border-radius: 100px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    width: 130%;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+}
+
+.label_block_form input:focus-visible {
+    outline: 0px solid #ffffff;
+}
+
+.label_block_warning {
+    display: none;
+
+}
+
+.label_content .button_orange {
+    display: flex;
+    justify-content: flex-start;
+    margin: 50px 0;
+}
+
+.button_orange input {
+    border: 2px solid #E35931;
+    border-radius: 100px;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    padding: 13.5px 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #ffffff;
+    background-color: #E35931;
+}
+
+    .button_orange input:hover {
+        background-color: #ffffff;
+        color: #E35931;
+        transition-duration: 0.5s;
+        cursor: pointer;
+    }
