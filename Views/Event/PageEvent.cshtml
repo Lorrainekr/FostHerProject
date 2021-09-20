@@ -10,7 +10,7 @@
         <div class="event_title_block">
             <h2>@Model.Designation</h2>
             <p>
-                Du 25 au 31 septembre au Bar l'Impondérable - GRATUIT
+                Du @Model.StartDate au @Model.EndDate au @Model.Lieu
             </p>
             <div class="line-break-black">
             </div>
@@ -20,28 +20,28 @@
             <div class="event_info_visual">
                 <img src="~/img/visuel_crowdfunding.png"
                      class="cover-image"
-                     alt="photo accueil event">
+                     alt="photo accueil event @Model.Designation">
             </div>
 
         <!--Infos clés-->
             <section class="event_info_content">
                 <div class="event_info_title">
                     <div class="avatar_block">
-                        <a class="avatar_link" alt="allez vers l'association" href='@Url.Action("Index", "Home")'>
+                        <a class="avatar_link" alt="aller vers l'association" href='@Url.Action("Index", "Home")'>
                             <div class="avatar"></div>
                         </a>
                     </div>
                     <div class="sub-title-asso">
-                        <h3>Roxane Butterfly</h3>
-                        <h5>La Fabrique de la Danse</h5>
+                        <h3>@Model.ArtistEvent.StageName</h3>
+                        <h5>@Model.AssociationEvent.AssoName</h5>
                     </div>
                 </div>
                 <div class="event_date">
                     <div class="event_date_content">
                         <p>La rythmicienne Roxane Butterfly nous propose une soirée d'improvisation tap dance en complicité avec le guitariste Lior Krief.</p>
-                        <p><strong>Date(s): </strong>Du 25 au 31 septembre</p>
-                        <p><strong>Lieu :</strong> Bar l'Impondérable</p>
-                        <p><strong>Tarif :</strong> Gratuit</p>
+                        <p><strong>Date(s): </strong>Du @Model.StartDate au @Model.EndDate</p>
+                        <p><strong>Lieu :</strong> @Model.Lieu</p>
+                        <p><strong>Tarif :</strong> @Model.Price euros</p>
                     </div>
                     <div class="block_button_event">
                         <p class="button_orange">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</p>
@@ -68,7 +68,6 @@
         <div>
             <ul>
                 <li><a id="infos">Informations</a></li>
-                <li><a id="reservation">Réserver</a></li>
             </ul>
         </div>
         <div class="block_button_event">
@@ -77,9 +76,6 @@
     </nav>
     <div id="partial_infos">
         @Html.Partial("EventSubpageInfos")
-    </div>
-    <div id="partial_reserver" style="display:none;">
-        @Html.Partial("EventSubpageReserver")
     </div>
 </div>
 
