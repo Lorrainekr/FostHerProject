@@ -294,9 +294,109 @@ button_white:hover {
     border-radius: 10px;
 }
 
+/*Css accueil block association*/
+.container_home_association {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.container-items-associations-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+
+.associations-femme-block1-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.img_alaune {
+    height: 411px;
+}
+
+.block_button_alaune {
+    position: absolute;
+    bottom: -140%;
+    margin-right: 30px;
+}
+
+.img_selection {
+    height: 200px;
+}
+
+.associations-femme-block1-left h4 {
+    color: #E94E1B;
+}
+
+.associations-femme-block1-left-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.association-block1-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.association-block2-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+}
+
+.association-block3-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+}
+
+.association-home-block-right h3 {
+    margin: 0px;
+}
+
+.nom-associations-home {
+    margin-left: 20px;
+}
+
+.nom-associations-home h4 {
+    color: #E94E1B;
+}
+
+.slide_block_home_association {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+}
+
+.icon-decouvrir-associations {
+    font-size: 30px;
+    color: #E94E1B;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 15px;
+    border-radius: 10pt;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+    padding: 20px 30px;
+}
+
 /*Css accueil block artiste*/
 
-.artist_accueil_container {
+    .artist_accueil_container {
     margin-top: 100px;
     margin-bottom: 100px;
 }
