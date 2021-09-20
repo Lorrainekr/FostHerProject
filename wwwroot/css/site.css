@@ -1021,7 +1021,7 @@ button_orange:hover {
     user-select: none;
 }
 
-<<<<<<< HEAD
+
     .container_search input {
         position: absolute;
         opacity: 0;
@@ -1029,15 +1029,8 @@ button_orange:hover {
         height: 0;
         width: 0;
     }
-=======
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
->>>>>>> bae1fa19ae0d18b70222a8c079e93678ac37a518
+
+
 
 .checkmark {
     position: absolute;
