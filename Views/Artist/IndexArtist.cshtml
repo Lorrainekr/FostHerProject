@@ -1,7 +1,7 @@
-﻿@model ProjetFostHer.Models.Artist
-@{
+﻿@{
     Layout = "_Layout";
 }
+@using ProjetFostHer.Models
 
 <!DOCTYPE html>
 
@@ -13,5 +13,127 @@
         <li>@Html.ActionLink("Supprimer une artiste", "DeleteArtist", "Artist")</li>
         <li>@Html.ActionLink("Modifier une artiste", "EditArtist", "Artist")</li>
     </ul>
-</body>
+
+    <div class="artiste-list-items-container">
+
+        <div class="artiste-list-menu-recherche">
+            <div class="artiste-list-menu-recherche-icon">
+                <input type="text" placeholder="Rechercher une artiste">
+                <a class="fas fa-search"></a>
+            </div>
+        </div>
+
+        <div class="artiste-list-filters-gallery">
+
+            <div class="artiste-list-filtre-recherche">
+                <div class="filtre-type-association">
+                    <h4 class="filter">Par Association</h4>
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Du côté des femmes
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Femmes Debout
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Osez le féminisme
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Voix de femmes
+                    </label><br />
+                </div>
+                <div class="filtre-recherche-categorie">
+                    <h4 class="filter">Genre d'art</h4>
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Pianiste
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Illustratrice
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Sculptrice
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Chanteuse
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Peintre
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Écrivain
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Graphiste
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Flûtiste
+                    </label><br />
+                    <label class="container_search">
+                        <input type="radio" class="checkmark-radio">Maquilleuse
+                    </label><br />
+
+                </div>
+            </div>
+            @foreach (Artist a in ViewBag.Artists)
+            {
+                <div class="artiste-list-gallery">
+                    <article class="artiste-block-vertical">
+                        <div class="artiste-list-image">
+                            <img class="catherine"
+                                 src="~/img/artiste_1.png"
+                                 alt="" />
+                        </div>
+
+                        <div class="artiste-list-description">
+                            <h2>@e.Artist.StageName</h2>
+                            <button name="button_white">Femmes Debout</button>
+                            <h4>@e.Category.CategoryName</h4>
+                            <p>
+                                Les bandes dessinées que Catherine Meurisse scénarise et dessine seule sont essentiellement axées
+                                autour de la littérature et des arts, le tout teinté d'humour...
+                            </p>
+                        </div>
+                    </article>
+
+                    @foreach (Event e in ViewBag.listEvents)
+                    {
+                        <div class="event_card">
+                            <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
+                            <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
+                            <div class="event_block_content">
+                                <h3>@e.Designation</h3>
+                                <div class="event_type_content">
+                                    <div class="line-break-card"></div>
+                                    <h4>@e.Category.CategoryName @e.Type</h4>
+                                </div>
+
+                                <div class="event_KPI">
+                                    <p><strong class="bold">Infos</strong></p>
+                                    <p>Du @e.StartDate <br />au @e.EndDate</p>
+                                    <p>@e.Lieu</p>
+                                    <p>Prix : @e.Price €</p>
+                                </div>
+                                <div class="event_card_link_content">
+                                    @Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+
+            </div>
+            <div class="pagination">
+                <ul class="pagination">
+                    <li><a class="fas fa-chevron-left"></a></li>
+                    <li><a href="#" class="p-button">1</a></li>
+                    <li><a href="#" class="p-button">2</a></li>
+                    <li><a href="#" class="p-button">3</a></li>
+                    <li><a href="#" class="p-button">4</a></li>
+                    <li><a class="fas fa-chevron-right"></a></li>
+                </ul>
+            </div>
+            <div class="artistes-link-decouvrir">
+                <a class="button">Lancer votre page!</a>
+            </div>
+        </div>
+    </body>
 </html>

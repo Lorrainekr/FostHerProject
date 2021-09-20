@@ -1325,3 +1325,141 @@ ul.pagination li a {
     ul.pagination li a.active {
         border-radius: 5px;
     }
+
+/* PAGE ARTISTE*/
+
+.artiste-list-items-container {
+    background-color: white;
+    width: initial;
+    height: 20cm;
+    padding: 20px;
+}
+
+.artiste-list-filters-gallery {
+    display: flex;
+    flex-direction: row;
+}
+
+.artiste-list-menu-recherche {
+    display: flex;
+    justify-content: left;
+    margin-bottom: 40px;
+}
+
+    .artiste-list-menu-recherche input[type=text] {
+        justify-content: center;
+        border: none;
+    }
+
+.artiste-list-menu-recherche-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    width: 250px;
+    height: 50px;
+    border-radius: 50px;
+    box-shadow: 7px 5px 5px grey;
+    margin-left: 5mm;
+}
+
+.artiste-list-filtre-recherche {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+    margin-left: 1cm;
+    width: 700px;
+}
+
+    .artiste-list-filtre-recherche label {
+        color: teal;
+    }
+
+.checkmark {
+    margin-right: 20px;
+}
+
+.checkmark-radio {
+    margin-right: 20px;
+}
+
+.artiste-list-description button {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+    color: #E94E1B;
+    background-color: white;
+    width: 170px;
+    height: 35px;
+    border-radius: 50px;
+    border-color: white;
+    box-shadow: 7px 5px 5px grey;
+    text-align: center;
+    position: absolute;
+    margin-top: -8%;
+    margin-left: 10%;
+}
+
+.artiste-list-description h4 {
+    color: #E94E1B
+}
+
+.artiste-list-gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.artiste-block-vertical {
+    width: min-content;
+}
+
+.artiste-list-image img {
+    height: 300px;
+}
+
+.artistes-next-pages {
+    display: flex;
+    align-content: space-between;
+    justify-content: center;
+}
+
+    .artistes-next-pages a {
+        display: flex;
+        align-content: stretch;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 18px;
+        color: #E94E1B;
+        background-color: white;
+        width: 40px;
+        height: 40px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        margin-left: 100px;
+        box-shadow: 3px 3px 3px grey;
+        border-radius: 5pt;
+    }
+
+.artistes-link-decouvrir {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12pt;
+    color: white;
+    background-color: #E94E1B;
+    width: 400px;
+    height: 45px;
+    padding-top: 9px;
+    border-radius: 50px;
+    box-shadow: 7px 5px 5px grey;
+    display: table;
+    margin: auto;
+    display: flex;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+}
+ 
