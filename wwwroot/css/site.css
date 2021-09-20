@@ -451,6 +451,45 @@ button_white:hover {
     color: #484848;
 } 
 
+/*Css evenement page d'accueil */
+
+.evenements-container-items-home {
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.evenement-image-home {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.button_event_block {
+    position: absolute;
+    margin-right: 25px;
+    margin-top: 220px;
+}
+
+.evenements-gallery-home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.evenement-block-vertical {
+    margin-left: 20px;
+}
+
+.evenement_img {
+    height: 246px;
+}
+ 
+.button_block_link_event{
+    margin-top: 50px;
+}
+
 /*Css à propos accueil*/
 
 .about_accueil_container {
@@ -527,6 +566,7 @@ button_white:hover {
     display: inline-flex;
     list-style-type: none;
     text-shadow: 1px 1px 2px rgba(255,255,255,0.50);
+    margin: 0;
 }
 .footer-social a i {
     padding:15px;
