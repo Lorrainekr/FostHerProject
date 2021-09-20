@@ -73,6 +73,16 @@ namespace ProjetFostHer.Controllers
             return View();
         }
 
+//a mettre à jour avec ID événement + BDD //
+        public IActionResult PageEvent()
+        {
+            using (IDal dal = new Dal())
+            {
+                List<Event> eve = dal.ListAllEvents();
+                ViewBag.listEvents = eve;
+            }
+            return View();
+        }
 
     }
 }
