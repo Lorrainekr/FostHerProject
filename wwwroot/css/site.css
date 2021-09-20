@@ -985,7 +985,7 @@ button_orange:hover {
     user-select: none;
 }
 
-    .container input {
+    .container_search input {
         position: absolute;
         opacity: 0;
         cursor: pointer;

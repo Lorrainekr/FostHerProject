@@ -226,8 +226,8 @@ namespace ProjetFostHer.Models
                    Stock = 500,
                    Price = 30,
                    Category = cat1,
-                   lieu = "Bar l'Impromptu, Paris",
-                   img = "~/img/visuel_crowdfunding.png",
+                   Lieu = "Bar l'Impromptu, Paris",
+                   Img = "~/img/visuel_crowdfunding.png",
                    product = new Product(),
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
