@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Http;
-
-using ProjetFostHer.DAL;
 using ProjetFostHer.Models;
 using System;
 using System.Collections.Generic;
@@ -20,8 +18,10 @@ namespace ProjetFostHer.ViewModels
         public Crowdfunding Crowdfundings { get; set; }
         public User User { get; set; }
         public bool Authentification { get; set; }
+
         public List<Cart> carts { get; set; }
         public Item items { get; set; }
+
 
     }
 }

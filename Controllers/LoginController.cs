@@ -47,8 +47,6 @@ namespace ProjetFostHer.Controllers
                     var userPrincipal = new ClaimsPrincipal(new[] { ClaimIdentity });
                     HttpContext.SignInAsync(userPrincipal);
 
-                      
-
                     if (!string.IsNullOrWhiteSpace(returnUrl) && Url.IsLocalUrl(returnUrl))
                         return Redirect(returnUrl);
                     return Redirect("IndexLogin");
