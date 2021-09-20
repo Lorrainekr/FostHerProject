@@ -29,8 +29,8 @@ namespace ProjetFostHer.Models
         public int Quantity { get; set; }
         public User user { get; set; }
         public Product product { get; set; }
-
-
+        public string Img { get; set; }
+        public string Lieu { get; set; }
 
 
     }
