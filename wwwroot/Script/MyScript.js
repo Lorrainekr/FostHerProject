@@ -40,7 +40,7 @@ function myFunction() {
     }
 }
 
-/* sticky menu scroll contrepartie crowdfunding
+// sticky menu scroll contrepartie crowdfunding
 window.onscroll = function () { myFunction() };
 
 var staticcontrepartie = document.getElementById("staticcontrepartie");

@@ -258,6 +258,7 @@ namespace ProjetFostHer.DAL
             
             
             cr.SumCalculation();
+
             _bddContext.Crowdfundings.Update(cr);
 
 

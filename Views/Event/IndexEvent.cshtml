@@ -178,25 +178,24 @@
 
             @foreach (Event e in ViewBag.listEvents)
             {
-                <div class="event_card">
-                    <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
-                    <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
-                    <div class="event_block_content">
-                        <h3>@e.Designation</h3>
-                        <div class="event_type_content">
-                            <div class="line-break-card"></div>
-                            <h4>@e.Category.CategoryName @e.Type</h4>
-                        </div>
-
-                        <div class="event_KPI">
-                            <p><strong class="bold">Infos</strong></p>
-                            <p>Du @e.StartDate <br />au @e.EndDate</p>
-                            <p>@e.Lieu</p>
-                            <p>Prix : @e.Price €</p>
-                        </div>
-                        <div class="event_card_link_content">
-                            @Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })
-                        </div>
+            <div class="event_card">
+                <img src= "~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
+                <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
+                <div class="event_block_content">
+                    <h3>@e.Designation</h3>
+                    <div class="event_type_content">
+                        <div class="line-break-card"></div>
+                        <h4>@e.Category.CategoryName @e.Type</h4>
+                    </div>
+                    
+                    <div class="event_KPI">
+                        <p><strong class="bold">Infos</strong></p>
+                        <p>Du @e.StartDate <br />au @e.EndDate</p>
+                        <p>@e.Lieu</p>
+                        <p>Prix : @e.Price €</p>
+                    </div>
+                    <div class="event_card_link_content">
+                        @Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })
                     </div>
                 </div>
             }
