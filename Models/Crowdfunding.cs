@@ -14,7 +14,7 @@ namespace ProjetFostHer.Models
         public string NameCrowdfunding { get; set; }
         //[Required(ErrorMessage = "Veuillez indiquez quand débute votre campagne")]
         public DateTime StartDate { get; set; }
-        //[Required(ErrorMessage = "Veuillez indiquez quand votre campagne se cloture")]
+        //[Required(ErrorMessage = "Veuillez indiquez quand termine votre campagne")]
         public DateTime EndDate { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
         public Association AssociationCrowdfunding { get; set; }

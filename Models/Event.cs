@@ -15,9 +15,9 @@ namespace ProjetFostHer.Models
         public string Designation { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         public string Type { get; set; }
-        [Required(ErrorMessage = "Veuillez indiquez quand débute votre evenement")]
+        [Required(ErrorMessage = "Veuillez indiquez quand débute votre événement")]
         public DateTime StartDate { get; set; }
-        [Required(ErrorMessage = "Veuillez indiquez quand votre evenement se cloture")]
+        [Required(ErrorMessage = "Veuillez indiquez quand termine votre événement")]
         public DateTime EndDate { get; set; }
         public int Stock { get; set; }
         public double Price { get; set; }
