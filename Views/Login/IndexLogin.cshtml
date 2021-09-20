@@ -12,19 +12,31 @@ else
 {
     <p>Veuillez vous authentifier pour continuer</p>
     using (Html.BeginForm())
-    { 
-        <div>
-            @Html.LabelFor(m => m.User.Email)
-            @Html.TextBoxFor(m => m.User.Email)
-            @Html.ValidationMessageFor(m => m.User.Email)
-        </div>
-        <div>
-            @Html.LabelFor(m => m.User.Password)
-            @Html.PasswordFor(m => m.User.Password)
-            @Html.ValidationMessageFor(m => m.User.Password)
-        </div>
-        <input type="submit" value="Se connecter"/>
-        <br />
-        @Html.ActionLink("Créer un compte", "CreerCompte")
+    {
+        <section class="container container_label">
+            <div class="label_content_login">
+                <h3>Mes informations de connexion</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => m.User.Email)
+                            @Html.LabelFor(m => m.User.Password)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => m.User.Email)
+                            @Html.PasswordFor(m => m.User.Password)
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => m.User.Email)
+                            @Html.ValidationMessageFor(m => m.User.Password)
+                        </div>
+                    </div>
+                    <div class="button_orange">
+                        <br />
+                        @Html.ActionLink("Créer un compte", "CreerCompte")
+                    </div>
+                </fieldset>
+            </div>
+        </section>
     }
 }
