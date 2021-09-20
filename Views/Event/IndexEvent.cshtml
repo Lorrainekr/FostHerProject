@@ -1,6 +1,5 @@
-﻿
-@{
-//Layout = "_Layout";
+﻿@{
+    Layout = "_Layout";
 }
 @using ProjetFostHer.Models
 
@@ -13,13 +12,194 @@
 </head>
 <body>
     <section class="container">
-        <h1>Associations</h1>
+        <h1>Evénements</h1>
         <ul>
             <li>@Html.ActionLink("Créer un crowdfunding", "CreateCrowdfunding", "Crowdfunding")</li>
             <li>@Html.ActionLink("Supprimer un crowdfunding", "DeleteCrowdfunding", "Crowdfunding")</li>
             <li>@Html.ActionLink("Modifier un crowdfunding", "EditCrowdfunding", "Crowdfunding")</li>
+            <li>@Html.ActionLink("Page event", "PageEvent", "Event")</li>
         </ul>
     </section>
+
+    <!-- HOME LES EVENT (déjà dev en page d'accueil du site)-->
+    <!-- ecran principal : barre de recherche latérale gauches et résultats de recherche -->
+
+    <container class="container_event_list">
+
+        <!-- partie gauche : barre de recherche (1 barre de recherche + 3 filtres )-->
+        <container class="list_searchbar">
+            <input type="text" class="search_bar" id="search" placeholder="Rechercher...">
+            <div class="filter">
+                <h4 class="filter">Evénements</h4>
+                <label class="container_search">
+                    <input type="radio" class="checkmark-radio">Nouveaux
+                </label></br>
+                <label class="container_search">
+                    <input type="radio" class="checkmark-radio">Populaires
+                </label></br>
+                <label class="container_search">
+                    <input type="radio" class="checkmark-radio">Sélection de la rédaction
+                </label></br>
+            </div>
+
+            <div class="filter-date">
+                <!-- documentation date : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
+                <h4 class="filter">Par date</h4>
+                <label for="start">Début :</label>
+                <input type="date" id="start" name="event-start" value="2021-09-23" min="2021-09-17" max="2022-01-01"></br></br>
+                <label for="start">Fin :</label>
+                <input type="date" id="end" name="event-end" value="2021-09-24" min="2021-09-17" max="2022-01-01">
+            </div>
+
+            <div class="filter-type">
+                <h4 class="filter">Par type</h4>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Exposition
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Spectacle
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Rencontre
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Hors les murs
+                </label></br>
+            </div>
+
+            <div class="filter">
+                <h4 class="filter">Par thématique</h4>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Peinture
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Cinéma
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Sculpture
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Street Art
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Musique
+                </label></br>
+                <label class="container_search">
+                    <input type="checkbox" class="checkmark">Danse
+                </label></br>
+            </div>
+
+            <div class="filter-prix">
+                <h4 class="filter">Par budget</h4>
+                <label class="container_search">
+                    <input type="radio">Gratuit<span class="checkmark-radio"></span>
+                </label></br>
+            </div>
+        </container>
+
+        <!-- Liste des résultats - cartes event -->
+
+        <container class="event_list">
+            <div class="event_card">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
+                <h5 class="event_artist">Nom de l'artiste</h5>
+                <h3>Titre de l'événement</h3>
+                <div class="line-break-card"></div>
+                <h4>Catégorie, Type</h4>
+                <div class="event_KPI">
+                    <p><strong>Infos</strong></p>
+                    <p>Du 25 au 31 septembre 2021</p>
+                    <p>Bar l'Impromptu, Paris</p>
+                    <p>Prix : Gratuit</p>
+                </div>
+            </div>
+
+            <div class="event_card">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
+                <h5 class="event_artist">Nom de l'artiste</h5>
+                <h3>Titre de l'événement</h3>
+                <div class="line-break-card"></div>
+                <h4>Catégorie, Type</h4>
+                <div class="event_KPI">
+                    <p><strong>Infos</strong></p>
+                    <p>Du 25 au 31 septembre 2021</p>
+                    <p>Bar l'Impromptu, Paris</p>
+                    <p>Prix : Gratuit</p>
+                </div>
+            </div>
+
+            <div class="event_card">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
+                <h5 class="event_artist">Nom de l'artiste</h5>
+                <h3>Titre de l'événement</h3>
+                <div class="line-break-card"></div>
+                <h4>Catégorie, Type</h4>
+                <div class="event_KPI">
+                    <p><strong>Infos</strong></p>
+                    <p>Du 25 au 31 septembre 2021</p>
+                    <p>Bar l'Impromptu, Paris</p>
+                    <p>Prix : Gratuit</p>
+                </div>
+            </div>
+
+            <div class="event_card">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
+                <h5 class="event_artist">Nom de l'artiste</h5>
+                <h3>Titre de l'événement</h3>
+                <div class="line-break-card"></div>
+                <h4>Catégorie, Type</h4>
+                <div class="event_KPI">
+                    <p><strong>Infos</strong></p>
+                    <p>Du 25 au 31 septembre 2021</p>
+                    <p>Bar l'Impromptu, Paris</p>
+                    <p>Prix : Gratuit</p>
+                </div>
+            </div>
+
+            <div class="event_card">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
+                <h5 class="event_artist">Nom de l'artiste</h5>
+                <h3>Titre de l'événement</h3>
+                <div class="line-break-card"></div>
+                <h4>Catégorie, Type</h4>
+                <div class="event_KPI">
+                    <p><strong>Infos</strong></p>
+                    <p>Du 25 au 31 septembre 2021</p>
+                    <p>Bar l'Impromptu, Paris</p>
+                    <p>Prix : Gratuit</p>
+                </div>
+            </div>
+
+            <div class="event_card">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
+                <h5 class="event_artist">Nom de l'artiste</h5>
+                <h3>Titre de l'événement</h3>
+                <div class="line-break-card"></div>
+                <h4>Catégorie, Type</h4>
+                <div class="event_KPI">
+                    <p><strong>Infos</strong></p>
+                    <p>Du 25 au 31 septembre 2021</p>
+                    <p>Bar l'Impromptu, Paris</p>
+                    <p>Prix : Gratuit</p>
+                </div>
+            </div>
+
+        </container>
+
+    </container>
+
+    <!-- pagination bas de page -->
+
+    <div class="pagination">
+        <ul class="pagination">
+            <li><a href="#" class="p-button">&laquo;</a></li>
+            <li><a href="#" class="p-button">1</a></li>
+            <li><a href="#" class="p-button">2</a></li>
+            <li><a href="#" class="p-button">3</a></li>
+            <li><a href="#" class="p-button">4</a></li>
+            <li><a href="#" class="p-button">&raquo;</a></li>
+        </ul>
+    </div>
 
     <table cellpadding="2" cellspacing="2" border="1">
 
@@ -40,13 +220,13 @@
                 <td>@e.Designation </td>
                 <td>@e.Price </td>
 
-                <td align="center">@Html.ActionLink("Buy Now", "Buy", "Cart", new { id = @e.product.Id })</td>
+                <td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id })</td>
 
 
             </tr>
         }
     </table>
-    <h1 align="center">@Html.ActionLink("Retour à l'accueil", "Index", "Home")</h1>
-    
+    <h1 align="left">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</h1>
+
 </body>
 </html>
