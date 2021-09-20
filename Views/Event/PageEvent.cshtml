@@ -1,0 +1,86 @@
+﻿@model ProjetFostHer.Models.Event
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<div class="container event_container">
+    <div class="event_block">
+        <div class="event_title_block">
+            <h2>Tap Jam avec Roxane Butterfly & Lior Krief et Prabhu Edouard</h2>
+            <p>
+                Du 25 au 31 septembre au Bar l'Impondérable - GRATUIT
+            </p>
+            <div class="line-break-black">
+            </div>
+        </div>
+        <div class="event_info_block">
+            <!--Image à gauche de l'écran-->
+            <div class="event_info_visual">
+                <img src="~/img/visuel_crowdfunding.png"
+                     class="cover-image"
+                     alt="photo accueil event">
+            </div>
+
+        <!--Infos clés-->
+            <section class="event_info_content">
+                <div class="event_info_title">
+                    <div class="avatar_block">
+                        <a class="avatar_link" alt="allez vers l'association" href='@Url.Action("Index", "Home")'>
+                            <div class="avatar"></div>
+                        </a>
+                    </div>
+                    <div class="sub-title-asso">
+                        <h3>Roxane Butterfly</h3>
+                        <h5>La Fabrique de la Danse</h5>
+                    </div>
+                </div>
+                <div class="event_date">
+                    <div class="event_date_content">
+                        <p>La rythmicienne Roxane Butterfly nous propose une soirée d'improvisation tap dance en complicité avec le guitariste Lior Krief.</p>
+                        <p><strong>Date(s): </strong>Du 25 au 31 septembre</p>
+                        <p><strong>Lieu :</strong> Bar l'Impondérable</p>
+                        <p><strong>Tarif :</strong> Gratuit</p>
+                    </div>
+                    <div class="block_button_event">
+                        <p class="button_orange">@Html.ActionLink("S'inscrire", "CartEvent", "Event")</p>
+                    </div>
+                </div>
+
+                <!-- Boutons social media-->
+                <div class="event_share">
+                    <ul class="event_share_list">
+                        <li><i class="social fas fa-heart"></i></li>
+                        <li><i class="social fas fa-share-alt"></i></li>
+                        <li><i class="social fab fa-facebook-f" id="fb"></i></li>
+                        <li><i class="social fab fa-instagram" id="ig"></i></li>
+                        <li><i class="social fab fa-twitter" id="tw"></i></li>
+
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="souspages">
+    <nav id="subnav" class="sousmenu">
+        <div>
+            <ul>
+                <li><a id="infos">Informations</a></li>
+                <li><a id="reservation">Réserver</a></li>
+            </ul>
+        </div>
+        <div class="block_button_event">
+            <p class="button_orange">@Html.ActionLink("S'inscrire", "CartEvent", "Event")</p>
+        </div>
+    </nav>
+    <div id="partial_infos">
+        @Html.Partial("EventSubpageInfos")
+    </div>
+    <div id="partial_reserver" style="display:none;">
+        @Html.Partial("EventSubpageReserver")
+    </div>
+</div>
+
+</html>
