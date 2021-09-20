@@ -127,7 +127,6 @@ h5 {
     text-align: left;
     font-size: 15px;
     border: 2px solid #ffffff;
-    margin-right: 20px;
     font-size: 14px;
     width: 460px;
 }
@@ -1005,8 +1004,6 @@ button_orange:hover {
 /* Espace de recherche  CHECKBOX ET RADIOBUTTON */
 
 .list_searchbar {
-    width: 30%;
-    height: auto;
     padding: 20px;
 }
 
@@ -1014,7 +1011,6 @@ button_orange:hover {
     display: block;
     position: relative;
     padding-left: 35px;
-    margin-left: 30px;
     margin-bottom: 0px;
     cursor: pointer;
     font-size: 13px;
@@ -1025,13 +1021,13 @@ button_orange:hover {
     user-select: none;
 }
 
-    .container input {
-        position: absolute;
-        opacity: 0;
-        cursor: pointer;
-        height: 0;
-        width: 0;
-    }
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
 
 .checkmark {
     position: absolute;
@@ -1051,25 +1047,38 @@ button_orange:hover {
     border-radius: 100%;
 }
 
-.container:hover input ~ .checkmark, .container:hover input ~ .checkmark-radio {
+.container:hover input ~ 
+.checkmark, 
+.container:hover input ~ 
+.checkmark-radio {
     background-color: #ccc;
 }
 
-.container input:checked ~ .checkmark, .container input:checked ~ .checkmark-radio {
+.container input:checked ~ 
+.checkmark, 
+.container input:checked ~ 
+.checkmark-radio {
     background-color: #2196F3;
 }
 
-.checkmark:after, .checkmark-radio:after {
+.checkmark:after, 
+.checkmark-radio:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-.container input:checked ~ .checkmark:after, .container input:checked ~ .checkmark-radio:after {
+.container input:checked ~ 
+.checkmark:after, 
+.container input:checked ~ 
+.checkmark-radio:after {
     display: block;
 }
 
-.container .checkmark:after, .container .checkmark-radio:after {
+.container 
+.checkmark:after, 
+.container 
+.checkmark-radio:after {
     left: 6px;
     top: 2px;
     width: 5px;
@@ -1093,13 +1102,13 @@ button_orange:hover {
 }
 
 .crowdfunding_card, .event_card {
-    box-shadow: 6px 3px 3px #F3EFF4;
-    padding-bottom: 15px;
-  
+    box-shadow: 6px 3px 3px #f3eff4;
+    margin: 20px;
+    max-width: 310px;
 }
 
 .crowdfunding_list img, .event_list img {
-    max-width: 250px;
+    max-width: 310px;
 }
 
 .crowdfunding_list h3, .event_list h3 {
@@ -1150,22 +1159,54 @@ button_orange:hover {
 .crowdfunding-artist, .event_artist {
     border-radius: 100px;
     border: none;
-    box-shadow: 3px 3px 3px #a85236;
     color: #E94E1B;
     background-color: white;
     position: relative;
     bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans semibold', sans-serif;
     text-align: center;
     font-size: 12px;
     line-height: normal;
     padding: 10px;
-    margin: 0 60px 0 0;
+    margin: 0 60px 0 10px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+}
+
+.event_block_content {
+    padding: 20px;
+    color: #3E3E3E;
+}
+
+.event_type_content {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.event_type_content h4 {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.bold{
+    font-size: 14px;
+    font-family: 'Open Sans semibold'
+}
+
+.event_card_link_content {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.event_card_link_content a {
+    color: #E13611;
+    font-family: 'Open Sans semibold'
 }
 
 /*CSS FORMULAIRES*/
 
-.container_label {
+    .container_label {
     padding-top: 20px;
     margin-bottom: 150px;
     background-color: #EFEBF1;
@@ -1260,16 +1301,20 @@ button_orange:hover {
 .pagination {
     display: flex;
     flex-direction: row;
-    margin: 0 auto;
+    justify-content: center;
+    margin-bottom: 100px;
 }
 
 ul.pagination li a {
-    color: black;
-    float: left;
-    border: 0.5px solid #E94E1B;
-    padding: 8px 16px;
-    text-decoration: none;
-    border-radius: 5px;
+    font-size: 16px;
+    color: #E94E1B;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-right: 10px;
+    border-radius: 10pt;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+    padding: 20px 30px;
+    font-family: 'Open Sans semibold';
 }
 
     ul.pagination li a:hover {
