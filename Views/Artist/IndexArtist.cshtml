@@ -13,18 +13,20 @@
         <li>@Html.ActionLink("Supprimer une artiste", "DeleteArtist", "Artist")</li>
         <li>@Html.ActionLink("Modifier une artiste", "EditArtist", "Artist")</li>
     </ul>
-
-    <div class="artiste-list-items-container">
-
-        <div class="artiste-list-menu-recherche">
-            <div class="artiste-list-menu-recherche-icon">
-                <input type="text" placeholder="Rechercher une artiste">
-                <a class="fas fa-search"></a>
+    <section class="artiste-list-items-container">
+        <div class="artist_search_block">
+            <div class="button_orange">
+                <a class="button">Créer votre page!</a>
             </div>
-        </div>
-
-        <div class="artiste-list-filters-gallery">
-
+            <div class="search_block">
+                <input class="search_bar"
+                       type="search"
+                       id="site-search"
+                       name="saisie"
+                       placeholder="Rechercher une artiste"
+                       aria-label="Rechercher une artistet">
+                <i class="fas fa-search icon_search"></i>
+            </div>
             <div class="artiste-list-filtre-recherche">
                 <div class="filtre-type-association">
                     <h4 class="filter">Par Association</h4>
@@ -73,67 +75,44 @@
 
                 </div>
             </div>
-            @foreach (Artist a in ViewBag.Artists)
-            {
-                <div class="artiste-list-gallery">
+        </div>
+        <div class="artist_list_block">
+            <div class="artiste-list-gallery">
+                @foreach (Artist e in ViewBag.listArtists)
+                {
                     <article class="artiste-block-vertical">
                         <div class="artiste-list-image">
-                            <img class="catherine"
-                                 src="~/img/artiste_1.png"
+                            <img class="artist_img"
+                                 src="~/img/artiste_4.png"
                                  alt="" />
                         </div>
-
                         <div class="artiste-list-description">
-                            <h2>@e.Artist.StageName</h2>
-                            <button name="button_white">Femmes Debout</button>
+                            <h3>@e.StageName</h3>
+                            <button name="button_white">@e.association</button>
                             <h4>@e.Category.CategoryName</h4>
                             <p>
-                                Les bandes dessinées que Catherine Meurisse scénarise et dessine seule sont essentiellement axées
-                                autour de la littérature et des arts, le tout teinté d'humour...
+                                Les bandes dessinées que Catherine Meurisse scénarise et
+                                dessine seule sont essentiellement axées autour de la
+                                littérature et des arts, le tout teinté d'humour...
                             </p>
                         </div>
-                    </article>
-
-                    @foreach (Event e in ViewBag.listEvents)
-                    {
-                        <div class="event_card">
-                            <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
-                            <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
-                            <div class="event_block_content">
-                                <h3>@e.Designation</h3>
-                                <div class="event_type_content">
-                                    <div class="line-break-card"></div>
-                                    <h4>@e.Category.CategoryName @e.Type</h4>
-                                </div>
-
-                                <div class="event_KPI">
-                                    <p><strong class="bold">Infos</strong></p>
-                                    <p>Du @e.StartDate <br />au @e.EndDate</p>
-                                    <p>@e.Lieu</p>
-                                    <p>Prix : @e.Price €</p>
-                                </div>
-                                <div class="event_card_link_content">
-                                    @Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })
-                                </div>
-                            </div>
+                        <div class="event_card_link_content">
+                            @Html.ActionLink("Voir l'artiste", "PageArtist", "Artist", new { id = e.Id })
                         </div>
-                    }
-                </div>
-
-            </div>
-            <div class="pagination">
-                <ul class="pagination">
-                    <li><a class="fas fa-chevron-left"></a></li>
-                    <li><a href="#" class="p-button">1</a></li>
-                    <li><a href="#" class="p-button">2</a></li>
-                    <li><a href="#" class="p-button">3</a></li>
-                    <li><a href="#" class="p-button">4</a></li>
-                    <li><a class="fas fa-chevron-right"></a></li>
-                </ul>
-            </div>
-            <div class="artistes-link-decouvrir">
-                <a class="button">Lancer votre page!</a>
+                    </article>
+                }
             </div>
         </div>
-    </body>
+    </section>
+    <section class="pagination_container">
+        <ul class="pagination">
+            <li><a class="fas fa-chevron-left p-button"></a></li>
+            <li><a href="#" class="p-button">1</a></li>
+            <li><a href="#" class="p-button">2</a></li>
+            <li><a href="#" class="p-button">3</a></li>
+            <li><a href="#" class="p-button">4</a></li>
+            <li><a class="fas fa-chevron-right p-button"></a>></li>
+        </ul>
+    </section>
+</body>
 </html>
