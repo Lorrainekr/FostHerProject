@@ -215,7 +215,7 @@ namespace ProjetFostHer.Models
             this.Events.AddRange(
                new Event
                {
-                   Designation = "Tap Jam avec Roxane Butterfly & Lior Krief et Prabhu Edouard",
+                   Designation = "Tap Jam avec Lior Krief et Prabhu Edouard",
                    Type = "Spectacle",
                    StartDate = new DateTime(2021, 02, 10),
                    EndDate = new DateTime(2021, 03, 11),
@@ -246,7 +246,7 @@ namespace ProjetFostHer.Models
                    EndDate = new DateTime(2021, 08, 10),
                    Stock = 40,
                    Price = 0,
-                   Category = cat1,
+                   Category = cat3,
                    Lieu = "La Mutinerie, Paris",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
                    product = new Product(),
