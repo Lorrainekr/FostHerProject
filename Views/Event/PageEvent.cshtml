@@ -8,7 +8,7 @@
 <div class="container event_container">
     <div class="event_block">
         <div class="event_title_block">
-            <h2>Tap Jam avec Roxane Butterfly & Lior Krief et Prabhu Edouard</h2>
+            <h2>@Model.Designation</h2>
             <p>
                 Du 25 au 31 septembre au Bar l'Impondérable - GRATUIT
             </p>
@@ -44,7 +44,7 @@
                         <p><strong>Tarif :</strong> Gratuit</p>
                     </div>
                     <div class="block_button_event">
-                        <p class="button_orange">@Html.ActionLink("S'inscrire", "CartEvent", "Event")</p>
+                        <p class="button_orange">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</p>
                     </div>
                 </div>
 
@@ -72,7 +72,7 @@
             </ul>
         </div>
         <div class="block_button_event">
-            <p class="button_orange">@Html.ActionLink("S'inscrire", "CartEvent", "Event")</p>
+            <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.Id })</p>
         </div>
     </nav>
     <div id="partial_infos">
