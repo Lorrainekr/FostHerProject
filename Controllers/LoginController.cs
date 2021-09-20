@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using ProjetFostHer.DAL;
+using ProjetFostHer.Helpers;
 using ProjetFostHer.Models;
 using ProjetFostHer.ViewModels;
 using System;
@@ -72,7 +73,14 @@ namespace ProjetFostHer.Controllers
         {
             if (ModelState.IsValid)
             {
-                int id = dal.AddUser(user.Name, user.Email, user.Password);
+                AdvancedUser au = new AdvancedUser();
+                au.LastName = user.advancedUser.LastName;
+                au.FirstName = user.advancedUser.FirstName;
+                au.Address = user.advancedUser.Address;
+                au.Tel = user.advancedUser.Tel;
+                au.Email = user.Email;
+                au.Password = user.Password;
+                int id = dal.AddUser(user.Name, user.Email, user.Password,au);
 
                 var userClaims = new List<Claim>()
                     {
@@ -92,6 +100,16 @@ namespace ProjetFostHer.Controllers
 
         public ActionResult Deconnexion()
         {
+            
+            using (Dal ctx = new Dal())
+            {
+                var cartId = SessionHelper.GetObjectFromJson<int>(HttpContext.Session, "cartId");
+
+                foreach (Item item in ctx.ListAllItems().ToList())
+                {
+                    new Dal().RemoveItem(cartId, item.Id);
+                }
+            }
             HttpContext.SignOutAsync();
             return Redirect("/Home/Index");
         }

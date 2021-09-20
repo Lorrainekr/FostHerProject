@@ -25,10 +25,10 @@ namespace ProjetFostHer.Models
 
 
         public int Id { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Veuillez saisir une adresse mail valide")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [RegularExpression("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$", 
             ErrorMessage = "Votre mot de passe doit contenir au moins :" +
                            " Une lettre majuscule" +
@@ -37,15 +37,15 @@ namespace ProjetFostHer.Models
                            " Un caractère spécial" +
                            " Une longueur minimal de huit caractères")]
         public string Password { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         public string AssoName { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         public string Address { get; set; }
         public string Tel { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [StringLength(10, ErrorMessage = "Votre numéro de RNA est composé de une lettre et de 9 chiffres")]
         public string RNA { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [StringLength(9 , ErrorMessage = "Votre numéro de SIREN est composé de 9 chiffres") ]
 
         public string Siren { get; set; }

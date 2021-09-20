@@ -58,6 +58,17 @@ namespace ProjetFostHer.Controllers
             }
         }
 
+        public IActionResult CreateAssociation()
+        {
+
+            
+                Association asso = new Association();
+                return View(asso);
+            
+          
+
+        }
+        [HttpPost]
         public IActionResult CreateAssociation(Association asso)
         {
 
@@ -65,18 +76,11 @@ namespace ProjetFostHer.Controllers
                 return View(asso);
             using (Dal ctx = new Dal())
             {
-                ctx.CreateAssociation
-                    (
-                    asso.Email, 
-                    asso.Password, 
-                    asso.AssoName, 
-                    asso.Address, 
-                    asso.Tel, 
-                    asso.RNA, 
-                    asso.Siren
-                    );
+  
+                    ctx.CreateAssociation(asso.Email,asso.Password,asso.AssoName,asso.Address,asso.Tel,asso.RNA,asso.Siren);
 
-                return View("Modifications");
+                    return View("Creation");
+              
             }
 
         }

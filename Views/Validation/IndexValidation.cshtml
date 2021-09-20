@@ -1,0 +1,56 @@
+﻿@{
+    //Layout = "_Layout";
+}
+@using ProjetFostHer.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Liste des adhérents</title>
+</head>
+<body>
+    <table cellpadding="2" cellspacing="2" border="1">
+
+        <tr>
+
+
+            <th> Nom </th>
+            <th> Prénom </th>
+            <th> Nom artistique </th>
+            <th> Adresse </th>
+            <th> Email </th>
+            <th> Siret </th>
+
+        </tr>>
+
+
+        @foreach (Artist e in ViewBag.listArtists)
+        {
+    <tr>
+        <td>@e.LastName </td>
+        <td>@e.FirstName </td>
+        <td>@e.StageName </td>
+        <td>@e.Address </td>
+        <td>@e.Email </td>
+        <td>@e.Siret </td>
+
+        @if (e.Validation == "en attente")
+        {
+            <td align="center">@Html.ActionLink("Valider l'inscription", "Validation", "Validation", new { id = e.Id })</td>
+        }
+        else
+        {
+            <td align="center">Validé</td>
+        }
+
+
+
+    </tr>
+        }
+    </table>
+    <h1 align="left">@Html.ActionLink("Retourner à l'accueil", "Index", "Home")</h1>
+
+</body>
+</html>

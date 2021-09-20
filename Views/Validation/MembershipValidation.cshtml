@@ -1,0 +1,48 @@
+﻿
+@model ProjetFostHer.Models.Artist
+@{
+//ViewBag.Title = "Membership Artist";
+//Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demande d'adhésion'</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <fieldset>
+        <legend>Demande d'adhésion : </legend>
+
+
+        @Html.LabelFor(m => Model.StageName)
+        @Html.TextBoxFor(m => Model.StageName)
+        @Html.ValidationMessageFor(m => Model.StageName)
+
+        @Html.LabelFor(m => Model.Category.CategoryName)
+        @Html.TextBoxFor(m => Model.Category.CategoryName)
+        @Html.ValidationMessageFor(m => Model.Category.CategoryName)
+
+        @Html.LabelFor(m => Model.Siret)
+        @Html.TextBoxFor(m => Model.Siret)
+        @Html.ValidationMessageFor(m => Model.Siret)
+
+
+        @Html.LabelFor(m => Model.association.AssoName)
+        @Html.TextBoxFor(m => Model.association.AssoName)
+        @Html.ValidationMessageFor(m => Model.association.AssoName)
+
+
+
+
+        <br />
+        <input type="submit" value="Soumettre le formulaire" />
+    </fieldset>
+    }
+
+</body>
+</html>

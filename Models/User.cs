@@ -15,5 +15,13 @@ namespace ProjetFostHer.Models
         [Required]
         public string Password { get; set; }
         public int Id { get; set; }
+
+        public Admin admin { get; set; }
+        
+        public Association association { get; set; }
+
+        public Artist artist { get; set; }
+
+        public AdvancedUser advancedUser { get; set; }
     }
 }

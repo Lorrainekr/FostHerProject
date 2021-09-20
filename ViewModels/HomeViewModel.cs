@@ -20,6 +20,8 @@ namespace ProjetFostHer.ViewModels
         public Crowdfunding Crowdfundings { get; set; }
         public User User { get; set; }
         public bool Authentification { get; set; }
+        public List<Cart> carts { get; set; }
+        public Item items { get; set; }
 
     }
 }

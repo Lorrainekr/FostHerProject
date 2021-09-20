@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -31,9 +32,13 @@ namespace ProjetFostHer.Models
         public string StageName { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         public Category Category { get; set; }
+        public Association association { get; set; }
+       
         [Required(ErrorMessage = "Champ obligatoire")]
         [StringLength(14, ErrorMessage = "Votre numéro de SIRET est composé de 14 chiffres")]
         public string Siret { get; set; }
+        public string Tel { get; set; }
+        public String Validation { get; set; }
 
         public Artist(string email, string password, string address, string firstName, string lastName, string stageName, Category category, string siret)
         {

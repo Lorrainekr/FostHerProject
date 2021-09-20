@@ -1,0 +1,76 @@
+﻿@*@model ProjetFostHer.Models.Cart
+
+
+@{
+    //Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Modifier le panier</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @if (!(Model.Event == null))
+        {
+
+
+            <fieldset>
+                <legend>Modifier le panier : </legend>
+                <br />
+
+                <br />
+                @Html.LabelFor(m => Model.EventQuantity)
+                @Html.EditorFor(m => Model.EventQuantity, new { htmlAttributes = new { min = 1, max = 20 } })
+                @Html.ValidationMessageFor(m => Model.EventQuantity)
+
+
+                <br />
+
+                <br />
+                <input type="submit" value="Confirmer" />
+
+
+            </fieldset>
+
+        }
+    }
+    @using (Html.BeginForm())
+    {
+        @if (!(Model.crowdfunding == null))
+                {
+
+                
+            <fieldset>
+                <legend>Modifier le panier : </legend>
+                <br />
+
+                <br />
+                @Html.LabelFor(m => Model.CrowdfundingDonation)
+                @Html.EditorFor(m => Model.CrowdfundingDonation, new { htmlAttributes = new { min = Model.crowdfunding.MinDonation, max = Model.crowdfunding.MaxDonation } })
+                @Html.ValidationMessageFor(m => Model.CrowdfundingDonation)
+
+
+                <br />
+
+                <br />
+                <input type="submit" value="Confirmer" />
+
+
+            </fieldset>
+
+        }
+
+    }
+
+
+
+
+
+
+</body>
+</html>*@

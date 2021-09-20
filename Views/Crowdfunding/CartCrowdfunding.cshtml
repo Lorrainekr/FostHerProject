@@ -2,7 +2,7 @@
 @model ProjetFostHer.Models.Crowdfunding
 
 @{
-    Layout = "_Layout";
+//Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -60,7 +60,7 @@
 
         </fieldset>
     }
-    <h1 align="center">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</h1>
+    <h1 align="center">@Html.ActionLink("Afficher mon panier", "IndexCart", "Cart", new { id = Model.user.Id })</h1>
 
 </body>
 </html>

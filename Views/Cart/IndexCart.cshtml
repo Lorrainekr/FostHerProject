@@ -1,0 +1,103 @@
+﻿
+
+@*@{
+//Layout = "_Layout";
+}
+@using ProjetFostHer.Models
+@using ProjetFostHer.Controllers
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexEvent</title>
+</head>
+<body>
+    <h1> Billets d'évènements</h1>
+
+
+
+    @using (Html.BeginForm())
+    {
+
+
+
+        
+        <table border="1">
+            <tr>
+                <th>Désignation</th>
+                <th>Quantité</th>
+                <th>Prix</th>
+                <th>mod</th>
+            </tr>
+
+            @foreach (Cart c in ViewBag.listCarts)
+            {
+                @if (c.crowdfunding == null && !(c.Event == null))
+                {
+
+
+                    <tr>
+
+                        <td>@Html.DisplayFor(model => c.Event.Designation)</td>
+                        <td>@Html.EditorFor(model => c.EventQuantity)</td>
+                        <td>@Html.DisplayFor(model => c.Event.Price)</td>
+                        <td>@Html.ActionLink("Modifier ", "CartEdit", "Cart", new { id = c.Id })</td>
+                    </tr>
+                }
+            }
+
+        </table>
+
+
+
+
+
+        <br />
+    }
+
+
+
+
+    @using (Html.BeginForm())
+    {
+
+        
+      
+        <table border="1">
+            <tr>
+                <th>Désignation</th>
+                <th>Donation</th>
+                <th>mod</th>
+            </tr>
+
+            @foreach (Cart c in ViewBag.listCarts)
+            {
+                if (!(c.crowdfunding == null) && (c.Event == null))
+                {
+
+
+                    <tr>
+
+                        <td>@Html.DisplayFor(model => c.crowdfunding.NameCrowdfunding)</td>
+                        <td>@Html.EditorFor(model => c.CrowdfundingDonation)</td>
+                        <td>@Html.ActionLink("Modifier","CartEdit","Cart", new { id = c.Id }) </td>
+
+
+                    </tr>
+                }
+            }
+
+        </table>
+
+
+
+
+
+        <br />
+    }
+
+
+</body>
+</html>*@
