@@ -100,19 +100,25 @@
         <!-- Liste des résultats - cartes event -->
 
         <container class="event_list">
-            <div class="event_card">
-                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
-                <h5 class="event_artist">Nom de l'artiste</h5>
-                <h3>Titre de l'événement</h3>
-                <div class="line-break-card"></div>
-                <h4>Catégorie, Type</h4>
-                <div class="event_KPI">
-                    <p><strong>Infos</strong></p>
-                    <p>Du 25 au 31 septembre 2021</p>
-                    <p>Bar l'Impromptu, Paris</p>
-                    <p>Prix : Gratuit</p>
+
+            @foreach (Event e in ViewBag.listEvents)
+            {
+                <div class="event_card">
+                    <img src=@e.Img alt="image de l'événement">
+                    <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
+                    <h3>@e.Designation</h3>
+                    <div class="line-break-card"></div>
+                    <h4>@e.Category.CategoryName, @e.Type</h4>
+                    <div class="event_KPI">
+                        <p><strong>Infos</strong></p>
+                        <p>Du @e.StartDate au @e.EndDate</p>
+                        <p>@e.Lieu</p>
+                        <p>Prix : @e.Price</p>
+                    </div>
                 </div>
-            </div>
+
+                    /*<td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id })</td>*/
+            }
 
             <div class="event_card">
                 <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
@@ -213,18 +219,7 @@
         </tr>>
 
 
-        @foreach (Event e in ViewBag.listEvents)
-        {
-            <tr>
-                <td>@e.Id </td>
-                <td>@e.Designation </td>
-                <td>@e.Price </td>
-
-                <td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id })</td>
-
-
-            </tr>
-        }
+ 
     </table>
     <h1 align="left">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</h1>
 
