@@ -7,39 +7,62 @@
     <p>Veuillez remplir ce formulaire pour créer votre compte :</p>
     using (Html.BeginForm())
     {
-        <div>
-            @Html.LabelFor(m => m.User.advancedUser.FirstName)
-            @Html.TextBoxFor(m => m.User.advancedUser.FirstName)
-            @Html.ValidationMessageFor(m => m.User.advancedUser.FirstName)
-        </div>
-        <div>
-            @Html.LabelFor(m => m.User.Name)
-            @Html.TextBoxFor(m => m.User.Name)
-            @Html.ValidationMessageFor(m => m.User.Name)
-        </div>
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire de création de compte</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Mes coordonnées</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => m.User.advancedUser.FirstName)
+                            @Html.LabelFor(m => m.User.Name)
+                            @Html.LabelFor(m => m.User.advancedUser.Address)
+                            @Html.LabelFor(m => m.User.advancedUser.Tel)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => m.User.advancedUser.FirstName)
+                            @Html.TextBoxFor(m => m.User.Name)
+                            @Html.TextBoxFor(m => m.User.advancedUser.Address)
+                            @Html.TextBoxFor(m => m.User.advancedUser.Tel)
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => m.User.advancedUser.FirstName)
+                            @Html.ValidationMessageFor(m => m.User.Name)
+                            @Html.ValidationMessageFor(m => m.User.advancedUser.Address)
+                            @Html.ValidationMessageFor(m => m.User.advancedUser.Tel)
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="label_content_login">
+                <h3>Mes informations de connexion</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => m.User.Email)
+                            @Html.LabelFor(m => m.User.Password)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => m.User.Email)
+                            @Html.PasswordFor(m => m.User.Password)  
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => m.User.Email)
+                            @Html.ValidationMessageFor(m => m.User.Password)
+                        </div>
+                    </div>
 
-        <div>
-            @Html.LabelFor(m => m.User.Email)
-            @Html.TextBoxFor(m => m.User.Email)
-            @Html.ValidationMessageFor(m => m.User.Email)
-        </div>
-        <div>
-            @Html.LabelFor(m => m.User.Password)
-            @Html.PasswordFor(m => m.User.Password)
-            @Html.ValidationMessageFor(m => m.User.Password)
-        </div>
+                    <div class="button_orange">
+                        <input type="submit" value="Créer un compte" />
+                    </div>
+                </fieldset>
+            </div>
+        </section>
 
-        <div>
-            @Html.LabelFor(m => m.User.advancedUser.Address)
-            @Html.TextBoxFor(m => m.User.advancedUser.Address)
-            @Html.ValidationMessageFor(m => m.User.advancedUser.Address)
-        </div>
-        <div>
-            @Html.LabelFor(m => m.User.advancedUser.Tel)
-            @Html.TextBoxFor(m => m.User.advancedUser.Tel)
-            @Html.ValidationMessageFor(m => m.User.advancedUser.Tel)
-        </div>
-        <input type="submit" value="Créer mon compte" />
+
+
     }
 }
 

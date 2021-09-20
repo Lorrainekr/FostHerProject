@@ -1,7 +1,7 @@
 ﻿@model ProjetFostHer.Models.Crowdfunding
 @{
-    //ViewBag.Title = "Membership Artist";
-    //Layout = "_Layout";
+    ViewBag.Title = "Membership Artist";
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -14,52 +14,50 @@
 <body>
     @using (Html.BeginForm())
     {
-    <fieldset>
-        <legend>Contibuer au crowdfunding : </legend>
+    <section class="container container_label">
+        <div class="label_title">
+            <h2>Formulaire de création de compte artiste</h2>
+        </div>
+        <div class="label_content_info">
+            <h3 class="">Mes coordonnées</h3>
+            <fieldset class="label_content">
+                <div class="label_block">
+                    <div class="label_block_text">
+                        @Html.LabelFor(m => Model.NameCrowdfunding)
+                        @Html.LabelFor(m => Model.StartDate)
+                        @Html.LabelFor(m => Model.EndDate)
+                        @Html.LabelFor(m => Model.AssociationCrowdfunding)
+                        @Html.LabelFor(m => Model.Artist)
+                        @Html.LabelFor(m => Model.MinDonation)
+                        @Html.LabelFor(m => Model.MaxDonation)
+                        @Html.LabelFor(m => Model.AmountMax)
+                        @Html.LabelFor(m => Model.Donation)
+                    </div>
+                    <div class="label_block_form">
+                        @Html.TextBoxFor(m => Model.NameCrowdfunding, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.AssociationCrowdfunding.AssoName, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.Artist.StageName, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.MinDonation, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.MaxDonation, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.AmountMax, new { @readonly = true })
+                        @Html.TextBoxFor(m => Model.Donation)
+                    </div>
+                    <div class="label_block_warning">
+                        @Html.ValidationMessageFor(m => Model.Donation)
+                    </div>
+                </div>
+                <div class="button_orange">
+                    <input type="submit" value="Contribuer" />
+                </div>
+            </fieldset>
+        </div>
+            <h1 align="center">@((Model.sum / Model.AmountMax) * 100)%</h1>
+</section>
 
 
-        @Html.LabelFor(m => Model.NameCrowdfunding)
-        @Html.TextBoxFor(m => Model.NameCrowdfunding, new { @readonly = true })
-
-
-        @Html.LabelFor(m => Model.StartDate)
-        @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
-
-
-        @Html.LabelFor(m => Model.EndDate)
-        @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
-
-
-
-        @Html.LabelFor(m => Model.AssociationCrowdfunding)
-        @Html.TextBoxFor(m => Model.AssociationCrowdfunding, new { @readonly = true })
-
-
-        @Html.LabelFor(m => Model.Artist)
-        @Html.TextBoxFor(m => Model.Artist, new { @readonly = true })
-
-
-        @Html.LabelFor(m => Model.MinDonation)
-        @Html.TextBoxFor(m => Model.MinDonation, new { @readonly = true })
-
-
-        @Html.LabelFor(m => Model.MaxDonation)
-        @Html.TextBoxFor(m => Model.MaxDonation, new { @readonly = true })
-
-        @Html.LabelFor(m => Model.AmountMax)
-        @Html.TextBoxFor(m => Model.AmountMax, new { @readonly = true })
-
-        @Html.LabelFor(m => Model.Donation)
-        @Html.TextBoxFor(m => Model.Donation)
-        @Html.ValidationMessageFor(m => Model.Donation)
-
-
-
-        <br />
-        <input type="submit" value="Soumettre le formulaire" />
-    </fieldset>
+        <h1 align="center">@Html.ActionLink("Retour à l'accueil", "Index", "Home")</h1>
     }
-<h1 align="center">@((Model.sum / Model.AmountMax)*100)%</h1>
-    <h1 align="center">@Html.ActionLink("Retour à l'accueil", "Index", "Home")</h1>
 </body>
 </html>

@@ -8,11 +8,11 @@ namespace ProjetFostHer.Models
 {
     public class User
     {
-        [Required]
+        //[Required]
         public string Name { get; set; }
-        [Required]
+        //[Required]
         public string Email { get; set; }
-        [Required]
+        //[Required]
         public string Password { get; set; }
         public int Id { get; set; }
 
