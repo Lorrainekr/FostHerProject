@@ -16,6 +16,8 @@ namespace ProjetFostHer.Models
         [Required(ErrorMessage = "Champ obligatoire")]
         public string Type { get; set; }
         [Required(ErrorMessage = "Veuillez indiquez quand débute votre evenement")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
         [Required(ErrorMessage = "Veuillez indiquez quand votre evenement se cloture")]
         public DateTime EndDate { get; set; }
