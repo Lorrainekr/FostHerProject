@@ -1,6 +1,7 @@
 ﻿@model ProjetFostHer.Models.Association
 @{
-    Layout = "_Layout";
+    ViewBag.Title = "CreateAssociation";
+    //Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -13,6 +14,7 @@
 <body>
     @using (Html.BeginForm())
     {
+
         <section class="container container_label">
             <div class="label_title">
                 <h2>Formulaire de création de compte artiste</h2>
@@ -27,6 +29,7 @@
                             @Html.LabelFor(m => Model.RNA)
                             @Html.LabelFor(m => Model.Siren)
                             @Html.LabelFor(m => Model.Address)
+
 
                         </div>
                         <div class="label_block_form">

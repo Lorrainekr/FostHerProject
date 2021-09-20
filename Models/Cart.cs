@@ -1,41 +1,23 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace ProjetFostHer.Models
-{
-    public class Cart
+
+    namespace ProjetFostHer.Models
     {
-        public Cart()
+        public class Cart
         {
-        }
-
-        public Cart(Event @event)
-        {
-            this.Event = @event;
-            
-        }
-
-        public Cart(Crowdfunding crowdfunding)
-        {
-            this.crowdfunding = crowdfunding;
-        }
-
-        public int Id { get; set; }
+            public int Id { get; set; }
+        public double total { get; set; }
+        public virtual List<Item> Items { get; set; }
         
-        public  Event Event { get; set; }
-
-        public Crowdfunding crowdfunding { get; set; }
-
-        public User user { get; set; }
-
-
-
-
-
-
-
-
     }
-}
+    }
+
+
+
+
+
+

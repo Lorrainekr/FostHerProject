@@ -1,0 +1,58 @@
+﻿@model ProjetFostHer.Models.Artist
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Validation</title>
+   
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <fieldset>
+        <legend>Confirmer l'adhésion' : </legend>
+
+        @Html.LabelFor(m => Model.Email, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.Email, new { @readonly = true })
+
+        <br />
+        @Html.LabelFor(m => Model.Password, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.Password, new { @readonly = true })
+
+
+        @Html.LabelFor(m => Model.Address, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.Address, new { @readonly = true })
+
+
+        @Html.LabelFor(m => Model.FirstName, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.FirstName, new { @readonly = true })
+
+
+        @Html.LabelFor(m => Model.LastName, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.LastName, new { @readonly = true })
+
+
+        @Html.LabelFor(m => Model.StageName, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.StageName, new { @readonly = true })
+
+
+        @Html.LabelFor(m => Model.Category, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.Category, new { @readonly = true })
+
+
+        @Html.LabelFor(m => Model.Siret, new { @readonly = true })
+        @Html.TextBoxFor(m => Model.Siret, new { @readonly = true })
+
+        @Html.DropDownListFor(modelItem => modelItem.Validation, new[] { new SelectListItem { Text = "Valider l'inscription", Value = "Valide" }, new SelectListItem { Text = "Refuser l'insciption", Value = "Refus" }, new SelectListItem { Text = "Laisser en attente", Value = "en attente" } })
+        <br />
+        <input type="submit" value="Valider l'inscription'" />
+    </fieldset>
+    }
+
+</body>
+</html>

@@ -58,10 +58,17 @@ namespace ProjetFostHer.Controllers
             if (!ModelState.IsValid)
                 return View(art);
             using (Dal ctx = new Dal())
-                { 
-                ctx.CreateArtist(art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Category, art.Siret);
+                {
+                
+                int a = Int32.Parse(HttpContext.User.Identity.Name);
+                User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                if (!(user.association == null))
+                {
+                    Association asso = ctx.ListAllAssociations().Where(r => r.Id == user.association.Id).FirstOrDefault();
+                    ctx.CreateArtist(art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Category, art.Siret, asso);
 
-                return View("Modifications");
+                    return View("Modifications");
+                }else return View("Error");
             }
             
         }

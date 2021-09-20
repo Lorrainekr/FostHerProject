@@ -1,0 +1,57 @@
+﻿@model ProjetFostHer.Models.Cart
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+
+    <title>Index</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+
+        <h3>Cart Page</h3>
+        <table cellpadding="2" cellspacing="2" border="1">
+            <tr>
+                <th>Supprimer</th>
+                <th>Modifier</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity <input type="submit" value="Update" /></th>
+                <th>Sub Total</th>
+            </tr>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@Html.ActionLink("Remove", "Remove", "Cart", new { id = @item.Id })</td>
+                    <td>@Html.ActionLink("Modifier", "OnPostUpdate", "Cart", new { id = @item.Id })</td>
+                    <td>@item.Product.Id</td>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price</td>
+                    <td><input type="number" name="quantities" value="@item.Quantity" min="1" style="width: 50px;" /></td>
+
+                    <td>@(item.Product.Price * item.Quantity)</td>
+                </tr>
+            }
+            <tr>
+                <td align="right" colspan="6">Sum</td>
+                <td>
+
+                    @(Model.Items.Sum(item => item.Product.Price * item.Quantity));
+                </td>
+            </tr>
+        </table>
+        
+        <br>
+        <a asp-controller="product" asp-action="index"> @Html.ActionLink("Retour à la liste des évènements", "IndexEvent", "Event")</a>
+        <h1 align="center">@Html.ActionLink("Retour à l'accueil", "Index", "Home")</h1>
+        <h1 align="center">@Html.ActionLink("Passer au paiement", "PaymentEvent", "Payment", new { id = Model.Id })</h1>
+    }
+</body>
+</html>

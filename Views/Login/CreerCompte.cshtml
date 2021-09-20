@@ -8,10 +8,16 @@
     using (Html.BeginForm())
     {
         <div>
+            @Html.LabelFor(m => m.User.advancedUser.FirstName)
+            @Html.TextBoxFor(m => m.User.advancedUser.FirstName)
+            @Html.ValidationMessageFor(m => m.User.advancedUser.FirstName)
+        </div>
+        <div>
             @Html.LabelFor(m => m.User.Name)
             @Html.TextBoxFor(m => m.User.Name)
             @Html.ValidationMessageFor(m => m.User.Name)
         </div>
+
         <div>
             @Html.LabelFor(m => m.User.Email)
             @Html.TextBoxFor(m => m.User.Email)
@@ -21,6 +27,17 @@
             @Html.LabelFor(m => m.User.Password)
             @Html.PasswordFor(m => m.User.Password)
             @Html.ValidationMessageFor(m => m.User.Password)
+        </div>
+
+        <div>
+            @Html.LabelFor(m => m.User.advancedUser.Address)
+            @Html.TextBoxFor(m => m.User.advancedUser.Address)
+            @Html.ValidationMessageFor(m => m.User.advancedUser.Address)
+        </div>
+        <div>
+            @Html.LabelFor(m => m.User.advancedUser.Tel)
+            @Html.TextBoxFor(m => m.User.advancedUser.Tel)
+            @Html.ValidationMessageFor(m => m.User.advancedUser.Tel)
         </div>
         <input type="submit" value="Créer mon compte" />
     }

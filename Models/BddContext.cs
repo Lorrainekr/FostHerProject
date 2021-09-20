@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ProjetFostHer.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +19,10 @@ namespace ProjetFostHer.Models
         public DbSet<Event> Events { get; set; }
         public DbSet<Cart> Carts { get; set; }
 
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql("server=localhost;user id=root;password=rrrrr;database=FostHerUserList");
@@ -36,12 +41,73 @@ namespace ProjetFostHer.Models
             Category cat3 = new Category();
             cat1.CategoryName = "Sculpture";
 
+
+
+
+            this.Accounts.AddRange(
+                new Account
+                {
+                    Id=1,
+                    NumeroCB="5134148609019174",
+                    DateExpirationMois="03",
+                    DateExpirationAnnee="2023",
+                    Crypto="283",
+                    Solde=20000
+                       
+                },
+                new Account
+                {
+                    Id=2,
+                    NumeroCB = "513518000000001",
+                    DateExpirationMois = "12",
+                    DateExpirationAnnee = "2025",
+                    Crypto = "123",
+                    Solde = 0
+                }
+
+                );
+            this.SaveChanges();
+                
+
+            this.Products.AddRange(
+                new Product
+                {
+                    Id = 1,
+                    Name = "product1",
+                    Price = 111.0
+                },
+                new Product
+                {
+                    Id = 2,
+                    Name = "product2",
+                    Price = 222.0
+                },
+                new Product
+                {
+                    Id = 3,
+                    Name = "product3",
+                    Price = 333.0
+                },
+                new Product
+                {
+                    Id = 4,
+                    Name = "product4",
+                    Price = 444.0
+                }
+            );
+
+            this.SaveChanges();
+        
+    
+
             this.Users.AddRange(
                 new User
                     {
                         Name = "Low",
                         Email = "lock@gmail.com",
-                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
+                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB",
+                       
+                        
                     },
 
                 new User
@@ -160,6 +226,7 @@ namespace ProjetFostHer.Models
                    Stock = 500,
                    Price = 30,
                    Category = cat1,
+                   product = new Product(),
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
                         "Mn12345$",
@@ -181,6 +248,7 @@ namespace ProjetFostHer.Models
                    Stock = 500,
                    Price = 40,
                    Category = cat1,
+                   product = new Product(),
                    ArtistEvent = new Artist(
                         "Mymen.jelassi2014@gmail.com",
                         "Mn12345$",
@@ -192,7 +260,7 @@ namespace ProjetFostHer.Models
                         "00551555"
                         )
                }
-            );
+            ) ;
 
           
 

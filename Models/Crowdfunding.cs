@@ -24,7 +24,16 @@ namespace ProjetFostHer.Models
         public double MinDonation { get; set; }
         public double MaxDonation { get; set; }
         public double Donation { get; set; }
+        public double sum { get; set; }
         public Artist Artist { get; set; }
+        public User user { get; set; }
+        
 
+        public void SumCalculation()
+        {
+
+            sum = sum + Donation;
+        }
+        
     }
 }

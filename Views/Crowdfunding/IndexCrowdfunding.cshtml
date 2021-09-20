@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = "_Layout";
+//Layout = "_Layout";
 }
 @using ProjetFostHer.Models
 
@@ -47,12 +47,12 @@
 
 
 
-                <td align="center">@Html.ActionLink("Voir le crowdfunding", "CartCrowdfunding", "Crowdfunding", new { id = c.Id })</td>
+                <td align="center">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = c.Id })</td>
 
             </tr>
         }
     </table>
-    <h1 align="left">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</h1>
+    <h1 align="left">@Html.ActionLink("Afficher mon panier", "IndexCart", "Cart", new { id = ViewData["id"] })</h1>
 
 </body>
 </html>

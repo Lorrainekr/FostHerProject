@@ -25,8 +25,12 @@ namespace ProjetFostHer.Models
         public Category Category { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
         public Artist ArtistEvent { get; set; }
+        public Association AssociationEvent { get; set; }
         public int Quantity { get; set; }
         public User user { get; set; }
+        public Product product { get; set; }
+
+
 
 
     }
