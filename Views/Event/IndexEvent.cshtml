@@ -8,25 +8,26 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>IndexEvent</title>
+    <title>Index Event</title>
 </head>
 <body>
     <section class="container">
-        <h1>Evénements</h1>
+        <h1>Tous les événements</h1>
         <ul>
             <li>@Html.ActionLink("Créer un crowdfunding", "CreateCrowdfunding", "Crowdfunding")</li>
             <li>@Html.ActionLink("Supprimer un crowdfunding", "DeleteCrowdfunding", "Crowdfunding")</li>
             <li>@Html.ActionLink("Modifier un crowdfunding", "EditCrowdfunding", "Crowdfunding")</li>
-            <li>@Html.ActionLink("Page event", "PageEvent", "Event")</li>
         </ul>
     </section>
 
-    <!-- HOME LES EVENT (déjà dev en page d'accueil du site)-->
-    <!-- ecran principal : barre de recherche latérale gauches et résultats de recherche -->
+    <!-- AJOUTER HOME LES EVENT (déjà dev en page d'accueil du site)-->
+
+    <!-- ecran principal : barre de recherche latérale gauche et résultats de recherche -->
 
     <container class="container_event_list">
 
         <!-- partie gauche : barre de recherche (1 barre de recherche + 3 filtres )-->
+        <!-- ajouter for each avec les catégories -->
         <container class="list_searchbar">
             <input type="text" class="search_bar" id="search" placeholder="Rechercher...">
             <div class="filter">
@@ -43,6 +44,7 @@
             </div>
 
             <div class="filter-date">
+
                 <!-- documentation date : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
                 <h4 class="filter">Par date</h4>
                 <label for="start">Début :</label>
@@ -104,7 +106,7 @@
             @foreach (Event e in ViewBag.listEvents)
             {
                 <div class="event_card">
-                    <img src=@e.Img alt="image de l'événement">
+                    <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
                     <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
                     <h3>@e.Designation</h3>
                     <div class="line-break-card"></div>
@@ -114,81 +116,10 @@
                         <p>Du @e.StartDate au @e.EndDate</p>
                         <p>@e.Lieu</p>
                         <p>Prix : @e.Price</p>
-                    </div>
+                        <>@Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })</>   
                 </div>
-
-                    /*<td align="center">@Html.ActionLink("Order Now", "CartEvent", "Event", new { id = e.Id })</td>*/
+                </div>
             }
-
-            <div class="event_card">
-                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
-                <h5 class="event_artist">Nom de l'artiste</h5>
-                <h3>Titre de l'événement</h3>
-                <div class="line-break-card"></div>
-                <h4>Catégorie, Type</h4>
-                <div class="event_KPI">
-                    <p><strong>Infos</strong></p>
-                    <p>Du 25 au 31 septembre 2021</p>
-                    <p>Bar l'Impromptu, Paris</p>
-                    <p>Prix : Gratuit</p>
-                </div>
-            </div>
-
-            <div class="event_card">
-                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
-                <h5 class="event_artist">Nom de l'artiste</h5>
-                <h3>Titre de l'événement</h3>
-                <div class="line-break-card"></div>
-                <h4>Catégorie, Type</h4>
-                <div class="event_KPI">
-                    <p><strong>Infos</strong></p>
-                    <p>Du 25 au 31 septembre 2021</p>
-                    <p>Bar l'Impromptu, Paris</p>
-                    <p>Prix : Gratuit</p>
-                </div>
-            </div>
-
-            <div class="event_card">
-                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
-                <h5 class="event_artist">Nom de l'artiste</h5>
-                <h3>Titre de l'événement</h3>
-                <div class="line-break-card"></div>
-                <h4>Catégorie, Type</h4>
-                <div class="event_KPI">
-                    <p><strong>Infos</strong></p>
-                    <p>Du 25 au 31 septembre 2021</p>
-                    <p>Bar l'Impromptu, Paris</p>
-                    <p>Prix : Gratuit</p>
-                </div>
-            </div>
-
-            <div class="event_card">
-                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
-                <h5 class="event_artist">Nom de l'artiste</h5>
-                <h3>Titre de l'événement</h3>
-                <div class="line-break-card"></div>
-                <h4>Catégorie, Type</h4>
-                <div class="event_KPI">
-                    <p><strong>Infos</strong></p>
-                    <p>Du 25 au 31 septembre 2021</p>
-                    <p>Bar l'Impromptu, Paris</p>
-                    <p>Prix : Gratuit</p>
-                </div>
-            </div>
-
-            <div class="event_card">
-                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement">
-                <h5 class="event_artist">Nom de l'artiste</h5>
-                <h3>Titre de l'événement</h3>
-                <div class="line-break-card"></div>
-                <h4>Catégorie, Type</h4>
-                <div class="event_KPI">
-                    <p><strong>Infos</strong></p>
-                    <p>Du 25 au 31 septembre 2021</p>
-                    <p>Bar l'Impromptu, Paris</p>
-                    <p>Prix : Gratuit</p>
-                </div>
-            </div>
 
         </container>
 
@@ -206,22 +137,6 @@
             <li><a href="#" class="p-button">&raquo;</a></li>
         </ul>
     </div>
-
-    <table cellpadding="2" cellspacing="2" border="1">
-
-        <tr>
-
-            <th> Id </th>
-            <th> Name </th>
-            <th> Price </th>
-            <th> Acheter </th>
-
-        </tr>>
-
-
- 
-    </table>
-    <h1 align="left">@Html.ActionLink("Afficher mon panier", "OrderNow", "Cart")</h1>
 
 </body>
 </html>

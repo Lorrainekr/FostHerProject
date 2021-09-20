@@ -34,15 +34,12 @@ namespace ProjetFostHer.Models
 
             Association asso1 = new Association("lokr@gmail.com", "Br12345,", "Lokri", "210 boulevard Pompidou 75011 Paris", "0652314598", "W456987123", "789456123");
             Association asso2 = new Association("lakr@gmail.com", "Br12346:", "Lowky", "22 rue Poupoupidou 75010 Somewhere", "0652314556", "W456987852", "789456258");
-            Category cat1 = new Category();
-            cat1.CategoryName = "Peinture";
-            Category cat2 = new Category();
-            cat1.CategoryName = "Cinema";
-            Category cat3 = new Category();
-            cat1.CategoryName = "Sculpture";
-
-
-
+            Category cat1 = new Category(); cat1.CategoryName = "Peinture";
+            Category cat2 = new Category(); cat1.CategoryName = "Cinema";
+            Category cat3 = new Category(); cat1.CategoryName = "Sculpture";
+            Category cat4 = new Category(); cat1.CategoryName = "Street Art";
+            Category cat5 = new Category(); cat1.CategoryName = "Musique";
+            Category cat6 = new Category(); cat1.CategoryName = "Danse";
 
             this.Accounts.AddRange(
                 new Account
@@ -182,16 +179,15 @@ namespace ProjetFostHer.Models
                    MinDonation = 5,
                    MaxDonation = 1000,
                    Artist = new Artist(
-                        "hdjbnd@gmail.com",
-                        "Mn1d45$",
-                        "80 rue",
-                        "Jean",
-                        "Dujardin",
-                        "Jpm",
+                        "roxbutterfly@gmail.com",
+                        "Pn12345!",
+                        "80 rue de la mer",
+                        "Roxanne",
+                        "Butterfly",
+                        "Roxanne Butterfly",
                         cat1,
                         "00551555"
                         )
-
                },
 
                new Crowdfunding
@@ -219,52 +215,77 @@ namespace ProjetFostHer.Models
             this.Events.AddRange(
                new Event
                {
-                   Designation = "Soutiens des artistes du 20eme",
-                   Type = "Conférence",
-                   StartDate = new DateTime(2021, 09, 10),
-                   EndDate = new DateTime(2021, 11, 10),
-                   Stock = 500,
-                   Price = 30,
+                   Designation = "Tap Jam avec Roxane Butterfly & Lior Krief et Prabhu Edouard",
+                   Type = "Spectacle",
+                   StartDate = new DateTime(2021, 02, 10),
+                   EndDate = new DateTime(2021, 03, 11),
+                   AssociationEvent = asso2,
+                   Stock = 400,
+                   Price = 0,
                    Category = cat1,
-                   lieu = "Bar l'Impromptu, Paris",
-                   img = "~/img/visuel_crowdfunding.png",
+                   Lieu = "Bar l'Impromptu, Paris",
+                   Img = "~/img/visuel_crowdfunding.png",
                    product = new Product(),
                    ArtistEvent = new Artist(
-                        "Mymen.jelassi2014@gmail.com",
-                        "Mn12345$",
-                        "9 rue",
-                        "George",
-                        "Michael",
-                        "GM",
-                        cat2,
+                        "roxbutterfly@gmail.com",
+                        "Pn12345!",
+                        "80 rue de la mer",
+                        "Roxanne",
+                        "Butterfly",
+                        "Roxanne Butterfly",
+                        cat1,
                         "00551555"
                         )
                },
 
                new Event
                {
-                   Designation = "Soutiens des artistes du 10eme",
+                   Designation = "Les femmes dans la peinture abstraite",
                    Type = "Conférence",
                    StartDate = new DateTime(2021, 09, 10),
-                   EndDate = new DateTime(2021, 11, 10),
-                   Stock = 500,
-                   Price = 40,
+                   EndDate = new DateTime(2021, 08, 10),
+                   Stock = 40,
+                   Price = 0,
                    Category = cat1,
-                   Lieu = "Bar l'Impromptu, Bobigny",
+                   Lieu = "La Mutinerie, Paris",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
                    product = new Product(),
                    ArtistEvent = new Artist(
-                        "Mymen.jelassi2014@gmail.com",
+                        "sylvettemarchal@gmail.com",
                         "Mn12345$",
-                        "9 rue",
-                        "George",
-                        "Michael",
-                        "GM",
-                        cat3,
-                        "00551555"
+                        "18 rue des alouettes",
+                        "Sylvette",
+                        "Marchal",
+                        "Sylvette Marchal",
+                        cat1,
+                        "00551559"
+                        )
+               },
+
+               new Event
+               {
+                   Designation = "Piano Sonata No. 3 (Chopin)",
+                   Type = "Spectacle",
+                   StartDate = new DateTime(2021, 10, 22),
+                   EndDate = new DateTime(2021, 10, 29),
+                   Stock = 150,
+                   Price = 10,
+                   Category = cat5,
+                   Lieu = "Conservatoire de Boulogne-Billancourt",
+                   Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
+                   product = new Product(),
+                   ArtistEvent = new Artist(
+                        "sylvettemarchal@gmail.com",
+                        "Mn12F345$",
+                        "18 rue des grands ruisseaux",
+                        "Amélie",
+                        "Joly",
+                        "Amélie Joly",
+                        cat5,
+                        "00551659"
                         )
                }
-            ) ;
+            );
 
           
 
