@@ -33,6 +33,7 @@ namespace ProjetFostHer.Models
         {
 
             sum = sum + Donation;
+            
         }
         
     }

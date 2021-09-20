@@ -62,18 +62,25 @@ namespace ProjetFostHer.Controllers
         }
 
 
-
-
         public IActionResult IndexCrowdfunding()
         {
             using (IDal dal = new Dal())
             {
-                List<Crowdfunding> cr = dal.ListAllCrowdfundings();
+                List<Crowdfunding> crwd = dal.ListAllCrowdfundings();
 
-                ViewBag.listcrowdfundings = cr;
+                ViewBag.listCrowdfundings = crwd;
 
             }
             return View();
+        }
+
+        public IActionResult PageCrowdfunding(int id)
+        {
+            using (IDal dal = new Dal())
+            {
+                Crowdfunding crwd = dal.ListAllCrowdfundings().Where(a => a.Id == id).FirstOrDefault();
+                return View(crwd);
+            }
         }
 
         public IActionResult Contribute(int id)

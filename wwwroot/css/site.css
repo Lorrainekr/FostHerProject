@@ -1021,13 +1021,16 @@ button_orange:hover {
     user-select: none;
 }
 
-.container input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-}
+
+    .container_search input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+
 
 .checkmark {
     position: absolute;

@@ -12,7 +12,23 @@ namespace ProjetFostHer.Controllers
     {
         public IActionResult IndexAssociation()
         {
+            using (IDal dal = new Dal())
+            {
+                List<Association> asso = dal.ListAllAssociations();
+
+                ViewBag.listAssociations = asso;
+
+            }
             return View();
+        }
+
+        public IActionResult PageAssociation(int id)
+        {
+            using (IDal dal = new Dal())
+            {
+                Association asso = dal.ListAllAssociations().Where(a => a.Id == id).FirstOrDefault();
+                return View(asso);
+            }
         }
         public IActionResult EditAssociation(int id)
         {

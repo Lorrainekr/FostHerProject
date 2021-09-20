@@ -12,8 +12,25 @@ namespace ProjetFostHer.Controllers
     {
         public IActionResult IndexArtist()
         {
+            using (IDal dal = new Dal())
+            {
+                List<Artist> art = dal.ListAllArtists();
+
+                ViewBag.listArtists = art;
+
+            }
             return View();
         }
+
+        public IActionResult PageArtist(int id)
+        {
+            using (IDal dal = new Dal())
+            {
+                Artist art = dal.ListAllArtists().Where(a => a.Id == id).FirstOrDefault();
+                return View(art);
+            }
+        }
+
         public IActionResult EditArtist(int id)
         {
             if (id != 0)
