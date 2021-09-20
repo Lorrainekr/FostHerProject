@@ -64,7 +64,7 @@ namespace ProjetFostHer
                     dal.AddItem(cartId, new Item { ProductId = id, Quantity = 1 });
                 }
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("Index","Cart");
         }
 
         public IActionResult Remove(int id)

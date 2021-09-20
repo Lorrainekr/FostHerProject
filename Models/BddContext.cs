@@ -171,11 +171,11 @@ namespace ProjetFostHer.Models
             this.Crowdfundings.AddRange(
                new Crowdfunding 
                {
-                   NameCrowdfunding = "Soutiens des artistes du 20eme",
+                   NameCrowdfunding = "J'ai 3 Amours: Piano, Contrebasse, Claquettes !",
                    StartDate = new DateTime(2021,09,10),
                    EndDate = new DateTime(2021,11,10),
                    AssociationCrowdfunding = asso1,
-                   AmountMax = 30000,
+                   AmountMax = 45000,
                    MinDonation = 5,
                    MaxDonation = 1000,
                    Artist = new Artist(
@@ -192,7 +192,7 @@ namespace ProjetFostHer.Models
 
                new Crowdfunding
                {
-                   NameCrowdfunding = "Soutiens des artistes du 10eme",
+                   NameCrowdfunding = "Soutenez la création des artistEs du 10eme",
                    StartDate = new DateTime(2021,09,10),
                    EndDate = new DateTime(2021, 11, 10),
                    AssociationCrowdfunding = asso2,
@@ -203,11 +203,11 @@ namespace ProjetFostHer.Models
                         "hdjbnd@gmail.com",
                         "Mn12345$",
                         "9 rue",
-                        "Jean",
-                        "Michael",
-                        "JVG",
+                        "Séverine",
+                        "Michel",
+                        "Séverine Michel",
                         cat2,
-                        "00551555"
+                        "00551575"
                         )
                }
             );
