@@ -69,6 +69,14 @@ namespace ProjetFostHer.Controllers
             }
         }
 
+        public IActionResult CreateArtist()
+        {
+
+            Artist art = new Artist();
+                return View(art);
+           
+        }
+        [HttpPost]
         public IActionResult CreateArtist(Artist art)
         {
 
@@ -83,8 +91,8 @@ namespace ProjetFostHer.Controllers
                 {
                     Association asso = ctx.ListAllAssociations().Where(r => r.Id == user.association.Id).FirstOrDefault();
                     ctx.CreateArtist(art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Category, art.Siret, asso);
-
                     return View("Modifications");
+                    
                 }else return View("Error");
             }
             
