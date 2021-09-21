@@ -12,15 +12,16 @@
     <title>Index Event</title>
 </head>
 <body>
-
+    @if(ViewBag.user=="A")
+    {
     <section class="container">
         <h1>Liste des Crowdfundings</h1>
         <ul>
             <li>@Html.ActionLink("Créer un crowdfunding", "CreateCrowdfunding", "Crowdfunding")</li>
-            <li>@Html.ActionLink("Supprimer un crowdfunding", "DeleteCrowdfunding", "Crowdfunding")</li>
-            <li>@Html.ActionLink("Modifier un crowdfunding", "EditCrowdfunding", "Crowdfunding")</li>
         </ul>
     </section>
+    }
+
 
     <!-- AJOUTER HOME LES Crowdfundings (déjà dev en page d'accueil du site)-->
     <!-- HOME LES CROWDFUNDINGS -->
@@ -104,13 +105,13 @@
                 <h4 class="filter">Projets</h4>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Nouveaux
-                </label></br>
+                </label><br/>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Populaires
-                </label></br>
+                </label><br/>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Sélection de la rédaction
-                </label></br>
+                </label><br/>
             </div>
 
             <div class="filter-amount">
@@ -120,32 +121,32 @@
                     <h4 class="filter">Par avancement</h4>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">En cours de financement
-                    </label></br>
+                    </label><br/>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Financés
-                    </label></br>
+                    </label><br/>
                 </div>
 
                 <div class="filter">
                     <h4 class="filter">Par thématique</h4>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Peinture
-                    </label></br>
+                    </label><br/>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Cinéma
-                    </label></br>
+                    </label><br/>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Sculpture
-                    </label></br>
+                    </label><br/>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Street Art
-                    </label></br>
+                    </label><br/>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Musique
-                    </label></br>
+                    </label><br/>
                     <label class="container_search">
                         <input type="checkbox" class="checkmark">Danse
-                    </label></br>
+                    </label><br/>
                 </div>
             </div>
         </container>
@@ -197,38 +198,6 @@
             <li><a href="#" class="p-button">&raquo;</a></li>
         </ul>
     </div>
-
-    <table cellpadding="2" cellspacing="2" border="1">
-
-        <tr>
-
-            <th> Id </th>
-            <th> Name </th>
-            <th> Min Donation </th>
-            <th> Max Donation </th>
-            <th> Amount max </th>
-
-        </tr>>
-
-
-        @foreach (Crowdfunding c in ViewBag.listcrowdfundings)
-        {
-            <tr>
-                <td>@c.Id </td>
-                <td>@c.NameCrowdfunding </td>
-                <td>@c.MinDonation </td>
-                <td>@c.MaxDonation </td>
-                <td>@c.AmountMax </td>
-
-
-
-
-                <td align="center">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = c.Id })</td>
-
-            </tr>
-        }
-    </table>
-    <h1 align="left">@Html.ActionLink("Afficher mon panier", "IndexCart", "Cart", new { id = ViewData["id"] })</h1>
 
 </body>
 </html>
