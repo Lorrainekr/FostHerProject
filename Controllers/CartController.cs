@@ -33,7 +33,16 @@ namespace ProjetFostHer
             }
             return View(cart);
         }
-        
+        [HttpPost]
+        public IActionResult Index(Cart cart)
+        {
+            
+
+                    return View(cart);
+            
+        }
+
+
         public IActionResult Buy(int id)
         {
             var cartId = SessionHelper.GetObjectFromJson<int>(HttpContext.Session, "cartId");
@@ -64,7 +73,7 @@ namespace ProjetFostHer
                     dal.AddItem(cartId, new Item { ProductId = id, Quantity = 1 });
                 }
             }
-            return RedirectToAction("Index","Cart");
+            return RedirectToAction("Index");
         }
 
         public IActionResult Remove(int id)
