@@ -52,7 +52,7 @@ function myFunction() {
     } else {
         staticcontrepartie.classList.remove("stickycontrepartie");
     }
-}*/
+}
 /* block deroulant*/
 var coll = document.getElementsByClassName("collapsible");
 var i;
