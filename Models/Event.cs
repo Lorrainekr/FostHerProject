@@ -19,7 +19,7 @@ namespace ProjetFostHer.Models
         [DataType(DataType.Date)]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
-        [Required(ErrorMessage = "Veuillez indiquez quand votre evenement se cloture")]
+        [Required(ErrorMessage = "Veuillez indiquez quand termine votre événement")]
         public DateTime EndDate { get; set; }
         public int Stock { get; set; }
         public double Price { get; set; }

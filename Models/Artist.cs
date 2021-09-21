@@ -22,15 +22,20 @@ namespace ProjetFostHer.Models
                            " Une lettre minuscule" +
                            " Un chiffre" +
                            " Un caractère spécial" +
-                           " Une longueur minimal de huit caractères")]
+                           " Une longueur minimale de huit caractères")]
+        [Display(Name = "Mot de passe")]
         public string Password { get; set; }
+        [Display(Name = "Adresse")]
         public string Address { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
         public string FirstName { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
+       
         public string LastName { get; set; }
+        [Display(Name = "Nom de scène (facultatif)")]
         public string StageName { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
+       
         public Category Category { get; set; }
         public Association association { get; set; }
        
