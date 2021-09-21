@@ -103,7 +103,7 @@
                 <h4 class="filter">Evénements</h4>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Nouveaux
-                </label><br/>
+                </label><br />
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Populaires
                 </label><br />
@@ -117,11 +117,11 @@
                 <h4 class="filter">Par date</h4>
                 <label for="start">Début :</label>
 
-                <input type="date" 
-                       id="start" 
-                       name="event-start" 
-                       value="2021-09-23" 
-                       min="2021-09-17" 
+                <input type="date"
+                       id="start"
+                       name="event-start"
+                       value="2021-09-23"
+                       min="2021-09-17"
                        max="2022-01-01"><br /><br />
 
                 <label for="start">Fin :</label>
@@ -181,7 +181,7 @@
             @foreach (Event e in ViewBag.listEvents)
             {
             <div class="event_card">
-                <img src= "~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
+                <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
                 <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
                 <div class="event_block_content">
                     <h3>@e.Designation</h3>
@@ -189,7 +189,7 @@
                         <div class="line-break-card"></div>
                         <h4>@e.Category.CategoryName @e.Type</h4>
                     </div>
-                    
+
                     <div class="event_KPI">
                         <p><strong class="bold">Infos</strong></p>
                         <p>Du @e.StartDate <br />au @e.EndDate</p>
@@ -200,23 +200,24 @@
                         @Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })
                     </div>
                 </div>
-            }
+            </div>
+                    }
+            </container>
+
         </container>
 
-    </container>
+        <!-- pagination bas de page -->
+        <div class="pagination">
+            <ul class="pagination">
+                <li><a class="fas fa-chevron-left"></a></li>
+                <li><a href="#" class="p-button">1</a></li>
+                <li><a href="#" class="p-button">2</a></li>
+                <li><a href="#" class="p-button">3</a></li>
+                <li><a href="#" class="p-button">4</a></li>
+                <li><a class="fas fa-chevron-right"></a></li>
+            </ul>
+        </div>
 
-    <!-- pagination bas de page -->
-    <div class="pagination">
-        <ul class="pagination">
-            <li><a class="fas fa-chevron-left"></a></li>
-            <li><a href="#" class="p-button">1</a></li>
-            <li><a href="#" class="p-button">2</a></li>
-            <li><a href="#" class="p-button">3</a></li>
-            <li><a href="#" class="p-button">4</a></li>
-            <li><a class="fas fa-chevron-right"></a></li>
-        </ul>
-    </div>
-
-</body>
+    </body>
 
 </html>
