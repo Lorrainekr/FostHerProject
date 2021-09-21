@@ -322,8 +322,8 @@ button_white:hover {
 
 .block_button_alaune {
     position: absolute;
-    bottom: -140%;
     margin-right: 30px;
+    margin-top: 385px;
 }
 
 .img_selection {
@@ -1107,7 +1107,7 @@ button_orange:hover {
 }
 
 .crowdfunding_card, .event_card {
-    box-shadow: 6px 3px 3px #f3eff4;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
     margin: 20px;
     max-width: 310px;
 }
@@ -1159,7 +1159,7 @@ button_orange:hover {
 
 .progress-small::-webkit-progress-value {
     background-color: #E94E1B;
-    box-shadow: 1px 1px 1px 1px #b3b3b3;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
 }
 
 .crowdfunding_artist, .event_artist {
@@ -1418,8 +1418,27 @@ ul.pagination li a {
     margin-left: 10%;
 }
 
+.artiste-list-description {
+    height: 200px;
+    padding: 15px;
+}
+
+.artiste-list-description h3 {
+    font-size: 20px;
+    margin: 0;
+}
+
+.artiste-list-description h5 {
+    color: #E94E1B;
+    font-size: 12px;
+    font-family: 'Open Sans regular'; 
+    margin: 0 0 2px 0;
+}
+
 .artiste-list-description h4 {
-    color: #E94E1B
+    font-size: 14px;
+    font-family: 'Open Sans semibold';
+    margin: 0 0 2px 0;
 }
 
 .artiste-list-gallery {
@@ -1427,57 +1446,88 @@ ul.pagination li a {
     flex-direction: row;
     flex-wrap: wrap;
     align-items: flex-start;
-    align-content: space-around;
-    justify-content: space-around;
+    justify-content: flex-start;
+    margin: 0 0 50px 50px;
 }
 
 .artiste-block-vertical {
-    width: min-content;
+    max-width: 300px;
+    margin-bottom: 50px;
+    margin-right: 30px;
+    margin-left: 8px;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+}
+
+.artiste-list-image {
+    display: flex;
+    justify-content: center;
 }
 
 .artiste-list-image img {
-    height: 250px;
+    max-width: 295px;
 }
 
-.artistes-next-pages {
+.artist_card_link_content {
     display: flex;
-    align-content: space-between;
-    justify-content: center;
+    justify-content: flex-end;
+    padding: 15px;
 }
 
-    .artistes-next-pages a {
-        display: flex;
-        align-content: stretch;
-        justify-content: space-around;
-        align-items: center;
-        font-size: 18px;
-        color: #E94E1B;
-        background-color: white;
-        width: 40px;
-        height: 40px;
-        margin-top: 20px;
-        margin-bottom: 20px;
-        margin-left: 100px;
-        box-shadow: 3px 3px 3px grey;
-        border-radius: 5pt;
-    }
+.artist_card_link_content a {
+    color: #E13611;
+    font-family: 'Open Sans semibold'
+}
 
-.artistes-link-decouvrir {
+/*PAGE ARTISTE */
+
+.page-artiste-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 100px;
+}
+
+.page-artiste-block-left {
+    margin-right: 100px;
+}
+
+.description-artiste {
     font-family: 'Oswald', sans-serif;
-    font-size: 12pt;
-    color: white;
-    background-color: #E94E1B;
-    width: 400px;
-    height: 45px;
-    padding-top: 9px;
-    border-radius: 50px;
-    box-shadow: 7px 5px 5px grey;
-    display: table;
-    margin: auto;
-    display: flex;
-    align-content: stretch;
-    justify-content: center;
-    align-items: center;
-    margin-top: 60px;
+    font-size: 14pt;
+    text-align: left;
 }
+
+.page_artist_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.icons-social-media a {
+    font-size: 30pt;
+    color: #E94E1B;
+}
+
+.page-artiste-block-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-artiste-block-right {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.artist_link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
+
  
