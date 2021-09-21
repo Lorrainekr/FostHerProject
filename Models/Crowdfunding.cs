@@ -17,7 +17,11 @@ namespace ProjetFostHer.Models
         //[Required(ErrorMessage = "Veuillez indiquez quand votre campagne se cloture")]
         public DateTime EndDate { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
+        public Category Category { get; set; }
+        //[Required(ErrorMessage = "Champ obligatoire")]
         public Association AssociationCrowdfunding { get; set; }
+        //[Required(ErrorMessage = "Champ obligatoire")]
+        public Artist ArtistCrowdfunding { get; set; }
         [Required(ErrorMessage = "Indiquez le montant que vous souhaitez obtenir")]
         public double AmountMax { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
