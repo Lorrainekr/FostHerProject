@@ -26,18 +26,22 @@
                 <th>Quantity <input type="submit" value="Update" /></th>
                 <th>Sub Total</th>
             </tr>
-            @foreach (var item in Model.Items)
+            @for (int i =0;i<Model.Items.Count;i++)   
             {
-                <tr>
-                    <td>@Html.ActionLink("Remove", "Remove", "Cart", new { id = @item.Id })</td>
-                    <td>@Html.ActionLink("Modifier", "OnPostUpdate", "Cart", new { id = @item.Id })</td>
-                    <td>@item.Product.Id</td>
-                    <td>@item.Product.Name</td>
-                    <td>@item.Product.Price</td>
-                    <td><input type="number" name="quantities" value="@item.Quantity" min="1" style="width: 50px;" /></td>
+        <tr>
+            <td>@Html.ActionLink("Remove", "Remove", "Cart", new { id = @Model.Items[i].Id })</td>
+            <td>@Html.ActionLink("Modifier", "OnPostUpdate", "Cart", new { id = @Model.Items[i].Id })</td>
+            <td>@Model.Items[i].Product.Id</td>
+            <td>@Model.Items[i].Product.Name</td>
+            <td>@Model.Items[i].Product.Price</td>
+            <td> @Html.TextBoxFor(m => Model.Items[i].Quantity, new { @type = "number", min = "1", style = "width: 50px;" }) </td>
 
-                    <td>@(item.Product.Price * item.Quantity)</td>
-                </tr>
+            <td>@(Model.Items[i].Product.Price * Model.Items[i].Quantity)</td>
+            @Html.HiddenFor(m => @Model.Items[i].Id)
+            @Html.HiddenFor(m => @Model.Items[i].Product.Id)
+            @Html.HiddenFor(m => @Model.Items[i].Product.Price)
+            @Html.HiddenFor(m => @Model.Items[i].Product.Name)
+        </tr>
             }
             <tr>
                 <td align="right" colspan="6">Sum</td>

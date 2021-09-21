@@ -274,10 +274,10 @@ namespace ProjetFostHer.DAL
             {
                 cart.total = cart.total + (item.Product.Price * item.Quantity);
             }
-            Cart crt = _bddContext.Carts.Find(cart.Id);
-            crt.total = cart.total;
+            //Cart crt = _bddContext.Carts.Find(cart.Id);
+            //crt.total = cart.total;
 
-            _bddContext.Carts.Update(crt);
+            _bddContext.Carts.Update(cart);
 
 
             _bddContext.SaveChanges();
