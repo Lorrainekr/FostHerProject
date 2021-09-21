@@ -1002,14 +1002,28 @@ button_orange:hover {
 .container_crowdfunding_list, .container_event_list {
     display: flex;
     flex-direction: row;
-    padding: 0 120px;
+    padding: 0 50px;
+}
+
+.evenements_list_title h2 {
+    margin-left: 50px;
+    margin-top: 0;
+}
+
+.list_searchbar {
+    margin-top: 15px;
+}
+
+.space {
+    padding-top: 100px;
+}
+
+.separator_line {
+    border-bottom: 2px solid #c3c3c3;
+    margin: 0 250px 100px 250px;
 }
 
 /* Espace de recherche  CHECKBOX ET RADIOBUTTON */
-
-.list_searchbar {
-    padding: 20px;
-}
 
 .container_search {
     display: block;
@@ -1108,7 +1122,7 @@ button_orange:hover {
 
 .crowdfunding_card, .event_card {
     box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
-    margin: 20px;
+    margin: 0 20px 20px 20px;
     max-width: 310px;
 }
 
@@ -1528,6 +1542,27 @@ ul.pagination li a {
     width: 100%;
     padding: 10px;
     justify-content: space-between;
+}
+
+/* LIST ASSOCIATION */
+.association_list_container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0 50px;
+}
+
+.association_list_title h2 {
+    margin-left: 50px;
+    margin-top: 0;
+}
+
+.association_list_title{
+    margin-top: 0;
+}
+
+.search_asso .search_bar {
+    margin-top: 15px;
 }
 
  
