@@ -322,8 +322,8 @@ button_white:hover {
 
 .block_button_alaune {
     position: absolute;
-    bottom: -140%;
     margin-right: 30px;
+    margin-top: 385px;
 }
 
 .img_selection {
@@ -1467,9 +1467,67 @@ ul.pagination li a {
     max-width: 295px;
 }
 
-.event_card_link_content{
+.artist_card_link_content {
+    display: flex;
+    justify-content: flex-end;
     padding: 15px;
 }
 
+.artist_card_link_content a {
+    color: #E13611;
+    font-family: 'Open Sans semibold'
+}
+
+/*PAGE ARTISTE */
+
+.page-artiste-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 100px;
+}
+
+.page-artiste-block-left {
+    margin-right: 100px;
+}
+
+.description-artiste {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14pt;
+    text-align: left;
+}
+
+.page_artist_content {
+    display: flex;
+    flex-direction: row;
+}
+
+.icons-social-media a {
+    font-size: 30pt;
+    color: #E94E1B;
+}
+
+.page-artiste-block-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-artiste-block-right {
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+
+.artist_link {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+    padding: 10px;
+    justify-content: space-between;
+}
 
  
