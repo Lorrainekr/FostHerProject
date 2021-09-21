@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index Event</title>
+    <title>Evenements</title>
 </head>
 
 <body>
@@ -103,25 +103,27 @@
                 <h4 class="filter">Evénements</h4>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Nouveaux
-                </label></br>
+                </label><br/>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Populaires
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Sélection de la rédaction
-                </label></br>
+                </label><br />
             </div>
 
             <div class="filter-date">
                 <!-- documentation date : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
                 <h4 class="filter">Par date</h4>
                 <label for="start">Début :</label>
-                <input type="date"
-                       id="start"
-                       name="event-start"
-                       value="2021-09-23"
-                       min="2021-09-17"
-                       max="2022-01-01"></br></br>
+
+                <input type="date" 
+                       id="start" 
+                       name="event-start" 
+                       value="2021-09-23" 
+                       min="2021-09-17" 
+                       max="2022-01-01"><br /><br />
+
                 <label for="start">Fin :</label>
                 <input type="date" id="end" name="event-end" value="2021-09-24" min="2021-09-17" max="2022-01-01">
             </div>
@@ -130,45 +132,45 @@
                 <h4 class="filter">Par type</h4>
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Exposition
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Spectacle
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Rencontre
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Hors les murs
-                </label></br>
+                </label><br />
             </div>
 
             <div class="filter">
                 <h4 class="filter">Par thématique</h4>
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Peinture
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Cinéma
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Sculpture
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Street Art
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Musique
-                </label></br>
+                </label><br />
                 <label class="container_search">
                     <input type="checkbox" class="checkmark">Danse
-                </label></br>
+                </label><br />
             </div>
 
             <div class="filter-prix">
                 <h4 class="filter">Par budget</h4>
                 <label class="container_search">
                     <input type="radio" class="checkmark-radio">Gratuit
-                </label></br>
+                </label><br />
             </div>
         </container>
 
@@ -204,15 +206,14 @@
     </container>
 
     <!-- pagination bas de page -->
-
     <div class="pagination">
         <ul class="pagination">
-            <li><a href="#" class="p-button">&laquo;</a></li>
+            <li><a class="fas fa-chevron-left"></a></li>
             <li><a href="#" class="p-button">1</a></li>
             <li><a href="#" class="p-button">2</a></li>
             <li><a href="#" class="p-button">3</a></li>
             <li><a href="#" class="p-button">4</a></li>
-            <li><a href="#" class="p-button">&raquo;</a></li>
+            <li><a class="fas fa-chevron-right"></a></li>
         </ul>
     </div>
 

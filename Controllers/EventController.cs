@@ -46,21 +46,13 @@ namespace ProjetFostHer.Controllers
                     ctx.CreateEvent(eve.Designation, eve.Type, eve.StartDate, eve.EndDate, eve.Price, eve.Category, asso);
                     
                 }
-
-
                 else
                 {
                     return View("Error");
                 }
-
             }
-
             return View("Modifications");
         }
- 
-  
-
-
        public IActionResult IndexEvent()
         {
            using (IDal dal = new Dal())

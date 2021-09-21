@@ -40,7 +40,8 @@ namespace ProjetFostHer.Models
         public string Tel { get; set; }
         public String Validation { get; set; }
 
-        public Artist(string email, string password, string address, string firstName, string lastName, string stageName, Category category, string siret)
+        public Artist(string email, string password, string address, string firstName, string lastName, string stageName, 
+            Category category, Association association, string siret)
         {
             Email = email;
             Password = password;
@@ -49,6 +50,7 @@ namespace ProjetFostHer.Models
             LastName = lastName;
             StageName = stageName;
             Category = category;
+            this.association = association;
             Siret = siret;
         }
 
