@@ -34,6 +34,7 @@
                         @Html.LabelFor(m => Model.Donation)
                     </div>
                     <div class="label_block_form">
+                        <p>@Model.NameCrowdfunding</p>
                         @Html.TextBoxFor(m => Model.NameCrowdfunding, new { @readonly = true })
                         @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
                         @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
