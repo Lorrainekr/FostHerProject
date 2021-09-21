@@ -23,7 +23,7 @@
                      alt="photo accueil event @Model.Designation">
             </div>
 
-        <!--Infos clés-->
+            <!--Infos clés-->
             <section class="event_info_content">
                 <div class="event_info_title">
                     <div class="avatar_block">
@@ -71,12 +71,13 @@
             </ul>
         </div>
         <div class="block_button_event">
-            <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id})</p>
+            <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id })</p>
         </div>
     </nav>
     <div id="partial_infos">
-        @Html.Partial("EventSubpageInfos")
+        @*@Html.Partial("EventSubpageInfos")**@
     </div>
 </div>
-
+<html>
+<body> </body>
 </html>

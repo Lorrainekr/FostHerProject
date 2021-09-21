@@ -38,11 +38,11 @@ namespace ProjetFostHer.Models
             Association asso4 = new Association("fabriquedanse@gmail.com", "!6753!76du", "La Fabrique de la Danse", "78, rue des petits prés, Nantes 44000", "0156785623", "L749267396", "234908758");
             Association asso5 = new Association("astrea@gmail.com", "!7589!76du", "Astrea", "67, rue de la grande truanderie, Paris 75002", "0176458790", "R563789653", "764908637");
             Category cat1 = new Category(); cat1.CategoryName = "Peinture";
-            Category cat2 = new Category(); cat1.CategoryName = "Cinema";
-            Category cat3 = new Category(); cat1.CategoryName = "Sculpture";
-            Category cat4 = new Category(); cat1.CategoryName = "Street Art";
-            Category cat5 = new Category(); cat1.CategoryName = "Musique";
-            Category cat6 = new Category(); cat1.CategoryName = "Danse";
+            Category cat2 = new Category(); cat2.CategoryName = "Cinema";
+            Category cat3 = new Category(); cat3.CategoryName = "Sculpture";
+            Category cat4 = new Category(); cat4.CategoryName = "Street Art";
+            Category cat5 = new Category(); cat5.CategoryName = "Musique";
+            Category cat6 = new Category(); cat6.CategoryName = "Danse";
 
             this.Accounts.AddRange(
                 new Account
@@ -97,8 +97,10 @@ namespace ProjetFostHer.Models
             );
 
             this.SaveChanges();
-        
-    
+
+            Product a = new Product();
+            a.Price = 80;
+            a.Name = "Tap Jam avec Lior Krief et Prabhu Edouard";
 
             this.Users.AddRange(
                 new User
@@ -218,21 +220,21 @@ namespace ProjetFostHer.Models
                         )
                }
             );
-
+            
             this.Events.AddRange(
                new Event
                {
-                   Designation = "Tap Jam avec Lior Krief et Prabhu Edouard",
+                   Designation = a.Name,
                    Type = "Spectacle",
                    StartDate = new DateTime(2021, 02, 10),
                    EndDate = new DateTime(2021, 03, 11),
                    AssociationEvent = asso2,
                    Stock = 400,
-                   Price = 0,
+                   Price = 800,
                    Category = cat1,
                    Lieu = "Bar l'Impromptu, Paris",
                    Img = "~/img/visuel_crowdfunding.png",
-                   product = new Product(),
+                   product = a,
                    ArtistEvent = new Artist(
                         "roxbutterfly@gmail.com",
                         "Pn12345!",
@@ -253,7 +255,7 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021, 09, 10),
                    EndDate = new DateTime(2021, 08, 10),
                    Stock = 40,
-                   Price = 0,
+                   Price = 800,
                    Category = cat3,
                    Lieu = "La Mutinerie, Paris",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",

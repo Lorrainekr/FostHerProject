@@ -36,9 +36,15 @@ namespace ProjetFostHer
         [HttpPost]
         public IActionResult Index(Cart cart)
         {
-            
+            using (Dal ctx = new Dal())
+            {
+                ctx.BuyEvents(cart);
 
-                    return View(cart);
+                return View(cart);
+            }
+
+           
+       
             
         }
 
