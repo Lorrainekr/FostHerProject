@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -11,10 +12,10 @@ namespace ProjetFostHer.Models
         
 
         public int Id { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [RegularExpression(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$", ErrorMessage = "Veuillez saisir une adresse mail valide")]
         public string Email { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [RegularExpression("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$",
             ErrorMessage = "Votre mot de passe doit contenir au moins :" +
                            " Une lettre majuscule" +
@@ -26,22 +27,26 @@ namespace ProjetFostHer.Models
         public string Password { get; set; }
         [Display(Name = "Adresse")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
-        [Display(Name = "Prénom")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
         public string FirstName { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
-        [Display(Name = "Nom de famille")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
+       
         public string LastName { get; set; }
         [Display(Name = "Nom de scène (facultatif)")]
         public string StageName { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
-        [Display(Name = "Domaine artistique")]
+        //[Required(ErrorMessage = "Champ obligatoire")]
+       
         public Category Category { get; set; }
-        [Required(ErrorMessage = "Champ obligatoire")]
+        public Association association { get; set; }
+       
+        //[Required(ErrorMessage = "Champ obligatoire")]
         [StringLength(14, ErrorMessage = "Votre numéro de SIRET est composé de 14 chiffres")]
         public string Siret { get; set; }
+        public string Tel { get; set; }
+        public String Validation { get; set; }
 
-        public Artist(string email, string password, string address, string firstName, string lastName, string stageName, Category category, string siret)
+        public Artist(string email, string password, string address, string firstName, string lastName, string stageName, 
+            Category category, Association association, string siret)
         {
             Email = email;
             Password = password;
@@ -50,6 +55,7 @@ namespace ProjetFostHer.Models
             LastName = lastName;
             StageName = stageName;
             Category = category;
+            this.association = association;
             Siret = siret;
         }
 

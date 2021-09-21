@@ -15,7 +15,9 @@ namespace ProjetFostHer.Models
         public string Designation { get; set; }
         [Required(ErrorMessage = "Champ obligatoire")]
         public string Type { get; set; }
-        [Required(ErrorMessage = "Veuillez indiquez quand débute votre événement")]
+        [Required(ErrorMessage = "Veuillez indiquez quand débute votre evenement")]
+        [DataType(DataType.Date)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime StartDate { get; set; }
         [Required(ErrorMessage = "Veuillez indiquez quand termine votre événement")]
         public DateTime EndDate { get; set; }
@@ -25,8 +27,12 @@ namespace ProjetFostHer.Models
         public Category Category { get; set; }
         //[Required(ErrorMessage = "Champ obligatoire")]
         public Artist ArtistEvent { get; set; }
+        public Association AssociationEvent { get; set; }
         public int Quantity { get; set; }
         public User user { get; set; }
+        public Product product { get; set; }
+        public string Img { get; set; }
+        public string Lieu { get; set; }
 
 
     }

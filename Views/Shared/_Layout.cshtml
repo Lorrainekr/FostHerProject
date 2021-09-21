@@ -1,7 +1,9 @@
 ﻿@*
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
+
 @*@model ProjetFostHer.ViewModels.HomeViewModel*@
+
 <!DOCTYPE html>
 
 <html>
@@ -21,6 +23,7 @@
         <header role="banner" aria-label="site navigation" class="site_header">
             <div class="header_block">
                 <!-- Site Navigation -->
+
                 <nav role="navigation" class="site-navigation">
                     <div class="logo_block">
                         <a href='@Url.Action("Index", "Home")'>
@@ -33,9 +36,9 @@
                     </div>
                     <ul class="header_list">
                         <li class="header_item">@Html.ActionLink("Associations", "IndexAssociation", "Association")</li>
-                        <li class="header_item">@Html.ActionLink("Artiste", "IndexArtist", "Artist")</li>
-                        <li class="header_item">@Html.ActionLink("Evènements", "IndexEvent", "Event")</li>
-                        <li class="header_item">@Html.ActionLink("Crowdfundings", "CrowdfundingIndex", "Crowdfunding")</li>
+                        <li class="header_item">@Html.ActionLink("Artistes", "IndexArtist", "Artist")</li>
+                        <li class="header_item">@Html.ActionLink("Evénements", "IndexEvent", "Event")</li>
+                        <li class="header_item">@Html.ActionLink("Crowdfundings", "IndexCrowdfunding", "Crowdfunding")</li>
                     </ul>
                 </nav>
                 <div class="right_item">
@@ -44,8 +47,8 @@
                                type="search"
                                id="site-search"
                                name="saisie"
-                               placeholder="Rechercher un artiste, une association, un évènement"
-                               aria-label="Rechercher un artiste, une association, un évènement">
+                               placeholder="Rechercher une artiste, une association, un évènement"
+                               aria-label="Rechercher une artiste, une association, un évènement">
                         <i class="fas fa-search icon_search"></i>
                     </div>
 
@@ -57,19 +60,23 @@
                     }
                     else
                     {
+
                         <div class="block_button">
                             <p class="user_button">
                                 Bienvenue
-                                <br />Low@*@ViewData["Message"]*@
+                                <br />@ViewData["Message"]
                             </p>
                             <p class="button_white">@Html.ActionLink("Se déconnecter", "Deconnexion", "Login")</p>
                         </div>
                     }
                 </div>
             </div>
+
         </header>
     </div>
+    <div class="block_space_site">
 
+    </div>
 
     <div class="view_container">
         @RenderBody()

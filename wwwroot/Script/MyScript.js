@@ -40,7 +40,7 @@ function myFunction() {
     }
 }
 
-/* sticky menu scroll contrepartie crowdfunding
+// sticky menu scroll contrepartie crowdfunding
 window.onscroll = function () { myFunction() };
 
 var staticcontrepartie = document.getElementById("staticcontrepartie");
@@ -52,7 +52,7 @@ function myFunction() {
     } else {
         staticcontrepartie.classList.remove("stickycontrepartie");
     }
-}*/
+}
 /* block deroulant*/
 var coll = document.getElementsByClassName("collapsible");
 var i;

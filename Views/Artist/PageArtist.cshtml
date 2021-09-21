@@ -1,0 +1,63 @@
+﻿@model ProjetFostHer.Models.Artist
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@Model.StageName</title>
+</head>
+<body>
+    <!-- Page Artiste -->
+    <section class="page-artiste-container container">
+        <div class="tilte-page-artiste">
+            <h2>@Model.StageName</h2>
+            <div class="line-break-black"></div>
+        </div>
+        <div class="page_artist_content">
+            <div class="page-artiste-block-left">
+                <div class="description-artiste">
+                    <h3>@Model.Category.CategoryName</h3>
+                    <p>Mendieta créé des objets d'art, y compris des dessins et des sculptures.</p>
+                    <p>
+                        Le travail de Mendieta est généralement autobiographique et porte sur des thèmes tels que le féminisme,
+                        la violence, la vie, la mort. Mendieta s’est souvent concentrée sur un lien spirituel et physique avec la Terre.
+                    <p>
+                    <p>
+                        Mendieta crée des silhouettes féminines dans la nature, dans la boue, le sable et l'herbe avec des
+                        matériaux naturels et fait des impressions de son corps ou de sa silhouette en les imprimant sur un mur,
+                        d’où le nom « silhouette sur un mur»
+                    </p>
+                    <p>
+                        Elle continue à utiliser des éléments naturels dans son travail. Grâce à ces travaux, qui dépassent
+                        les limites de la performance, le cinéma et la photographie, Mendieta explore sa relation avec la Terre
+                        mère ou la « Grande Déesse » (Great Goddess).
+                    </p>
+                </div>
+            </div>
+            <div class="page-artiste-block-right">
+                <div class="image-artiste">
+                    <img src="~/img/artiste_4.png"
+                         alt="" />
+                </div>
+                <div class="artist_link">
+                    <div class="icons-social-media">
+                        <a href="">
+                            <i class="fab fa-facebook-square"></i>
+                        </a>
+                        <a href="">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <div class="button_orange">
+                        <a>Contacter</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

@@ -12,7 +12,23 @@ namespace ProjetFostHer.Controllers
     {
         public IActionResult IndexAssociation()
         {
+            using (IDal dal = new Dal())
+            {
+                List<Association> asso = dal.ListAllAssociations();
+
+                ViewBag.listAssociations = asso;
+
+            }
             return View();
+        }
+
+        public IActionResult PageAssociation(int id)
+        {
+            using (IDal dal = new Dal())
+            {
+                Association asso = dal.ListAllAssociations().Where(a => a.Id == id).FirstOrDefault();
+                return View(asso);
+            }
         }
         public IActionResult EditAssociation(int id)
         {
@@ -62,6 +78,17 @@ namespace ProjetFostHer.Controllers
             }
         }
 
+        public IActionResult CreateAssociation()
+        {
+
+            
+                Association asso = new Association();
+                return View(asso);
+            
+          
+
+        }
+        [HttpPost]
         public IActionResult CreateAssociation(Association asso)
         {
 
@@ -69,18 +96,11 @@ namespace ProjetFostHer.Controllers
                 return View(asso);
             using (Dal ctx = new Dal())
             {
-                ctx.CreateAssociation
-                    (
-                    asso.Email, 
-                    asso.Password, 
-                    asso.AssoName, 
-                    asso.Address, 
-                    asso.Tel, 
-                    asso.RNA, 
-                    asso.Siren
-                    );
+  
+                    ctx.CreateAssociation(asso.Email,asso.Password,asso.AssoName,asso.Address,asso.Tel,asso.RNA,asso.Siren);
 
-                return View("Modifications");
+                    return View("Creation");
+              
             }
 
         }

@@ -22,11 +22,12 @@ namespace ProjetFostHer.Controllers
                  int  a = Int32.Parse(HttpContext.User.Identity.Name);
  
                     User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
-              
-                ViewData["Message"] = user.Name.ToString();
+                if (!(user==null))
+                    { ViewData["Message"] = user.Name.ToString(); }
+                
                 }
 
-            }
+                }
 
             
             return View();
