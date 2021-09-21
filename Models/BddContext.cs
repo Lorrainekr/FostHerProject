@@ -32,8 +32,11 @@ namespace ProjetFostHer.Models
             this.Database.EnsureDeleted();
             this.Database.EnsureCreated();
 
-            Association asso1 = new Association("lokr@gmail.com", "Br12345,", "Lokri", "210 boulevard Pompidou 75011 Paris", "0652314598", "W456987123", "789456123");
-            Association asso2 = new Association("lakr@gmail.com", "Br12346:", "Lowky", "22 rue Poupoupidou 75010 Somewhere", "0652314556", "W456987852", "789456258");
+            Association asso1 = new Association("femmesdelombre@gmail.com", "512398!uu!", "Sortir les femmes de l'ombre", "23, rue de l'écuyer, Noisy Le Roi 93130", "0123236789", "H763820717", "786543097");
+            Association asso2 = new Association("femmesdelombre@gmail.com", "512376du!!!", "Femmes artistes ici et là-bas", "11, rue du Maréchal Foch, Argens 11200", "0123276789", "K763845717", "986541097");
+            Association asso3 = new Association("aware.asso@gmail.com", "7863!76du", "AWARE", "45, rue des maraichers, Paris 75020", "0156785623", "L749267396", "234908758");
+            Association asso4 = new Association("fabriquedanse@gmail.com", "!6753!76du", "La Fabrique de la Danse", "78, rue des petits prés, Nantes 44000", "0156785623", "L749267396", "234908758");
+            Association asso5 = new Association("astrea@gmail.com", "!7589!76du", "Astrea", "67, rue de la grande truanderie, Paris 75002", "0176458790", "R563789653", "764908637");
             Category cat1 = new Category(); cat1.CategoryName = "Peinture";
             Category cat2 = new Category(); cat1.CategoryName = "Cinema";
             Category cat3 = new Category(); cat1.CategoryName = "Sculpture";
@@ -126,6 +129,7 @@ namespace ProjetFostHer.Models
                     FirstName="Juan",
                     LastName="Mata",
                     StageName="JM",
+                    association=asso3,
                     Category= cat1,
                     Siret="00551515"
                    
@@ -139,6 +143,7 @@ namespace ProjetFostHer.Models
                     FirstName = "George",
                     LastName = "Michael",
                     StageName = "GM",
+                    association = asso2,
                     Category = cat2,
                     Siret = "00551555"
                 }
@@ -186,6 +191,7 @@ namespace ProjetFostHer.Models
                         "Butterfly",
                         "Roxanne Butterfly",
                         cat1,
+                        asso4,
                         "00551555"
                         )
                },
@@ -207,6 +213,7 @@ namespace ProjetFostHer.Models
                         "Michel",
                         "Séverine Michel",
                         cat2,
+                        asso5,
                         "00551575"
                         )
                }
@@ -234,6 +241,7 @@ namespace ProjetFostHer.Models
                         "Butterfly",
                         "Roxanne Butterfly",
                         cat1,
+                        asso1,
                         "00551555"
                         )
                },
@@ -258,6 +266,7 @@ namespace ProjetFostHer.Models
                         "Marchal",
                         "Sylvette Marchal",
                         cat1,
+                        asso4,
                         "00551559"
                         )
                },
@@ -282,6 +291,7 @@ namespace ProjetFostHer.Models
                         "Joly",
                         "Amélie Joly",
                         cat5,
+                        asso3,
                         "00551659"
                         )
                }
