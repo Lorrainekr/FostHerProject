@@ -124,32 +124,75 @@ namespace ProjetFostHer.Models
             this.Artists.AddRange(
                 new Artist
                 {
-                    
-                    Email="aymen17@hotmail.fr",
-                    Password="Pn12345!",
-                    Address="8 rue",
-                    FirstName="Juan",
-                    LastName="Mata",
-                    StageName="JM",
-                    association=asso3,
-                    Category= cat1,
-                    Siret="00551515"
-                   
+
+                    Email ="roxannebutterfly@hotmail.fr",
+                    Password = "Pn12345!",
+                    Address = "8 rue Joan Miro, 92000 Levallois-Perret",
+                    FirstName = "Roxanne",
+                    LastName ="Butterfly",
+                    StageName ="Roxanne Butterfly",
+                    association = asso4,
+                    Category = cat6,
+                    Siret = "00551515"
+
                 },
+
                 new Artist
                 {
-                  
-                    Email = "Mymen.jelassi2014@gmail.com",
-                    Password = "Mn12345$",
-                    Address = "9 rue",
-                    FirstName = "George",
-                    LastName = "Michael",
-                    StageName = "GM",
+                    Email = "geraldine.rosser@gmail.com",
+                    Password = "n762345$",
+                    Address = "9 rue George Sand, 56000 Croix",
+                    FirstName = "Géraldine",
+                    LastName = "Rosser",
+                    StageName = "Géraldine Rosser",
                     association = asso2,
                     Category = cat2,
-                    Siret = "00551555"
+                    Siret = "10551555"
+                },
+
+                new Artist
+                {
+                    Email = "imane.bakhtaoui@gmail.com",
+                    Password = "nP7623!5$",
+                    Address = "9 rue Alexandre le Grand, 72000 Le Mans",
+                    FirstName = "Imane",
+                    LastName = "Bakhtaoui",
+                    StageName = "Imane Bakhtaoui",
+                    association = asso1,
+                    Category = cat3,
+                    Siret = "20551555"
+                },
+
+                new Artist
+                {
+
+                    Email ="lea.sidou@hotmail.fr",
+                    Password ="Gn12345!",
+                    Address ="12, square Alexandre Bataille, 75019 Paris",
+                    FirstName ="Léa",
+                    LastName ="Sidou",
+                    StageName ="Léa Sidou",
+                    association = asso4,
+                    Category = cat6,
+                    Siret ="12551515"
+
+                },
+
+                new Artist
+                    {
+
+                    Email ="michele.rieu@gmail.fr",
+                    Password ="An12345!",
+                    Address ="8, place Juliette Drouet, 54000 Le Havre",
+                    FirstName ="Michèle",
+                    LastName ="Riou",
+                    StageName ="Michèle Riou",
+                    association = asso4,
+                    Category = cat6,
+                    Siret ="67551515"
                 }
-            );
+                );
+
             //this.Associations.AddRange(
             //   new Association
             //   {
