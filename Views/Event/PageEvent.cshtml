@@ -51,7 +51,7 @@
                         <p><strong>Tarif :</strong> @Model.Price euros</p>
                     </div>
                     <div class="block_button_event">
-                        <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart")</p>
+                        <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id })</p>
                     </div>
                 </div>
 

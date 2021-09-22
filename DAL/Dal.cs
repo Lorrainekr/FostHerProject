@@ -632,7 +632,7 @@ namespace ProjetFostHer.DAL
             }
             return null;
         }
-        private string EncodeMD5(string motDePasse)
+        public string EncodeMD5(string motDePasse)
         {
             string motDePasseSel = "ChoixResto" + motDePasse + "ASP.NET MVC";
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));

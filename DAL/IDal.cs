@@ -79,6 +79,6 @@ namespace ProjetFostHer.DAL
         void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association asso,Artist a);
         void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, double price);
         void DeleteEvent(int id);
-
+        string EncodeMD5(string motDePasse);
     }
 }

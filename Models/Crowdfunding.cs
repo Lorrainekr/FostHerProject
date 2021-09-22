@@ -31,12 +31,14 @@ namespace ProjetFostHer.Models
         public double sum { get; set; }
         public Artist Artist { get; set; }
         public User user { get; set; }
-        
+        public int Contrib { get; set; }
+
 
         public void SumCalculation()
         {
 
             sum = sum + Donation;
+            Contrib = Contrib + 1;
             
         }
         

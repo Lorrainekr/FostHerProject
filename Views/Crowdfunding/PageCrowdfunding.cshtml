@@ -48,13 +48,13 @@
                 </div>
                 <div class="crowdfunding_progressbar">
                     <div class="crowdfunding_progressbar_content">
-                        <p><strong>0</strong><br> Contributeurs</p>
+                        <p><strong>@Model.Contrib</strong><br> Contributeurs</p>
                         <p><strong>78 jours</strong><br> Restants</p>
                         <p><strong>@Model.sum euros</strong><br> Récoltés sur @Model.AmountMax</p>
                     </div>
                 </div>
                     <div class="crowdfunding_progressbar_bar">
-                        <progress class="progress-amount" max="100" value="@Math.Round((Model.sum / Model.AmountMax) * 100)%"> @Math.Round((Model.sum / Model.AmountMax) * 100)% </progress>
+                        <progress class="progress-amount" max="100" value="@Math.Round((Model.sum / Model.AmountMax) * 100)"> @Math.Round((Model.sum / Model.AmountMax) * 100)% </progress>
                         <p id="amount">@Math.Round((Model.sum / Model.AmountMax) * 100)%</p>
 
                     </div>
