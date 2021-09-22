@@ -818,7 +818,7 @@ button_orange:hover {
     justify-content: space-evenly;
 }
 
-.sticky {
+#sticky {
     position: fixed;
     top: 0;
     width: 100%;
@@ -1225,6 +1225,11 @@ button_orange:hover {
 }
 
 /*CSS FORMULAIRES*/
+
+.center_block {
+    display: flex;
+    justify-content: center;
+}
 
     .container_label {
     padding-top: 20px;
