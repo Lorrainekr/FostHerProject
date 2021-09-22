@@ -394,11 +394,16 @@ namespace ProjetFostHer.DAL
             _bddContext.SaveChanges();
         }
 
-        public void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association associationevent)
+        public void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association associationevent,Artist a)
         {
             Product p = new Product();
             p.Name = designation;
             p.Price = price;
+            if ((a == null))
+            {
+                 a = new Artist();
+            }
+           
 
             Event newEvent = new Event()
             {
@@ -406,7 +411,7 @@ namespace ProjetFostHer.DAL
                 Type = type,
                 StartDate = startdate,
                 EndDate = enddate,
-
+                ArtistEvent=a,
                 Price = price,
                 Category = category,
                 AssociationEvent = associationevent,

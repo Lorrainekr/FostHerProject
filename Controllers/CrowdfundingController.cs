@@ -66,20 +66,27 @@ namespace ProjetFostHer.Controllers
         {
             using (IDal dal = new Dal())
             {
-                int a = Int32.Parse(HttpContext.User.Identity.Name);
-
-                User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
-                if (user == null)
+                if (!(HttpContext.User.Identity.IsAuthenticated))
                 {
                     ViewBag.user = "B";
-                }
-                else if (!(user.artist==null)|| !(user.association == null))
-                {
-                    ViewBag.user = "A";
                 }
                 else
                 {
-                    ViewBag.user = "B";
+                    int a = Int32.Parse(HttpContext.User.Identity.Name);
+
+                    User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                    if (user == null)
+                    {
+                        ViewBag.user = "B";
+                    }
+                    else if (!(user.artist == null) || !(user.association == null))
+                    {
+                        ViewBag.user = "A";
+                    }
+                    else
+                    {
+                        ViewBag.user = "B";
+                    }
                 }
                 List<Crowdfunding> crwd = dal.ListAllCrowdfundings();
 
@@ -93,7 +100,31 @@ namespace ProjetFostHer.Controllers
         {
             using (IDal dal = new Dal())
             {
+                
                 Crowdfunding crwd = dal.ListAllCrowdfundings().Where(a => a.Id == id).FirstOrDefault();
+                if (!(HttpContext.User.Identity.IsAuthenticated))
+                {
+                    ViewBag.user = "B";
+                }
+                else
+                {
+                    int a = Int32.Parse(HttpContext.User.Identity.Name);
+
+                    User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                    if (user == null)
+                    {
+                        ViewBag.user = "B";
+                    }
+                    else if ((crwd.AssociationCrowdfunding.Id==user.association.Id) || (crwd.Artist.Id == user.artist.Id))
+                    {
+                        ViewBag.user = "A";
+                    }
+                    else
+                    {
+                        ViewBag.user = "B";
+                    }
+
+                }
                 return View(crwd);
             }
         }

@@ -43,7 +43,7 @@ namespace ProjetFostHer.Controllers
                 else if (!(user.association == null))
                 {
                     Association asso = ctx.ListAllAssociations().Where(r => r.Id == user.association.Id).FirstOrDefault();
-                    ctx.CreateEvent(eve.Designation, eve.Type, eve.StartDate, eve.EndDate, eve.Price, eve.Category, asso);
+                    ctx.CreateEvent(eve.Designation, eve.Type, eve.StartDate, eve.EndDate, eve.Price, eve.Category, asso,eve.ArtistEvent);
                     
                 }
                 else
@@ -57,20 +57,27 @@ namespace ProjetFostHer.Controllers
         {
            using (IDal dal = new Dal())
             {
-                int a = Int32.Parse(HttpContext.User.Identity.Name);
-
-                User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
-                if (user == null)
+                if (!(HttpContext.User.Identity.IsAuthenticated))
                 {
                     ViewBag.user = "B";
-                }
-                else if (!(user.artist == null) || !(user.association == null))
-                {
-                    ViewBag.user = "A";
                 }
                 else
                 {
-                    ViewBag.user = "B";
+                    int a = Int32.Parse(HttpContext.User.Identity.Name);
+
+                    User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                    if (user == null)
+                    {
+                        ViewBag.user = "B";
+                    }
+                    else if (!(user.artist == null) || !(user.association == null))
+                    {
+                        ViewBag.user = "A";
+                    }
+                    else
+                    {
+                        ViewBag.user = "B";
+                    }
                 }
                 List<Event> eve = dal.ListAllEvents();
                
@@ -85,6 +92,41 @@ namespace ProjetFostHer.Controllers
             using (IDal dal = new Dal())
             {
                 Event eve = dal.ListAllEvents().Where(a => a.Id == id).FirstOrDefault();
+                if (!(HttpContext.User.Identity.IsAuthenticated))
+                {
+                    ViewBag.user = "B";
+                }
+                else
+                {
+                    int a = Int32.Parse(HttpContext.User.Identity.Name);
+
+                    User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                    if (user == null)
+                    {
+                        ViewBag.user = "B";
+                    }
+                    else if (!(eve.AssociationEvent == null))
+                    {
+                        if ((eve.AssociationEvent.Id == user.association.Id))
+                        {
+                            ViewBag.user = "A";
+                        }
+                    }
+                    else if (!(eve.ArtistEvent == null))
+                    {
+
+                        if (eve.ArtistEvent.Id == user.artist.Id)
+                        {
+                            ViewBag.user = "A";
+                        }
+
+                        else
+                        {
+                            ViewBag.user = "B";
+                        }
+
+                    }
+                }
                 return View(eve);
             }
         }
