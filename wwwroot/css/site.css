@@ -1282,8 +1282,26 @@ button_orange:hover {
     box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
 }
 
+.label_block_form select {
+    margin: 5px;
+    padding: 13.5px 40px;
+    border-radius: 100px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+}
+
 .label_block_form input:focus-visible {
     outline: 0px solid #ffffff;
+}
+
+.label_block_form select:focus-visible {
+    outline: 0px solid #ffffff;
+}
+
+.dropdownlist {
+    display: flex;
+    flex-direction: row;
 }
 
 .label_block_warning {
@@ -1569,5 +1587,9 @@ ul.pagination li a {
 .search_asso .search_bar {
     margin-top: 15px;
 }
+
+/* TABLE*/
+
+
 
  
