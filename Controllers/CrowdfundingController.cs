@@ -115,15 +115,27 @@ namespace ProjetFostHer.Controllers
                     {
                         ViewBag.user = "B";
                     }
-                    else if ((crwd.AssociationCrowdfunding.Id==user.association.Id) || (crwd.Artist.Id == user.artist.Id))
+                    else if (!(crwd.AssociationCrowdfunding == null))
                     {
-                        ViewBag.user = "A";
+                        if ((crwd.AssociationCrowdfunding.Id == user.association.Id))
+                        {
+                            ViewBag.user = "A";
+                        }
                     }
-                    else
+                    else if (!(crwd.ArtistCrowdfunding == null))
                     {
-                        ViewBag.user = "B";
-                    }
 
+                        if (crwd.ArtistCrowdfunding.Id == user.artist.Id)
+                        {
+                            ViewBag.user = "A";
+                        }
+
+                        else
+                        {
+                            ViewBag.user = "B";
+                        }
+
+                    }
                 }
                 return View(crwd);
             }
