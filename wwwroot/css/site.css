@@ -245,7 +245,7 @@ button_white:hover {
 }
 
 .bienvenue-text .bold_text{
-    font-family: Open sans semibold;
+    font-family: Open sans semibold , sans-serif;
 }
 
 .ancre_down {
@@ -1360,14 +1360,14 @@ ul.pagination li a {
     font-family: 'Open Sans semibold';
 }
 
-    ul.pagination li a:hover {
-        background-color: #E94E1B;
-        color: white;
-    }
+ul.pagination li a:hover {
+    background-color: #E94E1B;
+    color: white;
+}
 
-    ul.pagination li a.active {
-        border-radius: 5px;
-    }
+ul.pagination li a.active {
+    border-radius: 5px;
+}
 
 /* PAGE ARTISTE*/
 
