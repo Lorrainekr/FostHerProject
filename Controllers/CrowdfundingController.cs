@@ -27,10 +27,10 @@ namespace ProjetFostHer.Controllers
                     return View("Error");
                }
             }
-
+           
            if (!ModelState.IsValid)
                 return View(cr);
-
+           
             using (Dal ctx = new Dal())
             {
 
@@ -38,6 +38,7 @@ namespace ProjetFostHer.Controllers
                 User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
                 if (!(user.artist == null) && (user.artist.Validation == "Valide"))
                 {
+                    
                     Artist artist = ctx.ListAllArtists().Where(r => r.Id == user.artist.Id).FirstOrDefault();
                     ctx.CreateCrowdfunding(cr.NameCrowdfunding,cr.StartDate,cr.EndDate,artist.association,cr.AmountMax,cr.MinDonation,cr.MaxDonation,artist);
 
@@ -117,18 +118,24 @@ namespace ProjetFostHer.Controllers
                     }
                     else if (!(crwd.AssociationCrowdfunding == null))
                     {
-                        if ((crwd.AssociationCrowdfunding.Id == user.association.Id))
+                        if (!(user.association == null))
                         {
-                            ViewBag.user = "A";
+                            if ((crwd.AssociationCrowdfunding.Id == user.association.Id))
+                            {
+                                ViewBag.user = "A";
+                            }
                         }
                     }
                     else if (!(crwd.ArtistCrowdfunding == null))
                     {
-
-                        if (crwd.ArtistCrowdfunding.Id == user.artist.Id)
+                        if (!(user.artist == null))
                         {
-                            ViewBag.user = "A";
+                            if (crwd.ArtistCrowdfunding.Id == user.artist.Id)
+                            {
+                                ViewBag.user = "A";
+                            }
                         }
+                        
 
                         else
                         {
@@ -167,7 +174,82 @@ namespace ProjetFostHer.Controllers
             return RedirectToAction( "Payment", "Payment",new { id = cr.Id });
         }
 
+        public IActionResult EditCrowdfunding(int id)
+        {
+            if (id != 0)
+            {
+                using (IDal dal = new Dal())
+                {
+                    Crowdfunding crw = dal.ListAllCrowdfundings().Where(r => r.Id == id).FirstOrDefault();
+                    if (crw == null)
+                    {
+                        return View("Error");
+                    }
+                    return View(crw);
+                }
+            }
+            return View("Error");
+        }
 
+        [HttpPost]
+        public IActionResult EditCrowdfunding(Crowdfunding crw)
+        {
+            if (!ModelState.IsValid)
+                return View(crw);
+
+            if (crw.Id != 0)
+            {
+                using (Dal ctx = new Dal())
+                {
+                    ctx.EditCrowdfunding(crw.Id, crw.NameCrowdfunding, crw.StartDate, crw.EndDate, crw.AmountMax, crw.MinDonation, crw.MaxDonation);
+
+                    return View("Modifications");
+                }
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+
+        public IActionResult DeleteCrowdfunding(int id)
+        {
+            if (id != 0)
+            {
+                using (IDal dal = new Dal())
+                {
+                    Crowdfunding crw = dal.ListAllCrowdfundings().Where(r => r.Id == id).FirstOrDefault();
+                    if (crw == null)
+                    {
+                        return View("Error");
+                    }
+                    return View(crw);
+                }
+            }
+            return View("Error");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteEvent(Crowdfunding crw)
+        {
+            if (!ModelState.IsValid)
+                return View(crw);
+
+            if (crw.Id != 0)
+            {
+                using (Dal ctx = new Dal())
+                {
+                    ctx.DeleteEvent(crw.Id);
+
+                    return View("Modifications");
+                }
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
 
     }
 }

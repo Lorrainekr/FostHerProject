@@ -161,7 +161,11 @@
                 {
                     <div class="crowdfunding_card">
                         <img src="~/img/visuel_crowdfunding.png" alt="image du crowdfunding @e.NameCrowdfunding">
-                        <h5 class="crowdfunding_artist">@e.Artist.StageName</h5>
+                        @if (!(e.Artist == null))
+                {
+                    <h5 class="crowdfunding_artist">@e.Artist.StageName</h5>
+                }
+                        
                         <div class="event_block_content">
                             <h3>@e.NameCrowdfunding</h3>
                             <div class="event_type_content">

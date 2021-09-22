@@ -9,10 +9,10 @@ namespace ProjetFostHer.Models
     public class Crowdfunding
     {
         public int Id { get; set; }
-        //[Required(ErrorMessage = "Veuillez renseigner un titre pour votre campagne")]
+        [Required(ErrorMessage = "Veuillez renseigner un titre pour votre campagne")]
         [MaxLength(50, ErrorMessage = "Le titre est trop long !")]
         public string NameCrowdfunding { get; set; }
-        //[Required(ErrorMessage = "Veuillez indiquez quand débute votre campagne")]
+        [Required(ErrorMessage = "Veuillez indiquez quand débute votre campagne")]
         public DateTime StartDate { get; set; }
         //[Required(ErrorMessage = "Veuillez indiquez quand termine votre campagne")]
         public DateTime EndDate { get; set; }

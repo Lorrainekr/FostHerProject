@@ -32,8 +32,15 @@
                         </a>
                     </div>
                     <div class="sub-title-asso">
-                        <h3>@Model.ArtistEvent.StageName</h3>
-                        <h5>@Model.AssociationEvent.AssoName</h5>
+                        @if (!(Model.ArtistEvent == null))
+                        {
+                            <h3>@Model.ArtistEvent.StageName</h3>
+                        }
+                        @if (!(Model.AssociationEvent == null))
+            {
+                    <h5>@Model.AssociationEvent.AssoName</h5>
+            }
+                            
                     </div>
                 </div>
                 <div class="event_date">
@@ -71,7 +78,7 @@
             </ul>
         </div>
         <div class="block_button_event">
-            <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id })@if (ViewBag.user == "A"){@Html.ActionLink("Modifier", "EditCrowdfunding", "Crowdfunding", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteCrowdfunding", "Crowdfunding", new { id = Model.Id })}</p>
+            <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id })@if (ViewBag.user == "A"){@Html.ActionLink("Modifier", "EditEvent", "Event", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteEvent", "Event", new { id = Model.Id })}</p>
         </div>
     </nav>
     <div id="partial_infos">

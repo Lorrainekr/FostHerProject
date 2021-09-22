@@ -35,8 +35,15 @@
                         </a>
                     </div>
                     <div class="sub-title-asso">
-                        <h3>@Model.Artist.StageName</h3>
-                        <h5>@Model.AssociationCrowdfunding.AssoName</h5>
+                        @if (!(Model.Artist == null))
+                        {
+                            <h3>@Model.Artist.StageName</h3>
+                        }
+                        @if (!(Model.AssociationCrowdfunding == null))
+                        {
+                            <h5>@Model.AssociationCrowdfunding.AssoName</h5>
+                        }
+
                     </div>
                 </div>
                 <div class="crowdfunding_progressbar">
@@ -45,6 +52,7 @@
                         <p><strong>78 jours</strong><br> Restants</p>
                         <p><strong>@Model.sum euros</strong><br> Récoltés sur @Model.AmountMax</p>
                     </div>
+                </div>
                     <div class="crowdfunding_progressbar_bar">
                         <progress class="progress-amount" max="100" value="@Math.Round((Model.sum / Model.AmountMax) * 100)%"> @Math.Round((Model.sum / Model.AmountMax) * 100)% </progress>
                         <p id="amount">@Math.Round((Model.sum / Model.AmountMax) * 100)%</p>
@@ -66,21 +74,24 @@
             </div>
         </div>
     </div>
-    <div class="souspages">
-        <nav id="subnav" class="sousmenu">
-            <div>
-                <ul>
-                    <li><a id="project">Projets</a></li>
-                    <li><a id="objectif">Objectifs</a></li>
-                    <li><a id="comment">Commentaires</a></li>
-                    <li><a id="contributions">Contributions</a></li>
-                </ul>
-            </div>
-             <div class="block_button_crowdfunding">
-                <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })@if (ViewBag.user == "A") { @Html.ActionLink("Modifier", "EditCrowdfunding", "Crowdfunding", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteCrowdfunding", "Crowdfunding", new { id = Model.Id })}</p>
+<div class="souspages">
+    <nav id="subnav" class="sousmenu">
+        <div>
+            <ul>
+                <li><a id="project">Projets</a></li>
+                <li><a id="objectif">Objectifs</a></li>
+                <li><a id="comment">Commentaires</a></li>
+                <li><a id="contributions">Contributions</a></li>
+            </ul>
+        </div>
 
-             </div>
-        </nav>
+        <div class="block_button_crowdfunding">
+            <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })@if (ViewBag.user == "A")
+            {@Html.ActionLink("Modifier", "EditCrowdfunding", "Crowdfunding", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteCrowdfunding", "Crowdfunding", new { id = Model.Id })}</p>
+
+        </div>
+    </nav>
+</div>
         <div id="partial_project">
             @Html.Partial("CrowdfundingSubpageProject")
         </div>
