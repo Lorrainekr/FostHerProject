@@ -15,16 +15,36 @@
                 <h>Mon Panier</h>
                 <a class="fas fa-shopping-cart"></a>
             </div>
-            <section class="cart_table_block_container">
-                <div class="panier-block-center">
-                    <table class="panier-table">
-                        <thead>
+
+            <div class="panier-block-center">
+                <table class="panier-table">
+                    <thead>
+                        <tr>
+
+                            <th>Produit</th>
+                            <th>Prix</th>
+                            <th>Quantité <input type="submit" value="Update" /></th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+                            <th>Sous-total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Items.Count; i++)
+                        {
                             <tr>
-                                <th>Produit</th>
-                                <th>Prix</th>
-                                <th>Quantité <input type="submit" value="Update" /></th>
-                                <th>Supprimer</th>
-                                <th>Sous-total</th>
+                               
+                                <td>@Model.Items[i].Product.Name</td>
+                                <td>@Model.Items[i].Product.Price</td>
+                                <td> @Html.TextBoxFor(m => Model.Items[i].Quantity, new { @type = "number", min = "1" }) </td>
+                                <td>@Html.ActionLink("Remove", "Remove", "Cart", new { id = @Model.Items[i].Id })</td>
+                                <td>@Html.ActionLink("Modifier", "OnPostUpdate", "Cart", new { id = @Model.Items[i].Id })</td>
+                                <td>@(Model.Items[i].Product.Price * Model.Items[i].Quantity)</td>
+                          
+                     
+                                @Html.HiddenFor(m => @Model.Items[i].Product.Price)
+                                @Html.HiddenFor(m => @Model.Items[i].Product.Name)
+
                             </tr>
                         </thead>
                         <tbody class="panier_result">
