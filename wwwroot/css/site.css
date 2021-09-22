@@ -1588,8 +1588,88 @@ ul.pagination li a {
     margin-top: 15px;
 }
 
-/* TABLE*/
+/* Page panier*/
+.page-panier-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    justify-items: start;
+}
 
+.page-panier-title {
+    color: #7E4393;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.panier-table {
+    border-collapse: collapse;
+    box-shadow: 0 5px 10px lightgrey;
+    text-align: left;
+    overflow: hidden;
+}
+
+    .panier-table th {
+        background-color: white;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12pt;
+    }
+
+    .panier-table thead {
+        box-shadow: 0 5px 10px lightgrey;
+    }
+
+    .panier-table td {
+        padding: 1rem 2rem;
+    }
+
+.panier-block-center {
+    display: flex;
+    align-items: stretch;
+}
+
+.panier-total-paiement {
+    background-color: white;
+    width: 400px;
+    box-shadow: 0 5px 10px lightgrey;
+    font-family: 'Open Sans', sans-serif;
+}
+
+    .panier-total-paiement h3 {
+        text-transform: uppercase;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12pt;
+    }
+
+    .panier-total-paiement a {
+        font-size: 18pt;
+    }
+
+.button-paiement {
+    border: 2px solid #3CB371;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    padding: 13.5px 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #FFFFFF;
+    background-color: #3cb371;
+    width: 370px;
+}
+
+.total-paiement-somme {
+    display: flex;
+    justify-content: space-between;
+}
 
 
  

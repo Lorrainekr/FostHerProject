@@ -17,14 +17,14 @@
     {
     <section class="container container_label">
         <div class="label_title">
-            <h2>Formulaire paiement</h2>
+            <h2>Formulaire pour le paiement</h2>
         </div>
         <div class="label_content_info">
             <h3 class="">Mes coordonnées bancaires</h3>
             <fieldset class="label_content">
                 <div class="label_block">
                     <div class="label_block_text">
-                        @Html.LabelFor(m => Model.Montant)"Euros"
+                        @Html.LabelFor(m => Model.Montant,"Montant Euros")
                         @Html.LabelFor(m => Model.NumeroCB)
                         @Html.LabelFor(m => Model.DateExpirationMois)
                         @Html.LabelFor(m => Model.Crypto)
