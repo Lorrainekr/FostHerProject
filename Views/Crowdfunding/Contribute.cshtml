@@ -16,10 +16,10 @@
     {
     <section class="container container_label">
         <div class="label_title">
-            <h2>Formulaire de création de compte artiste</h2>
+            <h2>Récapitulatif de votre participation</h2>
         </div>
         <div class="label_content_info">
-            <h3 class="">Mes coordonnées</h3>
+            <h3>Objectif atteint à @Math.Round((Model.sum / Model.AmountMax) * 100)% | Veuillez choisir le montant de votre don</h3>
             <fieldset class="label_content">
                 <div class="label_block">
                     <div class="label_block_text">
@@ -34,7 +34,6 @@
                         @Html.LabelFor(m => Model.Donation)
                     </div>
                     <div class="label_block_form">
-                        <p>@Model.NameCrowdfunding</p>
                         @Html.TextBoxFor(m => Model.NameCrowdfunding, new { @readonly = true })
                         @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
                         @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
@@ -54,9 +53,7 @@
                 </div>
             </fieldset>
         </div>
-            <h1 align="center">@Math.Round((Model.sum / Model.AmountMax) * 100)%</h1>
-</section>
-
+    </section>
 
         <h1 align="center">@Html.ActionLink("Retour à l'accueil", "Index", "Home")</h1>
     }

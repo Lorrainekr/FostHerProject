@@ -4,53 +4,51 @@
 @{
     Layout = "_Layout";
 }
+
 <html>
 <body>
-    <div class="container crowdfunding_container">
-        <div class="crowdfunding_block">
-            <div class="crowdfunding_title_block">
-                <h2>titre crwd</h2>
-                <p>
-                    Un spectacle musical avec claquettes qui revisite
-                    le répertoire jazz en y ajoutant quelques épices essentielles
-                    à un Objet Very Non Identifiable.
-                </p>
-                <div class="line-break-black">
-                </div>
+<div class="container crowdfunding_container">
+    <div class="crowdfunding_block">
+        <div class="crowdfunding_title_block">
+            <h2>@Model.NameCrowdfunding</h2>
+            <p>
+                Un spectacle musical avec claquettes qui revisite
+                le répertoire jazz en y ajoutant quelques épices essentielles
+                à un Objet Very Non Identifiable.
+            </p>
+            <div class="line-break-black">
             </div>
-            <div class="crowdfunding_info_block">
-                <!--Image à gauche de l'écran-->
-                <div class="crowdfunding_info_visual">
-                    <img src="~/img/visuel_crowdfunding.png"
-                         class="cover-image"
-                         alt="photo accueil crowdfunding">
-                </div>
-                <!--Infos clés-->
-                <section class="crowdfunding_info_content">
-                    <div class="crowdfunding_info_title">
-                        <div class="avatar_block">
-                            <a class="avatar_link" alt="aller vers l'association" href='@Url.Action("Index", "Home")'>
-                                <div class="avatar"></div>
-                            </a>
-                        </div>
-                        <div class="sub-title-asso">
-                            <h3>zohozaihgARTIST</h3>
-                            <h5>La Fabrique de la Danse</h5>
-                        </div>
+        </div>
+        <div class="crowdfunding_info_block">
+            <!--Image à gauche de l'écran-->
+            <div class="crowdfunding_info_visual">
+                <img src="~/img/visuel_crowdfunding.png"
+                     class="cover-image"
+                     alt="photo accueil crowdfunding">
+            </div>
+            <!--Infos clés-->
+            <section class="crowdfunding_info_content">
+                <div class="crowdfunding_info_title">
+                    <div class="avatar_block">
+                        <a class="avatar_link" alt="aller vers l'association" href='@Url.Action("Index", "Home")'>
+                            <div class="avatar"></div>
+                        </a>
                     </div>
-                    <div class="crowdfunding_progressbar">
-                        <div class="crowdfunding_progressbar_content">
-                            <p><strong>70</strong><br> Contributeurs</p>
-                            <p><strong>3 jours</strong><br> Restants</p>
-                            <p><strong>1500 euros</strong><br> Récoltés sur 1800</p>
-                        </div>
-                        <div class="crowdfunding_progressbar_bar">
-                            <progress class="progress-amount" max="100" value="70"> 70% </progress>
-                            <p id="amount">70 %</p>
-                        </div>
-                        <div class="block_button_crowdfunding">
-                            <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })</p>
-                        </div>
+                    <div class="sub-title-asso">
+                        <h3>@Model.Artist.StageName</h3>
+                        <h5>@Model.AssociationCrowdfunding.AssoName</h5>
+                    </div>
+                </div>
+                <div class="crowdfunding_progressbar">
+                    <div class="crowdfunding_progressbar_content">
+                        <p><strong>0</strong><br> Contributeurs</p>
+                        <p><strong>78 jours</strong><br> Restants</p>
+                        <p><strong>@Model.sum euros</strong><br> Récoltés sur @Model.AmountMax</p>
+                    </div>
+                    <div class="crowdfunding_progressbar_bar">
+                        <progress class="progress-amount" max="100" value="@Math.Round((Model.sum / Model.AmountMax) * 100)%"> @Math.Round((Model.sum / Model.AmountMax) * 100)% </progress>
+                        <p id="amount">@Math.Round((Model.sum / Model.AmountMax) * 100)%</p>
+
                     </div>
 
                     <!-- Boutons social media-->
@@ -78,9 +76,10 @@
                     <li><a id="contributions">Contributions</a></li>
                 </ul>
             </div>
-            <div class="block_button_crowdfunding">
-                <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })</p>
-            </div>
+             <div class="block_button_crowdfunding">
+                <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })@if (ViewBag.user == "A") { @Html.ActionLink("Modifier", "EditCrowdfunding", "Crowdfunding", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteCrowdfunding", "Crowdfunding", new { id = Model.Id })}</p>
+
+             </div>
         </nav>
         <div id="partial_project">
             @Html.Partial("CrowdfundingSubpageProject")
@@ -93,8 +92,7 @@
         </div>
         <div id="partial_contributor" style="display:none;">
             @Html.Partial("CrowdfundingSubpageContributor")
-        </div>
-    </div>
+
 </body>
 </html>
 

@@ -241,11 +241,77 @@ namespace ProjetFostHer.Models
                         )
                },
 
+               new Crowdfunding 
+               {
+                   NameCrowdfunding = "Initiation aux instruments à vent pour les femmes",
+                   StartDate = new DateTime(2021,09,30),
+                   EndDate = new DateTime(2021,12,31),
+                   AssociationCrowdfunding = asso3,
+                   AmountMax = 1000,
+                   MinDonation = 5,
+                   MaxDonation = 1000,
+                   Artist = new Artist(
+                        "yaya@gmail.com",
+                        "Pnr12345!",
+                        "80 rue de la grande Ourse",
+                        "Yana",
+                        "Hasson",
+                        "Yana Hasson",
+                        cat5,
+                        asso3,
+                        "00551555"
+                        )
+               },/*
+               
+                new Crowdfunding 
+               {
+                   NameCrowdfunding = "Court-métrage sur les décors de la Comédie Française",
+                   StartDate = new DateTime(2021,09,30),
+                   EndDate = new DateTime(2021,12,31),
+                   AssociationCrowdfunding = asso1,
+                   AmountMax = 3400,
+                   MinDonation = 5,
+                   MaxDonation = 1000,
+                   Artist = new Artist(
+                        "jojo@gmail.com",
+                        "Pnir12345!",
+                        "80 rue d’émir",
+                        "Johanna",
+                        "Raynaud",
+                        "Johanna Raynaud",
+                        cat1,
+                        asso1,
+                        "10551555"
+                        )
+               },
+               
+               new Crowdfunding 
+              {
+                  NameCrowdfunding = "Spectacle collaboratif, les danses du Pacifique",
+                  StartDate = new DateTime(2022, 01, 01),
+                  EndDate = new DateTime(2022, 01, 29),
+                  AssociationCrowdfunding = asso4,
+                  AmountMax = 4500,
+                  MinDonation = 5,
+                  MaxDonation = 1000,
+                  Artist = new Artist(
+                       "fuch@gmail.com",
+                       "Pnr712345!",
+                       "80 avenue Leclerc",
+                       "Rachel",
+                       "Kato",
+                       "Rachel Kato",
+                       cat6,
+                       asso4,
+                       "10557555"
+                       )
+               },*/
+
                new Crowdfunding
                {
                    NameCrowdfunding = "Soutenez la création des artistEs du 10eme",
-                   StartDate = new DateTime(2021,09,10),
-                   EndDate = new DateTime(2021, 11, 10),
+                   StartDate = new DateTime(2022,01,01),
+                   EndDate = new DateTime(2022,01,29),
                    AssociationCrowdfunding = asso2,
                    AmountMax = 30000,
                    MinDonation = 5,
@@ -341,8 +407,6 @@ namespace ProjetFostHer.Models
                         )
                }
             );
-
-          
 
       this.SaveChanges();
         }

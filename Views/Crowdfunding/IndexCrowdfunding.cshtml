@@ -171,9 +171,9 @@
                             <div class="crowdfunding_KPI">
                                 <p><strong>% </strong> contributeurs</p>
                                 <p><strong>% jours</strong> restants</p>
-                                <p><strong>% euros</strong> sur % euros</p>
+                                <p><strong>@e.sum €</strong> sur @e.AmountMax €</p>
                             </div>
-                            <progress class="progress-small" max="100" value="70"> 70% </progress>
+                            <progress class="progress-small" max="100" value="@Math.Round((e.sum / e.AmountMax) * 100)"> @Math.Round((e.sum / e.AmountMax) * 100)% </progress>
 
                             <div class="event_card_link_content">
                                 @Html.ActionLink("Voir le crowdfunding", "PageCrowdfunding", "Crowdfunding", new { id = e.Id })

@@ -12,58 +12,51 @@
 </head>
 
 <body>
-    <section class="container">
-        <ul>
-            <li>@Html.ActionLink("Créer une association", "CreateAssociation", "Association")</li>
-            <li>@Html.ActionLink("Supprimer une association", "DeleteAssociation", "Association")</li>
-            <li>@Html.ActionLink("Modifier une association", "EditAssociation", "Association")</li>
-        </ul>
-    </section>
-    <section class="association_list_container">
-        <!-- barre de recherche -->
-        <div class="search_asso">
-            <input type="text" class="search_bar" id="search" placeholder="Rechercher...">
-        </div>
-        <!-- Liste des résultats - cartes event -->
-        <container class="association_list_block">
-            <div class="association_list_title">
-                <h2>Toutes les associations</h2>
+       <section class="association_list_container">
+            <!-- barre de recherche -->
+            <div class="search_asso">
+                <input type="text" class="search_bar" id="search" placeholder="Rechercher...">
             </div>
-            <section class="event_list">
-                @foreach (Association e in ViewBag.listAssociations)
-                {
-                    <div class="event_card">
-                        <img src="~/img/visuel_crowdfunding.png" alt="image de l'association @e.AssoName">
-                        <h5 class="event_artist">23 adhérentes</h5>
-                        <div class="event_block_content">
-                            <h3>@e.AssoName</h3>
-                            <div class="event_type_content">
-                                <p>Description de l'association et objectifs auprès des femmes artistes pour soutenir leur processus créatif et le</p>
-                            </div>
-                            <div class="event_card_link_content">
-                                @Html.ActionLink("Voir l'association", "PageAssociation", "Association", new { id = e.Id })
+            <!-- Liste des résultats - cartes event -->
+            <container class="association_list_block">
+                <div class="association_list_title">
+                    <h2>Toutes les associations</h2>
+                </div>
+                <section class="event_list">
+                    @foreach (Association e in ViewBag.listAssociations)
+                    {
+                        <div class="event_card">
+                            <img src="~/img/visuel_crowdfunding.png" alt="image de l'association @e.AssoName">
+                            <h5 class="event_artist">23 adhérentes</h5>
+                            <div class="event_block_content">
+                                <h3>@e.AssoName</h3>
+                                <div class="event_type_content">
+                                    <p>Description de l'association et objectifs auprès des femmes artistes pour soutenir leur processus créatif et le</p>
+                                </div>
+                                <div class="event_card_link_content">
+                                    @Html.ActionLink("Voir l'association", "PageAssociation", "Association", new { id = e.Id })
+                                </div>
                             </div>
                         </div>
-                    </div>
-                }
-            </section>
-        </container>
-    </section>
-    <section>
-        <!-- pagination bas de page -->
-        <div class="pagination">
-            <ul class="pagination">
-                <li><a class="fas fa-chevron-left"></a></li>
-                <li><a href="#" class="p-button">1</a></li>
-                <li><a href="#" class="p-button">2</a></li>
-                <li><a href="#" class="p-button">3</a></li>
-                <li><a href="#" class="p-button">4</a></li>
-                <li><a class="fas fa-chevron-right"></a></li>
-            </ul>
-        </div>
-    </section>
-    
-</body>
+                    }
+                </section>
+            </container>
+        </section>
+        <section>
+            <!-- pagination bas de page -->
+            <div class="pagination">
+                <ul class="pagination">
+                    <li><a class="fas fa-chevron-left"></a></li>
+                    <li><a href="#" class="p-button">1</a></li>
+                    <li><a href="#" class="p-button">2</a></li>
+                    <li><a href="#" class="p-button">3</a></li>
+                    <li><a href="#" class="p-button">4</a></li>
+                    <li><a class="fas fa-chevron-right"></a></li>
+                </ul>
+            </div>
+        </section>
+
+    </body>
 </html>
 
 
