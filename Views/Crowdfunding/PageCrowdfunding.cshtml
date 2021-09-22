@@ -58,6 +58,11 @@
                         <p id="amount">@Math.Round((Model.sum / Model.AmountMax) * 100)%</p>
 
                     </div>
+                    <div class="block_button_crowdfunding">
+                        <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })@if (ViewBag.user == "A")
+                        {@Html.ActionLink("Modifier", "EditCrowdfunding", "Crowdfunding", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteCrowdfunding", "Crowdfunding", new { id = Model.Id })}</p>
+
+                    </div>
 
                     <!-- Boutons social media-->
                     <div class="crowdfunding_share">
@@ -70,7 +75,8 @@
 
                         </ul>
                     </div>
-                </section>
+                </div>
+            </section>
             </div>
         </div>
     </div>
@@ -103,7 +109,8 @@
         </div>
         <div id="partial_contributor" style="display:none;">
             @Html.Partial("CrowdfundingSubpageContributor")
-
+        </div>
+    </div>
 </body>
 </html>
 
