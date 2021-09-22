@@ -58,18 +58,15 @@
                     <div class="label_block_text">
                         @Html.LabelFor(m => Model.Email)
                         @Html.LabelFor(m => Model.Password)
-                        @Html.LabelFor(m => Model.Password)
 
                     </div>
                     <div class="label_block_form">
                         @Html.TextBoxFor(m => Model.Email)
-                        @Html.TextBoxFor(m => Model.Password)
-                        @Html.TextBoxFor(m => Model.Password)
+                        @Html.PasswordFor(m => Model.Password)
                         @**@
                     </div>
                     <div class="label_block_warning">
                         @Html.ValidationMessageFor(m => Model.Email)
-                        @Html.ValidationMessageFor(m => Model.Password)
                         @Html.ValidationMessageFor(m => Model.Password)
                     </div>
                 </div>

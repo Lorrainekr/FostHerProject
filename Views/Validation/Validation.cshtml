@@ -36,11 +36,9 @@
                             @Html.TextBoxFor(m => Model.StageName, new { @readonly = true })
                             @Html.TextBoxFor(m => Model.Category.CategoryName, new { @readonly = true })
                             @Html.TextBoxFor(m => Model.Siret, new { @readonly = true })
-                        </div>
-                        <div class="label_block_warning">
-
                             @Html.DropDownListFor(modelItem => modelItem.Validation, new[] { new SelectListItem { Text = "Valider l'inscription", Value = "Valide" }, new SelectListItem { Text = "Refuser l'insciption", Value = "Refus" }, new SelectListItem { Text = "Laisser en attente", Value = "en attente" } })
                         </div>
+                        
                     </div>
                     <div class="button_orange">
                         <input type="submit" value="Valider" />
