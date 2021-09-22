@@ -15,7 +15,7 @@
     {
         <section class="container container_label">
             <div class="label_title">
-                <h2>Formulaire de création de compte artiste</h2>
+                <h2>Formulaire de suppression de d'association'</h2>
             </div>
             <div class="label_content_info">
                 <h3 class="">Mes coordonnées</h3>
@@ -30,11 +30,11 @@
 
                         </div>
                         <div class="label_block_form">
-                            @Html.TextBoxFor(m => Model.AssoName)
-                            @Html.TextBoxFor(m => Model.Tel)
-                            @Html.TextBoxFor(m => Model.RNA)
-                            @Html.TextBoxFor(m => Model.Siren)
-                            @Html.TextBoxFor(m => Model.Address)
+                            @Html.TextBoxFor(m => Model.AssoName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Tel, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.RNA, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Siren, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Address, new { @readonly = true })
                             @**@
                         </div>
                         <div class="label_block_warning">
@@ -54,18 +54,15 @@
                         <div class="label_block_text">
                             @Html.LabelFor(m => Model.Email)
                             @Html.LabelFor(m => Model.Password)
-                            @Html.LabelFor(m => Model.Password)
-
+ 
                         </div>
                         <div class="label_block_form">
                             @Html.TextBoxFor(m => Model.Email)
-                            @Html.TextBoxFor(m => Model.Password)
                             @Html.TextBoxFor(m => Model.Password)
                             @**@
                         </div>
                         <div class="label_block_warning">
                             @Html.ValidationMessageFor(m => Model.Email)
-                            @Html.ValidationMessageFor(m => Model.Password)
                             @Html.ValidationMessageFor(m => Model.Password)
                         </div>
                     </div>
