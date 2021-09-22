@@ -7,7 +7,7 @@
 <div class="container crowdfunding_container">
     <div class="crowdfunding_block">
         <div class="crowdfunding_title_block">
-            <h2>titre crwd</h2>
+            <h2>@Model.NameCrowdfunding</h2>
             <p>
                 Un spectacle musical avec claquettes qui revisite
                 le répertoire jazz en y ajoutant quelques épices essentielles
@@ -32,19 +32,19 @@
                         </a>
                     </div>
                     <div class="sub-title-asso">
-                        <h3>zohozaihgARTIST</h3>
-                        <h5>La Fabrique de la Danse</h5>
+                        <h3>@Model.Artist.StageName</h3>
+                        <h5>@Model.AssociationCrowdfunding.AssoName</h5>
                     </div>
                 </div>
                 <div class="crowdfunding_progressbar">
                     <div class="crowdfunding_progressbar_content">
-                        <p><strong>70</strong><br> Contributeurs</p>
-                        <p><strong>3 jours</strong><br> Restants</p>
-                        <p><strong>1500 euros</strong><br> Récoltés sur 1800</p>
+                        <p><strong>0</strong><br> Contributeurs</p>
+                        <p><strong>78 jours</strong><br> Restants</p>
+                        <p><strong>@Model.sum euros</strong><br> Récoltés sur @Model.AmountMax</p>
                     </div>
                     <div class="crowdfunding_progressbar_bar">
-                        <progress class="progress-amount" max="100" value="70"> 70% </progress>
-                        <p id="amount">70 %</p>
+                        <progress class="progress-amount" max="100" value="@Math.Round((Model.sum / Model.AmountMax) * 100)%"> @Math.Round((Model.sum / Model.AmountMax) * 100)% </progress>
+                        <p id="amount">@Math.Round((Model.sum / Model.AmountMax) * 100)%</p>
                     </div>
                     <div class="block_button_crowdfunding">
                         <p class="button_orange">@Html.ActionLink("Contribuer", "Contribute", "Crowdfunding", new { id = Model.Id })</p>
@@ -70,7 +70,7 @@
     <nav id="subnav" class="sousmenu">
         <div>
             <ul>
-                <li><a id="project">Projets</a></li>
+                <li><a id="project">Projet</a></li>
                 <li><a id="objectif">Objectifs</a></li>
                 <li><a id="comment">Commentaires</a></li>
                 <li><a id="contributions">Contributions</a></li>
