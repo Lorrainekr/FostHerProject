@@ -8,111 +8,112 @@
 <html>
 <body>
     <h1>Artistes</h1>
-    <ul>
-        <li>@Html.ActionLink("Créer une artiste", "CreateArtist", "Artist")</li>
-        <li>@Html.ActionLink("Supprimer une artiste", "DeleteArtist", "Artist")</li>
-        <li>@Html.ActionLink("Modifier une artiste", "EditArtist", "Artist")</li>
-    </ul>
-    <section class="artiste-list-items-container">
-        <div class="artist_search_block">
-            <div class="button_orange">
-                <a class="button">Créer votre page!</a>
-            </div>
-            <div class="search_block">
-                <input class="search_bar"
-                       type="search"
-                       id="site-search"
-                       name="saisie"
-                       placeholder="Rechercher une artiste"
-                       aria-label="Rechercher une artistet">
-                <i class="fas fa-search icon_search"></i>
-            </div>
-            <div class="artiste-list-filtre-recherche">
-                <div class="filtre-type-association">
-                    <h4 class="filter">Par Association</h4>
-                    <label class="container_search">
-                        <input type="checkbox" class="checkmark">Du côté des femmes
-                    </label><br />
-                    <label class="container_search">
-                        <input type="checkbox" class="checkmark">Femmes Debout
-                    </label><br />
-                    <label class="container_search">
-                        <input type="checkbox" class="checkmark">Osez le féminisme
-                    </label><br />
-                    <label class="container_search">
-                        <input type="checkbox" class="checkmark">Voix de femmes
-                    </label><br />
-                </div>
-                <div class="filtre-recherche-categorie">
-                    <h4 class="filter">Genre d'art</h4>
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Pianiste
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Illustratrice
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Sculptrice
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Chanteuse
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Peintre
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Écrivain
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Graphiste
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Flûtiste
-                    </label><br />
-                    <label class="container_search">
-                        <input type="radio" class="checkmark-radio">Maquilleuse
-                    </label><br />
-
-                </div>
-            </div>
-        </div>
-        <div class="artist_list_block">
-            <div class="artiste-list-gallery">
-                @foreach (Artist e in ViewBag.listArtists)
-                {
-                    <article class="artiste-block-vertical">
-                        <div class="artiste-list-image">
-                            <img class="artist_img"
-                                 src="~/img/artiste_4.png"
-                                 alt="" />
-                        </div>
-                        <div class="artiste-list-description">
-                            <h3>@e.StageName</h3>
-                            <h4>@e.association.AssoName</h4>
-                            <h5>@e.Category.CategoryName</h5>
-                            <p>
-                                Les bandes dessinées que Catherine Meurisse scénarise et
-                                dessine seule sont essentiellement axées autour de la
-                                littérature et des arts, le tout teinté d'humour...
-                            </p>
-                        </div>
-                        <div class="artist_card_link_content">
-                            @Html.ActionLink("Voir l'artiste", "PageArtist", "Artist", new { id = e.Id })
-                        </div>
-                    </article>
-                }
-            </div>
-        </div>
-    </section>
-    <section class="pagination_container">
-        <ul class="pagination">
-            <li><a href="#" class="p-button"><i class="fas fa-chevron-left"></i></a></li>
-            <li><a href="#" class="p-button">1</a></li>
-            <li><a href="#" class="p-button">2</a></li>
-            <li><a href="#" class="p-button">3</a></li>
-            <li><a href="#" class="p-button">4</a></li>
-            <li><a href="#" class="p-button"><i class="fas fa-chevron-right"></i></a></li>
+    @if (ViewBag.user == "A")
+    {
+        <ul>
+            <li>@Html.ActionLink("Créer une artiste", "CreateArtist", "Artist")</li>
         </ul>
-    </section>
-</body>
+    }
+        <section class="artiste-list-items-container">
+            <div class="artist_search_block">
+                <div class="button_orange">
+                    <a class="button">Créer votre page!</a>
+                </div>
+                <div class="search_block">
+                    <input class="search_bar"
+                           type="search"
+                           id="site-search"
+                           name="saisie"
+                           placeholder="Rechercher une artiste"
+                           aria-label="Rechercher une artistet">
+                    <i class="fas fa-search icon_search"></i>
+                </div>
+                <div class="artiste-list-filtre-recherche">
+                    <div class="filtre-type-association">
+                        <h4 class="filter">Par Association</h4>
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Du côté des femmes
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Femmes Debout
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Osez le féminisme
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Voix de femmes
+                        </label><br />
+                    </div>
+                    <div class="filtre-recherche-categorie">
+                        <h4 class="filter">Genre d'art</h4>
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Pianiste
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Illustratrice
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Sculptrice
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Chanteuse
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Peintre
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Écrivain
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Graphiste
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Flûtiste
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Maquilleuse
+                        </label><br />
+
+                    </div>
+                </div>
+            </div>
+            <div class="artist_list_block">
+                <div class="artiste-list-gallery">
+                    @foreach (Artist e in ViewBag.listArtists)
+                    {
+                        <article class="artiste-block-vertical">
+                            <div class="artiste-list-image">
+                                <img class="artist_img"
+                                     src="~/img/artiste_4.png"
+                                     alt="" />
+                            </div>
+                            <div class="artiste-list-description">
+                                <h3>@e.StageName</h3>
+                                <h4>@e.association.AssoName</h4>
+                                <h5>@e.Category.CategoryName</h5>
+                                <p>
+                                    Les bandes dessinées que Catherine Meurisse scénarise et
+                                    dessine seule sont essentiellement axées autour de la
+                                    littérature et des arts, le tout teinté d'humour...
+                                </p>
+                            </div>
+                            <div class="artist_card_link_content">
+                                @Html.ActionLink("Voir l'artiste", "PageArtist", "Artist", new { id = e.Id })
+                            </div>
+                        </article>
+                    }
+                </div>
+            </div>
+        </section>
+        <section class="pagination_container">
+            <ul class="pagination">
+                <li><a href="#" class="p-button"><i class="fas fa-chevron-left"></i></a></li>
+                <li><a href="#" class="p-button">1</a></li>
+                <li><a href="#" class="p-button">2</a></li>
+                <li><a href="#" class="p-button">3</a></li>
+                <li><a href="#" class="p-button">4</a></li>
+                <li><a href="#" class="p-button"><i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+        </section>
+    </body>
 </html>

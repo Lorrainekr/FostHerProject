@@ -14,6 +14,28 @@ namespace ProjetFostHer.Controllers
         {
             using (IDal dal = new Dal())
             {
+                if (!(HttpContext.User.Identity.IsAuthenticated))
+                {
+                    ViewBag.user = "B";
+                }
+                else
+                {
+                    int a = Int32.Parse(HttpContext.User.Identity.Name);
+
+                    User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                    if (user == null)
+                    {
+                        ViewBag.user = "B";
+                    }
+                    else if (!(user.association == null))
+                    {
+                        ViewBag.user = "A";
+                    }
+                    else
+                    {
+                        ViewBag.user = "B";
+                    }
+                }
                 List<Artist> art = dal.ListAllArtists();
 
                 ViewBag.listArtists = art;

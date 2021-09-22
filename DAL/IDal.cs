@@ -76,7 +76,7 @@ namespace ProjetFostHer.DAL
 
         // Méthode pour les évènements
         void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Artist artistevent);
-        void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association asso);
+        void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association asso,Artist a);
         void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price);
         void DeleteEvent(int id);
 

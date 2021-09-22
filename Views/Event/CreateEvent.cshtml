@@ -40,6 +40,10 @@
         @Html.TextBoxFor(m => Model.Category.CategoryName)
         @Html.ValidationMessageFor(m => Model.Category.CategoryName)
 
+        @Html.LabelFor(m => Model.ArtistEvent.StageName)
+        @Html.TextBoxFor(m => Model.ArtistEvent.StageName)
+        @Html.ValidationMessageFor(m => Model.ArtistEvent.StageName)
+
         <br />
         <input type="submit" value="Ajouter" />
     </fieldset>
