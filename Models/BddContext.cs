@@ -155,8 +155,14 @@ namespace ProjetFostHer.Models
             this.SaveChanges();
 
             Product a = new Product();
-            a.Price = 80;
+            a.Price = 35;
             a.Name = "Tap Jam avec Lior Krief et Prabhu Edouard";
+            Product b = new Product();
+            b.Price = 20;
+            b.Name = "Les femmes dans la peinture abstraite";
+            Product c = new Product();
+            c.Price = 40;
+            c.Name = "Piano Sonata No. 3 (Chopin)";
 
             //this.Users.AddRange(
             //    new User
@@ -164,8 +170,8 @@ namespace ProjetFostHer.Models
             //            Name = "Low",
             //            Email = "lock@gmail.com",
             //            Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB",
-                       
-                        
+
+
             //        },
 
             //    new User
@@ -428,7 +434,7 @@ namespace ProjetFostHer.Models
                    Category = cat3,
                    Lieu = "La Mutinerie, Paris",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
-                   product = new Product(),
+                   product = b,
                    ArtistEvent = new Artist(
                         "sylvettemarchal@gmail.com",
                         "Mn12345$",
@@ -453,7 +459,7 @@ namespace ProjetFostHer.Models
                    Category = cat5,
                    Lieu = "Conservatoire de Boulogne-Billancourt",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
-                   product = new Product(),
+                   product = c,
                    ArtistEvent = new Artist(
                         "sylvettemarchal@gmail.com",
                         "Mn12F345$",
