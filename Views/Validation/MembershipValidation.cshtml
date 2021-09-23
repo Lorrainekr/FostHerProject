@@ -1,0 +1,60 @@
+﻿
+@model ProjetFostHer.Models.Artist
+@{
+//ViewBag.Title = "Membership Artist";
+Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Demande d'adhésion</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire d'adhésion à une association'</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Mes coordonnées</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.StageName)
+                            @Html.LabelFor(m => Model.Category.CategoryName)
+                            @Html.LabelFor(m => Model.Siret)
+                            @Html.LabelFor(m => Model.association.AssoName)
+
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.StageName)
+                            @Html.TextBoxFor(m => Model.Category.CategoryName)
+                            @Html.TextBoxFor(m => Model.Siret)
+                            <div class="dropdownlist">
+                                @Html.DropDownListFor(modelItem => modelItem.association.AssoName, new[] { new SelectListItem { Text = "La Fabrique de la Danse", Value = "La Fabrique de la Danse" }, new SelectListItem { Text = "Femmes artistes ici et là-bas", Value = "Femmes artistes ici et là-bas" }, new SelectListItem { Text = "Sortir les femmes de l'ombre", Value = "Sortir les femmes de l'ombre" }, new SelectListItem { Text = "AWARE", Value = "AWARE" }, new SelectListItem { Text = "Astrea", Value = "Astrea" } })
+                            </div>
+
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.StageName)
+                            @Html.ValidationMessageFor(m => Model.Category.CategoryName)
+                            @Html.ValidationMessageFor(m => Model.Siret)
+                        </div>
+
+                    </div>
+                    
+                    <div class="button_orange">
+                        <input type="submit" value="Ajouter" />
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+    }
+
+</body>
+</html>

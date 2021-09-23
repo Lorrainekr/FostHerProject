@@ -1,0 +1,90 @@
+﻿@model ProjetFostHer.Models.Event
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<div class="container event_container">
+    <div class="event_block">
+        <div class="event_title_block">
+            <h2>@Model.Designation</h2>
+            <p>
+                Du @Model.StartDate au @Model.EndDate au @Model.Lieu
+            </p>
+            <div class="line-break-black">
+            </div>
+        </div>
+        <div class="event_info_block">
+            <!--Image à gauche de l'écran-->
+            <div class="event_info_visual">
+                <img src="~/img/visuel_crowdfunding.png"
+                     class="cover-image"
+                     alt="photo accueil event @Model.Designation">
+            </div>
+
+            <!--Infos clés-->
+            <section class="event_info_content">
+                <div class="event_info_title">
+                    <div class="avatar_block">
+                        <a class="avatar_link" alt="aller vers l'association" href='@Url.Action("Index", "Home")'>
+                            <div class="avatar"></div>
+                        </a>
+                    </div>
+                    <div class="sub-title-asso">
+                        @if (!(Model.ArtistEvent == null))
+                        {
+                            <h3>@Model.ArtistEvent.StageName</h3>
+                        }
+                        @if (!(Model.AssociationEvent == null))
+            {
+                    <h5>@Model.AssociationEvent.AssoName</h5>
+            }
+                            
+                    </div>
+                </div>
+                <div class="event_date">
+                    <div class="event_date_content">
+                        <p>La rythmicienne Roxane Butterfly nous propose une soirée d'improvisation tap dance en complicité avec le guitariste Lior Krief.</p>
+                        <p><strong>Date(s): </strong>Du @Model.StartDate au @Model.EndDate</p>
+                        <p><strong>Lieu :</strong> @Model.Lieu</p>
+                        <p><strong>Tarif :</strong> @Model.Price euros</p>
+                    </div>
+                    <div class="block_button_event">
+                        <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id })</p>
+                    </div>
+                </div>
+
+                <!-- Boutons social media-->
+                <div class="event_share">
+                    <ul class="event_share_list">
+                        <li><i class="social fas fa-heart"></i></li>
+                        <li><i class="social fas fa-share-alt"></i></li>
+                        <li><i class="social fab fa-facebook-f" id="fb"></i></li>
+                        <li><i class="social fab fa-instagram" id="ig"></i></li>
+                        <li><i class="social fab fa-twitter" id="tw"></i></li>
+
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+<div class="souspages">
+    <nav id="subnav" class="sousmenu">
+        <div>
+            <ul>
+                <li><a id="infos">Informations</a></li>
+            </ul>
+        </div>
+        <div class="block_button_event">
+            <p class="button_orange">@Html.ActionLink("Réserver", "Buy", "Cart", new { id = Model.product.Id })@if (ViewBag.user == "A"){@Html.ActionLink("Modifier", "EditEvent", "Event", new { id = Model.Id }) @Html.ActionLink("Supprimer", "DeleteEvent", "Event", new { id = Model.Id })}</p>
+        </div>
+    </nav>
+    <div id="partial_infos">
+        @*@Html.Partial("EventSubpageInfos")**@
+    </div>
+</div>
+<html>
+<body> </body>
+</html>

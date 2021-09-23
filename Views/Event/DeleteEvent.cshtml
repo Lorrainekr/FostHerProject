@@ -1,0 +1,66 @@
+﻿@model ProjetFostHer.Models.Event
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Supprimer les données de l'évènement</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire de suppression de l'évènement</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Informations</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.Designation)
+                            @Html.LabelFor(m => Model.Type)
+                            @Html.LabelFor(m => Model.StartDate)
+                            @Html.LabelFor(m => Model.EndDate)
+                            @Html.LabelFor(m => Model.Price)
+
+
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.Designation, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Type, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Price, new { @readonly = true })
+
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.Designation)
+                            @Html.ValidationMessageFor(m => Model.Type)
+                            @Html.ValidationMessageFor(m => Model.StartDate)
+                            @Html.ValidationMessageFor(m => Model.EndDate)
+                            @Html.ValidationMessageFor(m => Model.Price)
+
+                        </div>
+                    </div>
+                    <div class="button_orange">
+                        <input type="submit" value="Supprimer" />
+                    </div>
+                </fieldset>
+            </div>
+
+
+        </section>
+
+    }
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>
+

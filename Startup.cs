@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using ProjetFostHer.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +26,25 @@ namespace ProjetFostHer
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddRazorPages();
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+            .AddCookie(options =>
+            {
+            options.LoginPath = "/Login/Index";
+
+            });
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            using (BddContext ctx = new BddContext())
+            {
+                ctx.InitializeDb();
+                
+            }
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -40,11 +55,14 @@ namespace ProjetFostHer
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            app.UseSession();
             app.UseHttpsRedirection();
+
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 
@@ -55,5 +73,6 @@ namespace ProjetFostHer
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
     }
 }

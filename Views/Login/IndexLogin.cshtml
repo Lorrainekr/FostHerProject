@@ -1,0 +1,49 @@
+﻿@model ProjetFostHer.ViewModels.HomeViewModel
+@{
+    Layout = "_Layout";
+}
+@if (Model.Authentification)
+{
+    <div class="container center_block">
+        <h3>Vous êtes déja connecté !</h3>
+        <p>Bienvenue @Model.User.Name</p>
+        @Html.ActionLink("Se déconnecter", "Deconnexion")
+    </div>
+    
+}
+else
+{
+<div class="container center_block">
+    <h3>Veuillez vous authentifier pour continuer</h3>
+</div>
+    
+    using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_content_login">
+                <h3>Mes informations de connexion</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => m.User.Email)
+                            @Html.LabelFor(m => m.User.Password)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => m.User.Email)
+                            @Html.PasswordFor(m => m.User.Password)
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => m.User.Email)
+                            @Html.ValidationMessageFor(m => m.User.Password)
+                        </div>
+                    </div>
+                    <div class="button_orange">
+                        <input type="submit" value="Se connecter" />
+                        @Html.ActionLink("Créer un compte", "CreerCompte")
+                    </div>
+                   
+                </fieldset>
+            </div>
+        </section>
+    }
+}

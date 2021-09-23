@@ -1,0 +1,66 @@
+﻿
+@model ProjetFostHer.Models.Crowdfunding
+
+@{
+//Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ajouter au panier</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend>Ajouter au panier : </legend>
+            <br />
+            @Html.LabelFor(m => Model.NameCrowdfunding)
+            @Html.TextBoxFor(m => Model.NameCrowdfunding, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.NameCrowdfunding)
+            <br />
+
+         
+            @Html.LabelFor(m => Model.StartDate)
+            @Html.TextBoxFor(m => Model.StartDate, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.StartDate)
+            <br />
+            @Html.LabelFor(m => Model.EndDate)
+            @Html.TextBoxFor(m => Model.EndDate, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.EndDate)
+            <br />
+            @Html.LabelFor(m => Model.MinDonation)
+            @Html.TextBoxFor(m => Model.MinDonation, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.MinDonation)
+            <br />
+            @Html.LabelFor(m => Model.MaxDonation)
+            @Html.TextBoxFor(m => Model.MaxDonation, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.MaxDonation)
+            <br />
+           
+            @Html.LabelFor(m => Model.AmountMax)
+            @Html.TextBoxFor(m => Model.AmountMax, new { @readonly = true })
+            @Html.ValidationMessageFor(m => Model.AmountMax)
+            <br />
+            @Html.LabelFor(m => Model.Donation)
+            @Html.EditorFor(m => Model.Donation, new {htmlAttributes = new {type="number", min = Model.MinDonation, max = Model.MaxDonation } })
+            @Html.ValidationMessageFor(m => Model.Donation)
+
+
+
+
+            <br />
+
+            <br />
+            <input type="submit" value="Confirmer" />
+
+
+        </fieldset>
+    }
+    <h1 align="center">@Html.ActionLink("Afficher mon panier", "IndexCart", "Cart", new { id = Model.user.Id })</h1>
+
+</body>
+</html>
