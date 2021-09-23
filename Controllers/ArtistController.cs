@@ -14,6 +14,28 @@ namespace ProjetFostHer.Controllers
         {
             using (IDal dal = new Dal())
             {
+                if (!(HttpContext.User.Identity.IsAuthenticated))
+                {
+                    ViewBag.user = "B";
+                }
+                else
+                {
+                    int a = Int32.Parse(HttpContext.User.Identity.Name);
+
+                    User user = dal.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                    if (user == null)
+                    {
+                        ViewBag.user = "B";
+                    }
+                    else if (!(user.association == null))
+                    {
+                        ViewBag.user = "A";
+                    }
+                    else
+                    {
+                        ViewBag.user = "B";
+                    }
+                }
                 List<Artist> art = dal.ListAllArtists();
 
                 ViewBag.listArtists = art;
@@ -69,6 +91,14 @@ namespace ProjetFostHer.Controllers
             }
         }
 
+        public IActionResult CreateArtist()
+        {
+
+            Artist art = new Artist();
+                return View(art);
+           
+        }
+        [HttpPost]
         public IActionResult CreateArtist(Artist art)
         {
 
@@ -83,8 +113,8 @@ namespace ProjetFostHer.Controllers
                 {
                     Association asso = ctx.ListAllAssociations().Where(r => r.Id == user.association.Id).FirstOrDefault();
                     ctx.CreateArtist(art.Email, art.Password, art.Address, art.FirstName, art.LastName, art.StageName, art.Category, art.Siret, asso);
-
                     return View("Modifications");
+                    
                 }else return View("Error");
             }
             

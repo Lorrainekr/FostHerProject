@@ -253,10 +253,6 @@ namespace ProjetFostHer.DAL
         public void Contribute(Crowdfunding cr)
         {
 
-
-            
-            
-            
             cr.SumCalculation();
 
             _bddContext.Crowdfundings.Update(cr);
@@ -394,11 +390,16 @@ namespace ProjetFostHer.DAL
             _bddContext.SaveChanges();
         }
 
-        public void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association associationevent)
+        public void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association associationevent,Artist a)
         {
             Product p = new Product();
             p.Name = designation;
             p.Price = price;
+            if ((a == null))
+            {
+                 a = new Artist();
+            }
+           
 
             Event newEvent = new Event()
             {
@@ -406,7 +407,7 @@ namespace ProjetFostHer.DAL
                 Type = type,
                 StartDate = startdate,
                 EndDate = enddate,
-
+                ArtistEvent=a,
                 Price = price,
                 Category = category,
                 AssociationEvent = associationevent,
@@ -460,7 +461,7 @@ namespace ProjetFostHer.DAL
             }
         }
 
-        public void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation)
+        public void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate,double amountmax, double mindonation, double maxdonation)
         {
             Crowdfunding crowd = _bddContext.Crowdfundings.Find(id);
 
@@ -469,14 +470,13 @@ namespace ProjetFostHer.DAL
                 crowd.NameCrowdfunding = namecrowdfunding;
                 crowd.StartDate = startdate;
                 crowd.EndDate = enddate;
-                crowd.AssociationCrowdfunding = associationcrowdfunding;
                 crowd.AmountMax = amountmax;
                 crowd.MinDonation = mindonation;
                 crowd.MaxDonation = maxdonation;
                 _bddContext.SaveChanges();
             }
         }
-        public void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price)
+        public void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, double price)
         {
             Event eve = _bddContext.Events.Find(id);
 
@@ -486,7 +486,6 @@ namespace ProjetFostHer.DAL
                 eve.Type = type;
                 eve.StartDate = startdate;
                 eve.EndDate = enddate;
-                eve.Stock = stock;
                 eve.Price = price;
 
                 _bddContext.SaveChanges();
@@ -629,7 +628,7 @@ namespace ProjetFostHer.DAL
             }
             return null;
         }
-        private string EncodeMD5(string motDePasse)
+        public string EncodeMD5(string motDePasse)
         {
             string motDePasseSel = "ChoixResto" + motDePasse + "ASP.NET MVC";
             return BitConverter.ToString(new MD5CryptoServiceProvider().ComputeHash(ASCIIEncoding.Default.GetBytes(motDePasseSel)));

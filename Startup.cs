@@ -43,6 +43,7 @@ namespace ProjetFostHer
             using (BddContext ctx = new BddContext())
             {
                 ctx.InitializeDb();
+                
             }
             if (env.IsDevelopment())
             {

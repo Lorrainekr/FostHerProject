@@ -31,12 +31,12 @@
 
                         </div>
                         <div class="label_block_form">
-                            @Html.TextBoxFor(m => Model.LastName)
-                            @Html.TextBoxFor(m => Model.FirstName)
-                            @Html.TextBoxFor(m => Model.StageName)
-                            @Html.TextBoxFor(m => Model.Category.CategoryName)
-                            @Html.TextBoxFor(m => Model.Siret)
-                            @Html.TextBoxFor(m => Model.Address)
+                            @Html.TextBoxFor(m => Model.LastName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.FirstName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.StageName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Category.CategoryName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Siret, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Address, new { @readonly = true })
                             @**@
                         </div>
                         <div class="label_block_warning">
@@ -57,18 +57,15 @@
                         <div class="label_block_text">
                             @Html.LabelFor(m => Model.Email)
                             @Html.LabelFor(m => Model.Password)
-                            @Html.LabelFor(m => Model.Password)
 
                         </div>
                         <div class="label_block_form">
-                            @Html.TextBoxFor(m => Model.Email)
-                            @Html.TextBoxFor(m => Model.Password)
-                            @Html.TextBoxFor(m => Model.Password)
+                            @Html.TextBoxFor(m => Model.Email, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Password, new { @readonly = true })
                             @**@
                         </div>
                         <div class="label_block_warning">
                             @Html.ValidationMessageFor(m => Model.Email)
-                            @Html.ValidationMessageFor(m => Model.Password)
                             @Html.ValidationMessageFor(m => Model.Password)
                         </div>
                     </div>

@@ -69,16 +69,16 @@ namespace ProjetFostHer.DAL
         // Méthode pour les crowdfundings
         void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation);
         void CreateCrowdfunding(string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation, Artist artist);
-        void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate, Association associationcrowdfunding, double amountmax, double mindonation, double maxdonation);
+        void EditCrowdfunding(int id, string namecrowdfunding, DateTime startdate, DateTime enddate,  double amountmax, double mindonation, double maxdonation);
         
         void DeleteCrowdfunding(int id);
         void Contribute(Crowdfunding cr);
 
         // Méthode pour les évènements
         void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Artist artistevent);
-        void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association asso);
-        void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, int stock, double price);
+        void CreateEvent(string designation, string type, DateTime startdate, DateTime enddate, double price, Category category, Association asso,Artist a);
+        void EditEvent(int id, string designation, string type, DateTime startdate, DateTime enddate, double price);
         void DeleteEvent(int id);
-
+        string EncodeMD5(string motDePasse);
     }
 }
