@@ -1649,15 +1649,15 @@ ul.pagination li a.active {
     margin: 50px 0 100px 0;
 }
 
-    .panier-total-paiement h3 {
-        text-transform: uppercase;
-        font-family: 'Open Sans', sans-serif;
-        font-size: 12pt;
-    }
+.panier-total-paiement h3 {
+    text-transform: uppercase;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+}
 
-    .panier-total-paiement a {
-        font-size: 18pt;
-    }
+.panier-total-paiement a {
+    font-size: 18pt;
+}
 
 .button-paiement {
     border: 2px solid #3CB371;
