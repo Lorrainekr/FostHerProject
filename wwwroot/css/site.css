@@ -245,7 +245,7 @@ button_white:hover {
 }
 
 .bienvenue-text .bold_text{
-    font-family: Open sans semibold;
+    font-family: Open sans semibold , sans-serif;
 }
 
 .ancre_down {
@@ -1282,8 +1282,26 @@ button_orange:hover {
     box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
 }
 
+.label_block_form select {
+    margin: 5px;
+    padding: 13.5px 40px;
+    border-radius: 100px;
+    border: 2px solid #ffffff;
+    background-color: #ffffff;
+    box-shadow: 3px 3px 3px rgb(0 0 0 / 20%);
+}
+
 .label_block_form input:focus-visible {
     outline: 0px solid #ffffff;
+}
+
+.label_block_form select:focus-visible {
+    outline: 0px solid #ffffff;
+}
+
+.dropdownlist {
+    display: flex;
+    flex-direction: row;
 }
 
 .label_block_warning {
@@ -1342,14 +1360,14 @@ ul.pagination li a {
     font-family: 'Open Sans semibold';
 }
 
-    ul.pagination li a:hover {
-        background-color: #E94E1B;
-        color: white;
-    }
+ul.pagination li a:hover {
+    background-color: #E94E1B;
+    color: white;
+}
 
-    ul.pagination li a.active {
-        border-radius: 5px;
-    }
+ul.pagination li a.active {
+    border-radius: 5px;
+}
 
 /* PAGE ARTISTE*/
 
@@ -1569,5 +1587,104 @@ ul.pagination li a {
 .search_asso .search_bar {
     margin-top: 15px;
 }
+
+/* Page panier*/
+.page-panier-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.page-panier-title {
+    color: #7E4393;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.panier-table {
+    border-collapse: collapse;
+    text-align: left;
+    overflow: hidden;
+}
+
+    .panier-table th {
+        background-color: white;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12pt;
+    }
+
+    .panier-table thead {
+        border-bottom: 1px solid #d5d5d5;
+    }
+
+    .panier-table td {
+        padding: 1rem 2rem;
+    }
+
+.panier_result {
+    font-family: 'Open Sans';
+    font-size: 14px;
+}
+
+.cart_table_block_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.panier-block-center {
+    display: flex;
+    align-items: stretch;
+    margin-top: 50px;
+}
+
+.panier-total-paiement {
+    font-family: 'Open Sans', sans-serif;
+    margin: 50px 0 100px 0;
+}
+
+    .panier-total-paiement h3 {
+        text-transform: uppercase;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 12pt;
+    }
+
+    .panier-total-paiement a {
+        font-size: 18pt;
+    }
+
+.button-paiement {
+    border: 2px solid #3CB371;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+    display: inline-block;
+    font-family: 'Open sans semibold', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+    padding: 13.5px 60px;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 10px;
+    color: #FFFFFF;
+    background-color: #3cb371;
+    width: 370px;
+}
+
+.total-paiement-somme {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+}
+
+.total-paiement-somme p{
+    margin-left: 20px;
+}
+
 
  

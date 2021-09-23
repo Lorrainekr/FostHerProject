@@ -1,61 +1,90 @@
 ﻿@model ProjetFostHer.Models.Cart
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
-
 <!DOCTYPE html>
-
 <html>
 <head>
-    
-
     <title>Index</title>
 </head>
 <body>
     @using (Html.BeginForm())
     {
+        <div class="page-panier-container container">
+            <div class="page-panier-title">
+                <h>Mon Panier</h>
+                <a class="fas fa-shopping-cart"></a>
+            </div>
 
-        <h3>Cart Page</h3>
-        <table cellpadding="2" cellspacing="2" border="1">
-            <tr>
-                <th>Supprimer</th>
-                <th>Modifier</th>
-                <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Quantity <input type="submit" value="Update" /></th>
-                <th>Sub Total</th>
-            </tr>
-            @for (int i =0;i<Model.Items.Count;i++)   
-            {
-        <tr>
-            <td>@Html.ActionLink("Remove", "Remove", "Cart", new { id = @Model.Items[i].Id })</td>
-            <td>@Html.ActionLink("Modifier", "OnPostUpdate", "Cart", new { id = @Model.Items[i].Id })</td>
-            <td>@Model.Items[i].Product.Id</td>
-            <td>@Model.Items[i].Product.Name</td>
-            <td>@Model.Items[i].Product.Price</td>
-            <td> @Html.TextBoxFor(m => Model.Items[i].Quantity, new { @type = "number", min = "1", style = "width: 50px;" }) </td>
+            <div class="panier-block-center">
+                <table class="panier-table">
+                    <thead>
+                        <tr>
 
-            <td>@(Model.Items[i].Product.Price * Model.Items[i].Quantity)</td>
-            @Html.HiddenFor(m => @Model.Items[i].Id)
-            @Html.HiddenFor(m => @Model.Items[i].Product.Id)
-            @Html.HiddenFor(m => @Model.Items[i].Product.Price)
-            @Html.HiddenFor(m => @Model.Items[i].Product.Name)
-        </tr>
-            }
-            <tr>
-                <td align="right" colspan="6">Sum</td>
-                <td>
+                            <th>Produit</th>
+                            <th>Prix</th>
+                            <th>Quantité <input type="submit" value="Update" /></th>
+                            <th>Supprimer</th>
+                            <th>Modifier</th>
+                            <th>Sous-total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (int i = 0; i < Model.Items.Count; i++)
+                        {
+                            <tr>
+                               
+                                <td>@Model.Items[i].Product.Name</td>
+                                <td>@Model.Items[i].Product.Price</td>
+                                <td> @Html.TextBoxFor(m => Model.Items[i].Quantity, new { @type = "number", min = "1" }) </td>
+                                <td>@Html.ActionLink("Remove", "Remove", "Cart", new { id = @Model.Items[i].Id })</td>
+                                <td>@Html.ActionLink("Modifier", "OnPostUpdate", "Cart", new { id = @Model.Items[i].Id })</td>
+                                <td>@(Model.Items[i].Product.Price * Model.Items[i].Quantity)</td>
+                          
+                     
+                                @Html.HiddenFor(m => @Model.Items[i].Product.Price)
+                                @Html.HiddenFor(m => @Model.Items[i].Product.Name)
 
-                    @(Model.Items.Sum(item => item.Product.Price * item.Quantity));
-                </td>
-            </tr>
-        </table>
-        
-        <br>
-        <a asp-controller="product" asp-action="index"> @Html.ActionLink("Retour à la liste des évènements", "IndexEvent", "Event")</a>
-        <h1 align="center">@Html.ActionLink("Retour à l'accueil", "Index", "Home")</h1>
-        <h1 align="center">@Html.ActionLink("Passer au paiement", "PaymentEvent", "Payment", new { id = Model.Id })</h1>
+                            </tr>
+                        </thead>
+                        <tbody class="panier_result">
+                            @for (int i = 0; i < Model.Items.Count; i++)
+                            {
+                                <tr>
+                                    <td>@Model.Items[i].Product.Name</td>
+                                    <td>@Model.Items[i].Product.Price</td>
+                                    <td> @Html.TextBoxFor(m => Model.Items[i].Quantity, new { @type = "number", min = "1" }) </td>
+                                    <td>@Html.ActionLink("Retirer", "Remove", "Cart", new { id = @Model.Items[i].Id })</td>
+                                    <td>@(Model.Items[i].Product.Price * Model.Items[i].Quantity)</td>
+                                    @Html.HiddenFor(m => @Model.Items[i].Id)
+                                    @Html.HiddenFor(m => @Model.Items[i].Product.Id)
+                                    @Html.HiddenFor(m => @Model.Items[i].Product.Price)
+                                    @Html.HiddenFor(m => @Model.Items[i].Product.Name)
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panier-total-paiement">
+                    <div class="total-paiement-somme">
+                        <h3>Total</h3>
+                        <p>@(Model.Items.Sum(item => item.Product.Price * item.Quantity)) €</p>
+                    </div>
+                    <div class="button_orange">
+                        @Html.ActionLink("Paiement", "PaymentEvent", "Payment", new { id = Model.Id })
+                    </div>
+                    <p>Nous acceptons</p>
+                    <a class="fab fa-cc-visa"></a>
+                    <a class="fab fa-cc-mastercard"></a>
+                    <a class="fab fa-cc-amex"></a>
+                    <a class="fab fa-cc-paypal"></a>
+                </div>
+            </section>
+            
+        </div>
     }
 </body>
 </html>
+
+
+

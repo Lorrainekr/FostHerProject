@@ -107,19 +107,24 @@ namespace ProjetFostHer.Controllers
                     }
                     else if (!(eve.AssociationEvent == null))
                     {
-                        if ((eve.AssociationEvent.Id == user.association.Id))
+                        if (!(user.association == null))
                         {
-                            ViewBag.user = "A";
+                            if ((eve.AssociationEvent.Id == user.association.Id))
+                            {
+                                ViewBag.user = "A";
+                            }
                         }
                     }
                     else if (!(eve.ArtistEvent == null))
                     {
-
-                        if (eve.ArtistEvent.Id == user.artist.Id)
+                        if (!(user.artist == null))
                         {
-                            ViewBag.user = "A";
-                        }
 
+                            if (eve.ArtistEvent.Id == user.artist.Id)
+                            {
+                                ViewBag.user = "A";
+                            }
+                        }
                         else
                         {
                             ViewBag.user = "B";
@@ -130,6 +135,98 @@ namespace ProjetFostHer.Controllers
                 return View(eve);
             }
         }
+
+
+
+        public IActionResult EditEvent(int id)
+        {
+            if (id != 0)
+            {
+                using (IDal dal = new Dal())
+                {
+                    Event eve = dal.ListAllEvents().Where(r => r.Id == id).FirstOrDefault();
+                    if (eve == null)
+                    {
+                        return View("Error");
+                    }
+                    return View(eve);
+                }
+            }
+            return View("Error");
+        }
+
+        [HttpPost]
+        public IActionResult EditEvent(Event eve)
+        {
+            if (!ModelState.IsValid)
+                return View(eve);
+
+            if (eve.Id != 0)
+            {
+                using (Dal ctx = new Dal())
+                {
+                    ctx.EditEvent(eve.Id,eve.Designation, eve.Type, eve.StartDate, eve.EndDate, eve.Price);
+
+                    return View("Modifications");
+                }
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+
+        public IActionResult DeleteEvent(int id)
+        {
+            if (id != 0)
+            {
+                using (IDal dal = new Dal())
+                {
+                    Event eve = dal.ListAllEvents().Where(r => r.Id == id).FirstOrDefault();
+                    if (eve == null)
+                    {
+                        return View("Error");
+                    }
+                    return View(eve);
+                }
+            }
+            return View("Error");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteEvent(Event eve)
+        {
+            if (!ModelState.IsValid)
+                return View(eve);
+
+            if (eve.Id != 0)
+            {
+                using (Dal ctx = new Dal())
+                {
+                    ctx.DeleteEvent(eve.Id);
+
+                    return View("Modifications");
+                }
+            }
+            else
+            {
+                return View("Error");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

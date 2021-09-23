@@ -1,4 +1,4 @@
-﻿
+﻿@model ProjetFostHer.Models.Crowdfunding
 @{
     Layout = "_Layout";
 }
@@ -8,8 +8,65 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>CreateCrowdfunding</title>
+    <title>Créer un crowdfunding</title>
 </head>
 <body>
+    @using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire de création d'un crowdfunding</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Informations</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.NameCrowdfunding)
+                            @Html.LabelFor(m => Model.StartDate)
+                            @Html.LabelFor(m => Model.EndDate)
+                            @Html.LabelFor(m => Model.MinDonation)
+                            @Html.LabelFor(m => Model.MaxDonation)
+                            @Html.LabelFor(m => Model.AmountMax)
+                            @Html.LabelFor(m => Model.Artist.association.AssoName)
+                            @Html.LabelFor(m => Model.ArtistCrowdfunding.StageName)
+
+
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.NameCrowdfunding)
+                            @Html.TextBoxFor(m => Model.StartDate)
+                            @Html.TextBoxFor(m => Model.EndDate)
+                            @Html.TextBoxFor(m => Model.MinDonation)
+                            @Html.TextBoxFor(m => Model.MaxDonation)
+                            @Html.TextBoxFor(m => Model.AmountMax)
+                            @Html.TextBoxFor(m => Model.Artist.association.AssoName)
+                            @Html.TextBoxFor(m => Model.ArtistCrowdfunding.StageName)
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.NameCrowdfunding)
+                            @Html.ValidationMessageFor(m => Model.StartDate)
+                            @Html.ValidationMessageFor(m => Model.EndDate)
+                            @Html.ValidationMessageFor(m => Model.MinDonation)
+                            @Html.ValidationMessageFor(m => Model.MaxDonation)
+                            @Html.ValidationMessageFor(m => Model.AmountMax)
+                            @Html.ValidationMessageFor(m => Model.Artist.association.AssoName)
+                            @Html.ValidationMessageFor(m => Model.ArtistCrowdfunding.StageName)
+                        </div>
+                    </div>
+                    <div class="button_orange">
+                        <input type="submit" value="Ajouter" />
+                    </div>
+                </fieldset>
+            </div>
+
+
+        </section>
+
+    }
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
 </body>
 </html>

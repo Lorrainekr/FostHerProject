@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using ProjetFostHer.DAL;
 
 namespace ProjetFostHer.Models
 {
@@ -33,10 +34,65 @@ namespace ProjetFostHer.Models
             this.Database.EnsureCreated();
 
             Association asso1 = new Association("femmesdelombre@gmail.com", "512398!uu!", "Sortir les femmes de l'ombre", "23, rue de l'écuyer, Noisy Le Roi 93130", "0123236789", "H763820717", "786543097");
-            Association asso2 = new Association("femmesdelombre@gmail.com", "512376du!!!", "Femmes artistes ici et là-bas", "11, rue du Maréchal Foch, Argens 11200", "0123276789", "K763845717", "986541097");
+            Association asso2 = new Association("femmesdumonde@gmail.com", "512376du!!!", "Femmes artistes ici et là-bas", "11, rue du Maréchal Foch, Argens 11200", "0123276789", "K763845717", "986541097");
             Association asso3 = new Association("aware.asso@gmail.com", "7863!76du", "AWARE", "45, rue des maraichers, Paris 75020", "0156785623", "L749267396", "234908758");
             Association asso4 = new Association("fabriquedanse@gmail.com", "!6753!76du", "La Fabrique de la Danse", "78, rue des petits prés, Nantes 44000", "0156785623", "L749267396", "234908758");
             Association asso5 = new Association("astrea@gmail.com", "!7589!76du", "Astrea", "67, rue de la grande truanderie, Paris 75002", "0176458790", "R563789653", "764908637");
+            using (Dal ctx = new Dal())
+            {
+                
+           
+
+                this.Users.AddRange(
+                    new User
+                    {
+                        Name = asso1.AssoName,
+                        Email = asso1.Email,
+                        Password=ctx.EncodeMD5(asso1.Password),
+                        association=asso1,
+
+                    },
+
+                    new User
+                    {
+                        Name = asso2.AssoName,
+                        Email = asso2.Email,
+                        Password = ctx.EncodeMD5(asso2.Password),
+                        association = asso2,
+
+                    },
+                    new User
+                    {
+                        Name = asso3.AssoName,
+                        Email = asso3.Email,
+                        Password = ctx.EncodeMD5(asso3.Password),
+                        association = asso3,
+
+                    },
+
+                    new User
+                    {
+                        Name = asso4.AssoName,
+                        Email = asso4.Email,
+                        Password = ctx.EncodeMD5(asso4.Password),
+                        association = asso4,
+
+                    },
+                    new User
+                    {
+                        Name = asso5.AssoName,
+                        Email = asso5.Email,
+                        Password = ctx.EncodeMD5(asso5.Password),
+                        association = asso5,
+
+                    }
+
+
+
+
+                        );
+            }
+
             Category cat1 = new Category(); cat1.CategoryName = "Peinture";
             Category cat2 = new Category(); cat2.CategoryName = "Cinema";
             Category cat3 = new Category(); cat3.CategoryName = "Sculpture";
@@ -99,26 +155,32 @@ namespace ProjetFostHer.Models
             this.SaveChanges();
 
             Product a = new Product();
-            a.Price = 80;
+            a.Price = 35;
             a.Name = "Tap Jam avec Lior Krief et Prabhu Edouard";
+            Product b = new Product();
+            b.Price = 20;
+            b.Name = "Les femmes dans la peinture abstraite";
+            Product c = new Product();
+            c.Price = 40;
+            c.Name = "Piano Sonata No. 3 (Chopin)";
 
-            this.Users.AddRange(
-                new User
-                    {
-                        Name = "Low",
-                        Email = "lock@gmail.com",
-                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB",
-                       
-                        
-                    },
+            //this.Users.AddRange(
+            //    new User
+            //        {
+            //            Name = "Low",
+            //            Email = "lock@gmail.com",
+            //            Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB",
 
-                new User
-                    {
-                        Name = "Tom",
-                        Email = "tom@gmail.com",
-                        Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
-                    }
-                    );
+
+            //        },
+
+            //    new User
+            //        {
+            //            Name = "Tom",
+            //            Email = "tom@gmail.com",
+            //            Password = "FB-32-9E-B0-0E-A1-D6-76-5D-D1-3B-8E-C0-26-3C-CB"
+            //        }
+            //        );
 
 
             this.Artists.AddRange(
@@ -225,6 +287,8 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021,09,10),
                    EndDate = new DateTime(2021,11,10),
                    AssociationCrowdfunding = asso1,
+                   Contrib=81,
+                   sum=2360,
                    AmountMax = 45000,
                    MinDonation = 5,
                    MaxDonation = 1000,
@@ -313,6 +377,8 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2022,01,01),
                    EndDate = new DateTime(2022,01,29),
                    AssociationCrowdfunding = asso2,
+                   Contrib=108,
+                   sum=7500,
                    AmountMax = 30000,
                    MinDonation = 5,
                    MaxDonation = 1000,
@@ -368,7 +434,7 @@ namespace ProjetFostHer.Models
                    Category = cat3,
                    Lieu = "La Mutinerie, Paris",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
-                   product = new Product(),
+                   product = b,
                    ArtistEvent = new Artist(
                         "sylvettemarchal@gmail.com",
                         "Mn12345$",
@@ -393,7 +459,7 @@ namespace ProjetFostHer.Models
                    Category = cat5,
                    Lieu = "Conservatoire de Boulogne-Billancourt",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",
-                   product = new Product(),
+                   product = c,
                    ArtistEvent = new Artist(
                         "sylvettemarchal@gmail.com",
                         "Mn12F345$",
