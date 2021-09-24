@@ -1,0 +1,84 @@
+﻿@model ProjetFostHer.Models.Association
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditAssociation</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire de création de compte artiste</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Mes coordonnées</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.AssoName)
+                            @Html.LabelFor(m => Model.Tel)
+                            @Html.LabelFor(m => Model.RNA)
+                            @Html.LabelFor(m => Model.Siren)
+                            @Html.LabelFor(m => Model.Address)
+
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.AssoName)
+                            @Html.TextBoxFor(m => Model.Tel)
+                            @Html.TextBoxFor(m => Model.RNA)
+                            @Html.TextBoxFor(m => Model.Siren)
+                            @Html.TextBoxFor(m => Model.Address)
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.AssoName)
+                            @Html.ValidationMessageFor(m => Model.Tel)
+                            @Html.ValidationMessageFor(m => Model.RNA)
+                            @Html.ValidationMessageFor(m => Model.Siren)
+                            @Html.ValidationMessageFor(m => Model.Address)
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="label_content_login">
+                <h3>Mes informations de connexion</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.Email)
+                            @Html.LabelFor(m => Model.Password)
+                            @Html.LabelFor(m => Model.Password)
+
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.Email)
+                            @Html.TextBoxFor(m => Model.Password)
+                            @Html.TextBoxFor(m => Model.Password)
+                            @**@
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.Email)
+                            @Html.ValidationMessageFor(m => Model.Password)
+                            @Html.ValidationMessageFor(m => Model.Password)
+                        </div>
+                    </div>
+
+                    <div class="button_orange">
+                        <input type="submit" value="Modifier" />
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+    }
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+</body>
+</html>

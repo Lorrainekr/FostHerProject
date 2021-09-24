@@ -1,0 +1,53 @@
+﻿@model ProjetFostHer.Models.Event
+@{
+    ViewBag.Title = "CreateArtist";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Ajouter un évènement</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+    <fieldset>
+        <legend>Ajouter une artiste : </legend>
+        @Html.LabelFor(m => Model.Designation)
+        @Html.TextBoxFor(m => Model.Designation)
+        @Html.ValidationMessageFor(m => Model.Designation)
+        <br />
+        @Html.LabelFor(m => Model.Type)
+        @Html.TextBoxFor(m => Model.Type)
+        @Html.ValidationMessageFor(m => Model.Type)
+
+        @Html.LabelFor(m => Model.StartDate)
+        @Html.TextBoxFor(m => Model.StartDate)
+        @Html.ValidationMessageFor(m => Model.StartDate)
+
+        @Html.LabelFor(m => Model.EndDate)
+        @Html.TextBoxFor(m => Model.EndDate)
+        @Html.ValidationMessageFor(m => Model.EndDate)
+
+        @Html.LabelFor(m => Model.Price)
+        @Html.TextBoxFor(m => Model.Price)
+        @Html.ValidationMessageFor(m => Model.Price)
+
+        @Html.LabelFor(m => Model.Category.CategoryName)
+        @Html.TextBoxFor(m => Model.Category.CategoryName)
+        @Html.ValidationMessageFor(m => Model.Category.CategoryName)
+
+        @Html.LabelFor(m => Model.ArtistEvent.StageName)
+        @Html.TextBoxFor(m => Model.ArtistEvent.StageName)
+        @Html.ValidationMessageFor(m => Model.ArtistEvent.StageName)
+
+        <br />
+        <input type="submit" value="Ajouter" />
+    </fieldset>
+    }
+
+</body>
+</html>

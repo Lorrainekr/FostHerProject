@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ProjetFostHer.DAL;
 using ProjetFostHer.Models;
 using ProjetFostHer.ViewModels;
 using System;
@@ -12,22 +13,24 @@ namespace ProjetFostHer.Controllers
     {
         public IActionResult Index()
         {
-            Association associationPicasso = new Association 
-            { 
-                Address = "Paris 20 eme", 
-                Tel = "22222222",
-                RNA = "11111111",
-                Siren = "hldpssjggfg4647879889C"
-            };
+            
+                using (Dal ctx = new Dal())
+                {
+                
+                if (!(HttpContext.User.Identity.Name == null))
+                {
+                 int  a = Int32.Parse(HttpContext.User.Identity.Name);
+ 
+                    User user = ctx.ListAllUsers().Where(r => r.Id == a).FirstOrDefault();
+                if (!(user==null))
+                    { ViewData["Message"] = user.Name.ToString(); }
+                
+                }
 
-            HomeViewModel homeviewmodel = new HomeViewModel
-            {
-                Message = "Bienvenue à l'association Picasso !",
-                Date = DateTime.Now,
-                Associations = associationPicasso
-            };
+                }
 
-            return View(homeviewmodel);
+            
+            return View();
         }
     }
 }

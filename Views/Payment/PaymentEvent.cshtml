@@ -1,0 +1,56 @@
+﻿@model ProjetFostHer.Models.Account
+@{
+
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Information pour le paiement</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_title">
+                <h2>Formulaire pour le paiement</h2>
+            </div>
+            <div class="label_content_info">
+                <h3 class="">Mes coordonnées bancaires</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.Montant,"Montant (Euros)")
+                            @Html.LabelFor(m => Model.NumeroCB)
+                            @Html.LabelFor(m => Model.DateExpirationMois)
+                            @Html.LabelFor(m => Model.Crypto)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.Montant, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.NumeroCB)
+                            <div class="dropdownlist">
+                                @Html.DropDownListFor(modelItem => modelItem.DateExpirationMois, new[] { new SelectListItem { Text = "Janvier", Value = "01" }, new SelectListItem { Text = "Février", Value = "02" }, new SelectListItem { Text = "Mars", Value = "03" }, new SelectListItem { Text = "Avril", Value = "04" }, new SelectListItem { Text = "Mai", Value = "05" }, new SelectListItem { Text = "Juin", Value = "06" }, new SelectListItem { Text = "Juillet", Value = "07" }, new SelectListItem { Text = "Août", Value = "08" }, new SelectListItem { Text = "Septembre", Value = "09" }, new SelectListItem { Text = "Octobre", Value = "10" }, new SelectListItem { Text = "Novembre", Value = "11" }, new SelectListItem { Text = "Décembre", Value = "12" } })
+                                @Html.DropDownListFor(modelItem => modelItem.DateExpirationAnnee, new[] { new SelectListItem { Text = "2021", Value = "2021" }, new SelectListItem { Text = "2022", Value = "2022" }, new SelectListItem { Text = "2023", Value = "2023" }, new SelectListItem { Text = "2024", Value = "2024" }, new SelectListItem { Text = "2025", Value = "2025" }, new SelectListItem { Text = "2026", Value = "2026" } })
+                            </div>
+                            @Html.TextBoxFor(m => Model.Crypto)
+                        </div>
+                        <div class="label_block_warning">
+                            @Html.ValidationMessageFor(m => Model.Montant)
+                            @Html.ValidationMessageFor(m => Model.NumeroCB)
+                            @Html.ValidationMessageFor(m => Model.Crypto)
+                        </div>
+                    </div>
+
+                    <div class="button_orange">
+                        <input type="submit" value="Valider" />
+                    </div>
+                </fieldset>
+            </div>
+        </section>
+    }
+
+</body>
+</html>

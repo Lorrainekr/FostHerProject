@@ -1,0 +1,60 @@
+﻿@model ProjetFostHer.Models.Artist
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Validation</title>
+   
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        <section class="container container_label">
+            <div class="label_content_login">
+                <h3>Confimer l'adhésion'</h3>
+                <fieldset class="label_content">
+                    <div class="label_block">
+                        <div class="label_block_text">
+                            @Html.LabelFor(m => Model.Email)
+                            @Html.LabelFor(m => Model.Address)
+                            @Html.LabelFor(m => Model.FirstName)
+                            @Html.LabelFor(m => Model.LastName)
+                            @Html.LabelFor(m => Model.StageName)
+                            @Html.LabelFor(m => Model.Category.CategoryName)
+                            @Html.LabelFor(m => Model.Siret)
+                            @Html.LabelFor(m => Model.Validation)
+                        </div>
+                        <div class="label_block_form">
+                            @Html.TextBoxFor(m => Model.Email, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Address, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.FirstName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.LastName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.StageName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Category.CategoryName, new { @readonly = true })
+                            @Html.TextBoxFor(m => Model.Siret, new { @readonly = true })
+                            <div class="dropdownlist">
+                                @Html.DropDownListFor(modelItem => modelItem.Validation, new[] { new SelectListItem { Text = "Valider l'inscription", Value = "Valide" }, new SelectListItem { Text = "Refuser l'insciption", Value = "Refus" }, new SelectListItem { Text = "Laisser en attente", Value = "en attente" } })
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    
+                    <div class="button_orange">
+                        <input type="submit" value="Valider" />
+
+                    </div>
+
+                </fieldset>
+            </div>
+        </section>
+    }
+
+</body>
+</html>

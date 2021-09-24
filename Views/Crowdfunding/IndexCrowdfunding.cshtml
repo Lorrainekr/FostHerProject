@@ -1,0 +1,206 @@
+﻿
+@{
+    Layout = "_Layout";
+}
+@using ProjetFostHer.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index Event</title>
+</head>
+<body>
+    @if (ViewBag.user == "A")
+    {
+        <section class="container">
+            <h1>Liste des Crowdfundings</h1>
+            <ul>
+                <li>@Html.ActionLink("Créer un crowdfunding", "CreateCrowdfunding", "Crowdfunding")</li>
+            </ul>
+        </section>
+    }
+
+
+    <!-- AJOUTER HOME LES Crowdfundings (déjà dev en page d'accueil du site)-->
+    <!-- HOME LES CROWDFUNDINGS -->
+    <section class="container crowdfunding_accueil_container">
+        <div class="crowdfunding_accueil_title">
+            <h2>Les crowdfundings par thème</h2>
+        </div>
+        <div class="crowdfunding_accueil_gallery">
+            <div>
+                <div class="crowdfunding_accueil_img">
+                    <img class="img_theme"
+                         src="~/img/peinture_mini.png"
+                         alt="découvrir les crowdfunding dans l'univers de la peinture" />
+                </div>
+                <div class="crowdfunding_title_theme">
+                    <h3>Peinture</h3>
+                </div>
+            </div>
+            <div>
+                <div class="crowdfunding_accueil_img">
+                    <img class="img_theme"
+                         src="~/img/movie_mini.png"
+                         alt="découvrir les crowdfunding dans l'univers du cinema" />
+                </div>
+                <div class="crowdfunding_title_theme">
+                    <h3>Cinéma</h3>
+
+                </div>
+            </div>
+            <div>
+                <div class="crowdfunding_accueil_img">
+                    <img class="img_theme"
+                         src="~/img/sculpt_mini.png"
+                         alt="découvrir les crowdfunding dans l'univers de la sculpture" />
+                </div>
+                <div class="crowdfunding_title_theme">
+                    <h3>Sculpture</h3>
+                </div>
+            </div>
+            <div>
+                <div class="crowdfunding_accueil_img">
+                    <img class="img_theme"
+                         src="~/img/streetart_mini.png"
+                         alt="découvrir les crowdfunding dans l'univers du street art" />
+                </div>
+                <div class="crowdfunding_title_theme">
+                    <h3>Street Art</h3>
+                </div>
+            </div>
+            <div>
+                <div class="crowdfunding_accueil_img">
+                    <img class="img_theme"
+                         src="~/img/music_mini.png"
+                         alt="découvrir les crowdfunding dans l'univers de la musique" />
+                </div>
+                <div class="crowdfunding_title_theme">
+                    <h3>Musique</h3>
+                </div>
+            </div>
+            <div>
+                <div class="crowdfunding_accueil_img">
+                    <img class="img_theme"
+                         src="~/img/spectacle_mini.png"
+                         alt="découvrir les crowdfunding dans l'univers du spectacle" />
+                </div>
+                <div class="crowdfunding_title_theme">
+                    <h3>Danse</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="separator_line space"></section>
+    <!-- ecran principal : barre de recherche latérale gauche et résultats de recherche -->
+    <container class="container_crowdfunding_list">
+
+        <!-- partie gauche : barre de recherche (1 barre de recherche + 3 filtres )-->
+
+        <container class="list_searchbar">
+            <input type="text" class="search_bar" id="search" placeholder="Rechercher...">
+            <div class="filter">
+                <h4 class="filter">Projets</h4>
+                <label class="container_search">
+                    <input type="radio" class="checkmark-radio">Nouveaux
+                </label><br />
+                <label class="container_search">
+                    <input type="radio" class="checkmark-radio">Populaires
+                </label><br />
+                <label class="container_search">
+                    <input type="radio" class="checkmark-radio">Sélection de la rédaction
+                </label><br />
+            </div>
+
+            <div class="filter-amount">
+                <!-- documentation date : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
+
+                <div class="filter-avancement">
+                    <h4 class="filter">Par avancement</h4>
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">En cours de financement
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Financés
+                    </label><br />
+                </div>
+
+                <div class="filter">
+                    <h4 class="filter">Par thématique</h4>
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Peinture
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Cinéma
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Sculpture
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Street Art
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Musique
+                    </label><br />
+                    <label class="container_search">
+                        <input type="checkbox" class="checkmark">Danse
+                    </label><br />
+                </div>
+            </div>
+        </container>
+        <section>
+            <!-- Liste des résultats - cartes event -->
+            <div class="evenements_list_title">
+                <h2>Tous les crowdfundings</h2>
+            </div>
+            <div class="crowdfunding_list">
+
+                @foreach (Crowdfunding e in ViewBag.listCrowdfundings)
+                {
+                    <div class="crowdfunding_card">
+                        <img src="~/img/visuel_crowdfunding.png" alt="image du crowdfunding @e.NameCrowdfunding">
+                        @if (!(e.Artist == null))
+                {
+                    <h5 class="crowdfunding_artist">@e.Artist.StageName</h5>
+                }
+                        
+                        <div class="event_block_content">
+                            <h3>@e.NameCrowdfunding</h3>
+                            <div class="event_type_content">
+                                <h4>@e.Category</h4>
+                            </div>
+
+                            <div class="crowdfunding_KPI">
+                                <p><strong>% </strong> contributeurs</p>
+                                <p><strong>% jours</strong> restants</p>
+                                <p><strong>@e.sum €</strong> sur @e.AmountMax €</p>
+                            </div>
+                            <progress class="progress-small" max="100" value="@Math.Round((e.sum / e.AmountMax) * 100)"> @Math.Round((e.sum / e.AmountMax) * 100)% </progress>
+
+                            <div class="event_card_link_content">
+                                @Html.ActionLink("Voir le crowdfunding", "PageCrowdfunding", "Crowdfunding", new { id = e.Id })
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </section>
+    </container>
+
+    <!-- pagination bas de page -->
+    <section class="pagination_container">
+        <ul class="pagination">
+            <li><a href="#" class="p-button"><i class="fas fa-chevron-left"></i></a></li>
+            <li><a href="#" class="p-button">1</a></li>
+            <li><a href="#" class="p-button">2</a></li>
+            <li><a href="#" class="p-button">3</a></li>
+            <li><a href="#" class="p-button">4</a></li>
+            <li><a href="#" class="p-button"><i class="fas fa-chevron-right"></i></a></li>
+        </ul>
+    </section>
+
+</body>
+</html>

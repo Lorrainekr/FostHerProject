@@ -1,0 +1,222 @@
+﻿@{
+Layout = "_Layout";
+}
+@using ProjetFostHer.Models
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Evenements</title>
+</head>
+
+<body>
+    @if (ViewBag.user == "A")
+    {
+        <section class="container">
+            <h1>Tous les événements</h1>
+            <ul>
+                <li>@Html.ActionLink("Créer un événement", "CreateEvent", "Event")</li>
+            </ul>
+        </section>
+    }
+        <!-- AJOUTER HOME LES EVENT (déjà dev en page d'accueil du site)-->
+
+        <section class="container evenements-container-items-home event_container_block">
+
+            <div class="evenements-gallery-title-home">
+                <h2>Ça se passe en ce moment sur Fosther !</h2>
+            </div>
+            <div class="evenements-gallery-home">
+                <article class="evenement-block-vertical">
+                    <div class="evenement-image-home">
+                        <img class="evenement_img"
+                             src="~/img/visuel_evenement.png"
+                             alt="" />
+                        <div class="button_orange button_event_block">
+                            <a href="">Participer</a>
+                        </div>
+                    </div>
+
+                    <div class="evenement-nom-home">
+                        <h3>Art Paper Rosa</h3>
+                        <p> Nov 18, 2021</p>
+                        <p>
+                            L’artiste française Rosa Loy présentera douze
+                            œuvres typiques de son style poétique et onirique. Ses compositions mettent en scène des
+                            personnages exclusivement féminins...
+                        </p>
+                    </div>
+                </article>
+                <article class="evenement-block-vertical">
+                    <div class="evenement-image-home">
+                        <img class="evenement_img"
+                             src="~/img/visuel_evenement.png"
+                             alt="" />
+                        <div class="button_orange button_event_block">
+                            <a href="">Participer</a>
+                        </div>
+                    </div>
+
+                    <div class="evenement-nom-home">
+                        <h3>Artcurial</h3>
+                        <p>Oct 24, 2021</p>
+                        <p>
+                            Artcurial offre un vaste panorama du dessin, en privilégiant les œuvres contemporaines et
+                            celles réalisées sur papier ou carton, et vise à revaloriser l’art essentiel du dessin...
+                        </p>
+                    </div>
+                </article>
+                <article class="evenement-block-vertical">
+                    <div class="evenement-image-home">
+                        <img class="evenement_img"
+                             src="~/img/visuel_evenement.png"
+                             alt="" />
+                        <div class="button_orange button_event_block">
+                            <a href="">Participer</a>
+                        </div>
+                    </div>
+                    <div class="evenement-nom-home">
+                        <h3> Marseau</h3>
+                        <p> Sept 29, 2021</p>
+                        <p>
+                            La collaboration entre la peintre DanHôo et la musicienne Stephanie Grangier porte plus loin les
+                            inspirations croisées entre peinture et musique, fréquentes dans l’histoire de l’art...
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="separator_line"></section>
+        <!-- ecran principal : barre de recherche latérale gauche et résultats de recherche -->
+        <container class="container_event_list">
+            <div class="artist_search_block">
+                <div class="button_orange">
+                    @Html.ActionLink("Créer votre évènement", "CreateEvent", "Event")
+                </div>
+                <section class="list_searchbar">
+                    <input type="text" class="search_bar" id="search" placeholder="Rechercher...">
+                    <div class="filter">
+                        <h4 class="filter">Evénements</h4>
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Nouveaux
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Populaires
+                        </label><br />
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Sélection de la rédaction
+                        </label><br />
+                    </div>
+
+                    <div class="filter-date">
+                        <!-- documentation date : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date -->
+                        <h4 class="filter">Par date</h4>
+                        <label for="start">Début :</label>
+
+                        <input type="date"
+                               id="start"
+                               name="event-start"
+                               value="2021-09-23"
+                               min="2021-09-17"
+                               max="2022-01-01"><br /><br />
+
+                        <label for="start">Fin :</label>
+                        <input type="date" id="end" name="event-end" value="2021-09-24" min="2021-09-17" max="2022-01-01">
+                    </div>
+
+                    <div class="filter-type">
+                        <h4 class="filter">Par type</h4>
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Exposition
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Spectacle
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Rencontre
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Hors les murs
+                        </label><br />
+                    </div>
+
+                    <div class="filter">
+                        <h4 class="filter">Par thématique</h4>
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Peinture
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Cinéma
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Sculpture
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Street Art
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Musique
+                        </label><br />
+                        <label class="container_search">
+                            <input type="checkbox" class="checkmark">Danse
+                        </label><br />
+                    </div>
+
+
+                    <div class="filter-prix">
+                        <h4 class="filter">Par budget</h4>
+                        <label class="container_search">
+                            <input type="radio" class="checkmark-radio">Gratuit
+                        </label><br />
+                    </div>
+                </section>
+            </div>
+            <section>
+                <!-- Liste des résultats - cartes event -->
+                <div class="evenements_list_title">
+                    <h2>Tous les événements</h2>
+                </div>
+                <div class="event_list">
+
+                    @foreach (Event e in ViewBag.listEvents)
+                    {
+                        <div class="event_card">
+                            <img src="~/img/visuel_crowdfunding.png" alt="image de l'événement @e.Designation">
+                            <h5 class="event_artist">@e.ArtistEvent.StageName</h5>
+                            <div class="event_block_content">
+                                <h3>@e.Designation</h3>
+                                <div class="event_type_content">
+                                    <div class="line-break-card"></div>
+                                    <h4>@e.Category.CategoryName @e.Type</h4>
+                                </div>
+
+                                <div class="event_KPI">
+                                    <p><strong class="bold">Infos</strong></p>
+                                    <p>Du @e.StartDate <br />au @e.EndDate</p>
+                                    <p>@e.Lieu</p>
+                                    <p>Prix : @e.Price €</p>
+                                </div>
+                                <div class="event_card_link_content">
+                                    @Html.ActionLink("Voir l'événement", "PageEvent", "Event", new { id = e.Id })
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </section>
+        </container>
+        <!-- pagination bas de page -->
+        <section class="pagination_container">
+            <ul class="pagination">
+                <li><a href="#" class="p-button"><i class="fas fa-chevron-left"></i></a></li>
+                <li><a href="#" class="p-button">1</a></li>
+                <li><a href="#" class="p-button">2</a></li>
+                <li><a href="#" class="p-button">3</a></li>
+                <li><a href="#" class="p-button">4</a></li>
+                <li><a href="#" class="p-button"><i class="fas fa-chevron-right"></i></a></li>
+            </ul>
+        </section>
+    </body>
+</html>
