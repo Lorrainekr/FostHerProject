@@ -35,7 +35,7 @@ namespace ProjetFostHer.Models
 
             Association asso1 = new Association("femmesdelombre@gmail.com", "512398!uu!", "Sortir les femmes de l'ombre", "23, rue de l'écuyer, Noisy Le Roi 93130", "0123236789", "H763820717", "786543097");
             Association asso2 = new Association("femmesdumonde@gmail.com", "512376du!!!", "Femmes artistes ici et là-bas", "11, rue du Maréchal Foch, Argens 11200", "0123276789", "K763845717", "986541097");
-            Association asso3 = new Association("aware.asso@gmail.com", "7863!76du", "AWARE", "45, rue des maraichers, Paris 75020", "0156785623", "L749267396", "234908758");
+            Association asso3 = new Association("aware.asso@gmail.com", "12345ABC", "AWARE", "45, rue des maraichers, Paris 75020", "0156785623", "L749267396", "234908758");
             Association asso4 = new Association("fabriquedanse@gmail.com", "!6753!76du", "La Fabrique de la Danse", "78, rue des petits prés, Nantes 44000", "0156785623", "L749267396", "234908758");
             Association asso5 = new Association("astrea@gmail.com", "!7589!76du", "Astrea", "67, rue de la grande truanderie, Paris 75002", "0176458790", "R563789653", "764908637");
             using (Dal ctx = new Dal())
@@ -455,7 +455,7 @@ namespace ProjetFostHer.Models
                    StartDate = new DateTime(2021, 10, 22),
                    EndDate = new DateTime(2021, 10, 29),
                    Stock = 150,
-                   Price = 10,
+                   Price = 40,
                    Category = cat5,
                    Lieu = "Conservatoire de Boulogne-Billancourt",
                    Img = "/Users/eleonorepean/GitHub/FostHerProject/wwwroot/img/visuel_crowdfunding.png",

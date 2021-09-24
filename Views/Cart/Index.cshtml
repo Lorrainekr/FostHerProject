@@ -22,7 +22,7 @@
                         <tr>
 
                             <th>Produit</th>
-                            <th>Prix</th>
+                            <th>Prix (EUR)</th>
                             <th>Quantité <input type="submit" value="Update" /></th>
                             <th>Supprimer</th>
                             <th>Modifier</th>
@@ -65,22 +65,15 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="panier-total-paiement">
-                    <div class="total-paiement-somme">
-                        <h3>Total</h3>
-                        <p>@(Model.Items.Sum(item => item.Product.Price * item.Quantity)) €</p>
-                    </div>
-                    <div class="button_orange">
-                        @Html.ActionLink("Paiement", "PaymentEvent", "Payment", new { id = Model.Id })
-                    </div>
-                    <p>Nous acceptons</p>
-                    <a class="fab fa-cc-visa"></a>
-                    <a class="fab fa-cc-mastercard"></a>
-                    <a class="fab fa-cc-amex"></a>
-                    <a class="fab fa-cc-paypal"></a>
-                </div>
-            </section>
-            
+
+                <button class="button_orange">@Html.ActionLink("Paiement", "PaymentEvent", "Payment", new { id = Model.Id })</button>
+                <p>Nous acceptons</p>
+                <a class="fab fa-cc-visa"></a>
+                <a class="fab fa-cc-mastercard"></a>
+                <a class="fab fa-cc-amex"></a>
+                <a class="fab fa-cc-paypal"></a>
+            </div>
+
         </div>
     }
 </body>
