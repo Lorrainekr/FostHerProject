@@ -6836,19 +6836,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\leann\\.nuget\\packages\\": {}
+    "C:\\Users\\Utilisateur\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\ProjetFostHer.csproj",
+      "projectUniqueName": "C:\\Git_proj2\\FostHerProject\\ProjetFostHer.csproj",
       "projectName": "ProjetFostHer",
-      "projectPath": "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\ProjetFostHer.csproj",
-      "packagesPath": "C:\\Users\\leann\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\leann\\Desktop\\GitHub\\FostHerProject\\obj\\",
+      "projectPath": "C:\\Git_proj2\\FostHerProject\\ProjetFostHer.csproj",
+      "packagesPath": "C:\\Users\\Utilisateur\\.nuget\\packages\\",
+      "outputPath": "C:\\Git_proj2\\FostHerProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\leann\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Utilisateur\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
